@@ -1,14 +1,14 @@
 FOB Website: Product Requirements Document (PRD)
-Version 2.1 (Complete Removal of Fixtures & Match Schedules; Walk-In Viewing Lounge & On-Site Board Schedule Model) | 20 October 2026 | Status: ready for client sign-off | Prepared by the FOB project team (Brand Strategy, Sports Creative Direction, Art Direction, Copy, UX/UI, Development, Production)
+Version 2.3 (Alcohol & Beer Decommissioning / Fresh Smoothies & Healthy Drinks Overhaul) | 21 October 2026 | Status: ready for client sign-off | Prepared by the FOB project team (Brand Strategy, Sports Creative Direction, Art Direction, Copy, UX/UI, Development, Production)
 1. Summary
 FOB is a premier sports and recreation centre located at 2, Lawani Ode Street, Alakara Bus Stop, Ashipa, Ayobo, Lagos, with seven zones: football pitch, football viewing centre, gym, basketball court, snooker, table tennis and gaming. This document defines the requirements for the FOB website: what it must do, how it must look and move, and every illustration, animation, broadcast graphic, and map navigation interface produced for it.
-The website has one job: turn a mobile visitor into a person who walks through the door or sends a WhatsApp message. Bookings across zones run through WhatsApp, phone and walk-in. The viewing centre operates as a live stadium-grade 4K sports lounge featuring a 4K laser projection wall and 105dB stadium surround sound alongside an integrated beer bar with shawarma and live charcoal grills, first come first served. In Version 2.1, all online upcoming and live match fixture listings have been completely eliminated; users discover daily fixtures and match screening schedules directly upon arriving at the viewing centre or via WhatsApp inquiries, keeping the website lightweight and laser-focused on venue atmosphere and walk-in conversion. The quality bar the site is built to is in section 17, and the brand system it is built from is in section 18.
+The website has one job: turn a mobile visitor into a person who walks through the door or sends a WhatsApp message. Bookings across zones run through WhatsApp, phone and walk-in. The viewing centre operates as a live stadium-grade 4K sports lounge featuring a 4K laser projection wall and 105dB stadium surround sound alongside an integrated smoothie bar with healthy drinks, shawarma, and live charcoal grills, first come first served. In Version 2.1, all online upcoming and live match fixture listings have been completely eliminated; users discover daily fixtures and match screening schedules directly upon arriving at the viewing centre or via WhatsApp inquiries, keeping the website lightweight and laser-focused on venue atmosphere and walk-in conversion. The quality bar the site is built to is in section 17, and the brand system it is built from is in section 18.
 Product principles
 	•	Sleek in structure, fun in moments. Layout, type and photography stay clean. Colour, copy, motion and small surprises carry the fun.
 	•	Mobile first, data-light. Most visitors will arrive on a phone on mobile data. Zero fixture polling overhead.
 	•	The next action is always visible: Lock it in, Explore Viewing, Call, or Directions, reinforced by a persistent mobile thumb-zone action dock.
 	•	The O is the hero. It is the logo, the zone icon, the loader, the cursor and the interactive toy.
-	•	Nothing hidden: venue setup, audio/visual specs, operating hours, food & beer menus, and turn-by-turn directions are always one tap away.
+	•	Nothing hidden: venue setup, audio/visual specs, operating hours, fresh smoothie, healthy drinks & food menus, and turn-by-turn directions are always one tap away.
 	•	Zero pricing friction: the site eliminates all pricing tables and payment barriers; availability and table reservations happen directly via WhatsApp.
 	•	Stadium energy, broadcast precision: Visuals blend Lagos crew warmth with sports broadcast typography and floodlight contrast.
 	•	Cinematic presentation, authentic branding: Every visual asset across hero headers, interactive zone tabs, and photo galleries is framed with anamorphic letterboxing, subtle lens vignetting, and a micro-HUD glassmorphic FOB tag celebrating the iconic volt O.
@@ -17,7 +17,7 @@ Product principles
 2. Goals and success metrics
 Business goals
 	•	Increase walk-ins and WhatsApp enquiries across all seven zones.
-	•	Make the viewing centre the most visited page, driven by the 4K laser wall experience, 105dB audio specs, and match-day beer & grill offerings.
+	•	Make the viewing centre the most visited page, driven by the 4K laser wall experience, 105dB audio specs, and match-day fresh smoothie & grill offerings.
 	•	Grow group and event revenue (birthdays, team outings, corporate nights, tournaments).
 	•	Give FOB a brand and website that look established from launch day.
 Metrics (targets to be confirmed after a 30-day baseline)
@@ -78,7 +78,7 @@ Tap me hints on two money guns that fire falling naira notes
 Tap the O: a ball that kicks out sport balls and volt sparks that fall and bounce
 Hero feature
 One hero feature given its own full-width block with a bold intro label
-The viewing centre gets the same treatment, with a showcase block for the 4K laser projection wall, 105dB stadium audio, and chow/beer bar
+The viewing centre gets the same treatment, with a showcase block for the 4K laser projection wall, 105dB stadium audio, and healthy chow/smoothie bar
 FAQ
 Accordion of plain-language questions
 FAQ accordion on Home and on each zone page
@@ -166,7 +166,7 @@ WhatsApp message templates
 In scope (launch)
 	•	Brand-led marketing website, mobile first, responsive to desktop, built in plain HTML, CSS and vanilla JavaScript (section 23).
 	•	Seven zone pages plus Home, Football Viewing Centre Lounge, Events and Parties, Gallery, Find Us and Contact, FAQ, 404.
-	•	Viewing Centre Showcase: 4K laser projection wall, 105dB stadium surround audio specs, walk-in open seating policy, and integrated beer bar with shawarma and live charcoal grills.
+	•	Viewing Centre Showcase: 4K laser projection wall, 105dB stadium surround audio specs, walk-in open seating policy, and integrated smoothie bar with healthy drinks, shawarma, and live charcoal grills.
 	•	A simple CMS so staff manage venue status, hours, events and photos.
 	•	WhatsApp and tap-to-call flows, directions links, basic analytics, local SEO.
 Out of scope (launch)
@@ -178,7 +178,7 @@ Out of scope (launch)
 Sitemap
 	•	Home
 	•	Play: Football pitch, Basketball court, Snooker, Table tennis
-	•	Watch: Football viewing (4K Laser Projection Lounge, Walk-In Seating, Beer Bar, Shawarma & Live Grills)
+	•	Watch: Football viewing (4K Laser Projection Lounge, Walk-In Seating, Smoothie Bar, Healthy Drinks, Shawarma & Live Grills)
 	•	Train: Gym
 	•	Games: Gaming centre
 	•	Events and Parties
@@ -209,21 +209,21 @@ Sections in order, with the PocketApp pattern each follows:
 	•	Three-photo gallery strip.
 	•	Zone FAQ (three questions).
 	•	Related zones strip.
-7.3 Football viewing centre (4K Sports Lounge & Beer Bar)
+7.3 Football viewing centre (4K Sports Lounge & Smoothie Bar)
 	•	Zone Hero Band: Zone 02 banner in FOB magenta with quick links to View Chow & Drinks Menu and Get Directions.
 	•	Walk-in Open Seating Banner: Clear notice informing guests that seating is open, first come, first served, and daily screening lineups are posted on-site at the centre.
 	•	The Setup Showcase:
 		- 4K Laser Wall: Ultra-short-throw 4K laser projection display delivering high nit brightness and vivid contrast for all daytime and nighttime matches.
 		- 105dB Stadium Audio: Multi-channel acoustic surround sound calibrated for pitch-side commentary and visceral stadium atmosphere.
 		- Daily Match Board: Schedules, kick-off lineups, and channels are posted right at the entrance doors and counter boards daily.
-	•	Refreshments & Chow: Full Match-Day Beer Bar, Shawarma & Live Charcoal Grills section (sub-zero beer buckets, draught cider pitchers, double-sausage special shawarma, smokey BBQ chicken shawarma rolls, whole charcoal-grilled catfish/croaker with roasted plantain, signature suya & peppered asun platters, spicy glazed wings, and match cocktails; zero-pricing policy preserved).
+	•	Refreshments & Chow: Full Match-Day Smoothie Bar, Healthy Drinks, Shawarma & Live Charcoal Grills section (cold-pressed signature fruit smoothies, sharing tropical juice pitchers, organic mocktails & electrolyte replenishers, double-sausage special shawarma, smokey BBQ chicken shawarma rolls, whole charcoal-grilled catfish/croaker with roasted plantain, signature suya & peppered asun platters, spicy glazed wings; zero-pricing policy preserved).
 	•	Viewing Centre FAQs: Detailed answers covering walk-in seating, screen setups, match board discovery, and private watch party bookings.
 7.4 Walk-In Viewing Lounge Model & On-Site Match Schedules (Replaces Online Fixture Listings)
 In Version 2.1, all online upcoming and live match fixture listings and polling feeds have been completely removed across the website:
-	•	Physical Board Discovery: Daily fixtures, channels, and kick-off times are posted on prominent physical boards at the entrance and bar counter at FOB.
+	•	Physical Board Discovery: Daily fixtures, channels, and kick-off times are posted on prominent physical boards at the entrance and lounge counter at FOB.
 	•	Conversational WhatsApp Inquiries: Guests who wish to check whether a specific match is showing before leaving home can tap "Ask on WhatsApp" to verify with shift staff in real time.
 	•	Zero Maintenance Overhead: Eliminates the risk of stale or unsynchronized match times on the website.
-	•	100% Experience Focus: Web pages highlight the physical assets: 4K laser projection, stadium acoustic power, cold beer buckets, freshly pressed shawarma, and live charcoal grills.
+	•	100% Experience Focus: Web pages highlight the physical assets: 4K laser projection, stadium acoustic power, fresh fruit smoothies, healthy drinks, freshly pressed shawarma, and live charcoal grills.
 7.5 Events and Parties
 Three package cards (birthday, team outing, tournament), what is included, group sizes, and an enquiry button that opens WhatsApp with the event template (pricing removed; custom quotes provided on WhatsApp).
 7.6 Gallery
@@ -305,13 +305,13 @@ FR-36
 [DEPRECATED in v2.1] Match Screening Card Presentation: Decommissioned. All online match fixture cards removed from all pages.
 Decommissioned
 FR-37
-Site-Wide Viewing Lounge Marquee: Ticker highlights the 4K laser wall, stadium sound, cold beers, and live grill offerings.
+Site-Wide Viewing Lounge Marquee: Ticker highlights the 4K laser wall, stadium sound, fresh fruit smoothies, healthy drinks, and live grill offerings.
 Should
 FR-38
 Google Maps Navigation API Integration: Directions buttons and route calculation interface connect directly to the Google Maps Directions API (`https://www.google.com/maps/dir/?api=1...`), passing user origin GPS coordinates and destination at 2, Lawani Ode Street, Alakara Bus Stop, Ashipa, Ayobo, Lagos for native turn-by-turn navigation
 Must
 FR-39
-Match-Day Beer Bar, Shawarma & Live Grills: Viewing centre and refreshments interfaces present sub-zero beer buckets, shawarma rolls, and charcoal-grilled whole fish/meats with table delivery flows under the zero-pricing model
+Match-Day Smoothie Bar, Healthy Drinks, Shawarma & Live Grills: Viewing centre and refreshments interfaces present fresh fruit smoothies, cold-pressed juice pitchers, shawarma rolls, and charcoal-grilled whole fish/meats with table delivery flows under the zero-pricing model
 Must
 FR-40
 Cinematic Media System & Branded FOB Image Tagging: Every image asset across landing and zone pages is encapsulated in a responsive cinematic frame (.fob-cinematic-frame) featuring anamorphic edge letterboxing, radial lens vignetting, subtle micro-zoom on interaction, and an integrated glassmorphic HUD badge (.fob-media-tag) displaying the branded volt 'O' and zone context
@@ -324,7 +324,7 @@ FR-42
 Decommissioned
 CMS requirements
 Staff must be able to do these without a developer. Two roles: Admin (owner) and Editor (shift staff, can edit announcements, hours, events, and photos).
-	•	Viewing Centre: 4K setup specs, walk-in advisories, beer bar & grill menu items, and FAQs.
+	•	Viewing Centre: 4K setup specs, walk-in advisories, smoothie & grill menu items, and FAQs.
 	•	Zones: name, tagline, features, specs, hours, photos, FAQ items.
 	•	Events: package name, description, group sizes, inclusions.
 	•	Global settings: WhatsApp number, phone number, address, map link, hours, special-hours notice, social links, site-wide banner message.
@@ -455,13 +455,13 @@ Static image (no scale)
 A. Brand core: ILL-01 to 09 (wordmark, O mark, O-grid, spark confetti, pill kit, utility icons, dividers)
 B. Home page: ILL-10 to 16 (floating sport Os, tap me bubble, trust strip icons, how it works spots, crew avatar stack, tabs scenes, desktop QR frame)
 C. Zone set: 7 animated Os, 7 hero scenes, 21 spot icons
-D. Viewing centre (4K Sports Lounge & Beer Bar):
+D. Viewing centre (4K Sports Lounge & Smoothie Bar):
 	•	ILL-50: [DEPRECATED in v2.1]
 	•	ILL-51: [DEPRECATED in v2.1]
 	•	ILL-52: [DEPRECATED in v2.1]
 	•	ILL-53: [DEPRECATED in v2.1]
 	•	ILL-54: [DEPRECATED in v2.0]
-	•	ILL-55: Refreshment menu icons (beer bucket, cider pitcher, shawarma roll, live charcoal grill)
+	•	ILL-55: Refreshment menu icons (smoothie cup, juice pitcher, shawarma roll, live charcoal grill)
 	•	ILL-56: 4K Laser Projection Lounge setup and audio visual specs showcase
 	•	ILL-57: Walk-in open seating advisory: first come, first served
 	•	ILL-58: Conversational fallback: Ask on WhatsApp
@@ -543,6 +543,10 @@ Management, Sports Creative Direction & Product Owner
 Dual-Session Operating Schedule & Sunday Zone Specific Constraints: Formalized FOB venue operations into two dedicated daily recreation/training sessions Monday through Saturday: Morning Session (7:00 am to 11:00 am WAT) and Evening Session (5:00 pm to 9:00 pm WAT). Enforced critical Sunday zone rules: (1) Gym & Fitness Studio remains closed all day Sunday; (2) 5-a-side Football Pitch and Basketball Court open exclusively for the Sunday Evening Session (5:00 pm to 9:00 pm WAT). Upgraded `data/hours.json` multi-session schema, `assets/js/hours.js` state evaluator, Schema.org `OpeningHoursSpecification`, trust strip live badge/subtitle, and all zone specification cards.
 1, 6, 7, 8 (FR-10), 14, 23
 Operations Director, Sports UX Lead & Product Owner
+31
+Transition from Alcohol/Beer Bar to 100% Healthy Smoothies & Wellness Hydration: Removed all beer, alcohol, cider, and alcoholic cocktail offerings site-wide. Replaced with freshly blended fruit smoothies, cold-pressed tropical juice sharing pitchers, organic match mocktails, and electrolyte hydration drinks alongside our signature shawarma and live charcoal grills. This aligns FOB with an active, high-performance athletic lifestyle, family-friendly recreation, and clean nutrition while preserving the zero-pricing discovery model.
+1, 7.3, 8 (FR-39), 11, 14, 23
+Food & Beverage, Sports Wellness Direction & Product Owner
 14. Technical implementation: HTML, CSS and vanilla JavaScript
 File structure:
 /fob-site
@@ -574,6 +578,7 @@ File structure:
   robots.txt
   sitemap.xml
 Document control
+Version 2.3: 21 October 2026. Alcohol & Beer Decommissioning / Smoothie & Healthy Drinks Overhaul: Completely eliminated beer, alcohol, and alcoholic cocktails site-wide. Introduced fresh cold-pressed smoothies, tropical juice pitchers, and organic wellness drinks paired with shawarma and live charcoal grills across all menus, badges, and PRD specifications (Decision 31).
 Version 2.2: 20 October 2026. Dual-Session Operating Schedule & Sunday Zone Rules: Reconfigured venue hours to split morning (7:00 am – 11:00 am) and evening (5:00 pm – 9:00 pm) sessions Monday to Saturday. Implemented Sunday operational constraints: Gym closed all day; Football Pitch & Basketball Court evening session only (5:00 pm – 9:00 pm). Synchronized schema.org, live status chips, trust strips, zone spec cards, and FAQ (FR-10, Decision 30).
 Version 2.1: 20 October 2026. Complete Removal of Fixture Lists & Match Schedules: Deleted every section displaying upcoming or live matches site-wide (including Today at FOB and the viewing centre fixtures list). Established on-site match board and WhatsApp inquiry model, removing fixtures.js and fixtures.json from production (FR-04, FR-09, Decision 29).
 Version 2.0: 20 October 2026. Complete Decommissioning of LiveScore Telemetry & Transition to Pure Matchday Screening Hub: Removed all live scores, in-game match clocks, goal scorers lists, goal flash animations, polling engines, and API keys site-wide. Converted viewing centre into an authentic matchday screening guide with door times, open seating status, and seamless WhatsApp reservations (FR-09, FR-34, FR-42, Decision 28).
