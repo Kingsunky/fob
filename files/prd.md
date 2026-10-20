@@ -1,8 +1,8 @@
 FOB Website: Product Requirements Document (PRD)
-Version 1.5 (Sports Broadcast Overhaul, Match-Center Telemetry, and Zero-Pricing Scope) | 20 October 2026 | Status: ready for client sign-off | Prepared by the FOB project team (Brand Strategy, Sports Creative Direction, Art Direction, Copy, UX/UI, Development, Production)
+Version 1.6 (Ayobo Venue Address, Google Maps Navigation API, Shawarma & Grills Menu, Sports Broadcast Scope) | 20 October 2026 | Status: ready for client sign-off | Prepared by the FOB project team (Brand Strategy, Sports Creative Direction, Art Direction, Copy, UX/UI, Development, Production)
 1. Summary
-FOB is a recreational centre in Lagos with seven zones: football pitch, football viewing centre, gym, basketball court, snooker, table tennis and gaming. This document defines the requirements for the FOB website: what it must do, how it must look and move, and every illustration, animation, broadcast graphic, and real-time live match telemetry asset produced for it.
-The website has one job: turn a mobile visitor into a person who walks through the door or sends a WhatsApp message. Bookings across zones run through WhatsApp, phone and walk-in. The viewing centre operates as a live stadium-grade match-day hub with real-time score synchronization across top football competitions, first come first served. All public pricing has been deliberately removed from the site to focus entirely on atmosphere, live match energy, availability, and fast WhatsApp bookings. The quality bar the site is built to is in section 17, and the brand system it is built from is in section 18.
+FOB is a premier sports and recreation centre located at 2, Lawani Ode Street, Alakara Bus Stop, Ashipa, Ayobo, Lagos, with seven zones: football pitch, football viewing centre, gym, basketball court, snooker, table tennis and gaming. This document defines the requirements for the FOB website: what it must do, how it must look and move, and every illustration, animation, broadcast graphic, map navigation interface, and real-time live match telemetry asset produced for it.
+The website has one job: turn a mobile visitor into a person who walks through the door or sends a WhatsApp message. Bookings across zones run through WhatsApp, phone and walk-in. The viewing centre operates as a live stadium-grade match-day hub with real-time score synchronization across top football competitions, an integrated beer bar with shawarma and live charcoal grills, first come first served. All public pricing has been deliberately removed from the site to focus entirely on atmosphere, live match energy, availability, and fast WhatsApp bookings. The quality bar the site is built to is in section 17, and the brand system it is built from is in section 18.
 Product principles
 	•	Sleek in structure, fun in moments. Layout, type and photography stay clean. Colour, copy, motion and small surprises carry the fun.
 	•	Mobile first, data-light. Most visitors will arrive on a phone on mobile data.
@@ -220,7 +220,7 @@ Sections in order, with the PocketApp pattern each follows:
 		- Primary button: See you there. Secondary: Ask on WhatsApp. Directions link on every card.
 	•	First come first served message shown clearly: Big one. Come early.
 	•	Live state: the magenta O pulses while a match is live on screen.
-	•	Refreshments section with a menu of match-day food and drinks (no prices listed).
+	•	Refreshments & Chow: Full Match-Day Beer Bar, Shawarma & Live Charcoal Grills section (sub-zero beer buckets, draught cider pitchers, double-sausage special shawarma, smokey BBQ chicken shawarma rolls, whole charcoal-grilled catfish/croaker with roasted plantain, signature suya & peppered asun platters, spicy glazed wings, and match cocktails; zero-pricing policy preserved).
 	•	Empty state: No match today. Check tomorrow.
 7.4 LiveScore Model & Top Football Competitions Sync Engine
 To establish FOB as Lagos's premier match-day authority, the site syncs top football matches across major domestic and international competitions, powered by a lightweight client-side polling and data-sync model:
@@ -262,7 +262,12 @@ Three package cards (birthday, team outing, tournament), what is included, group
 7.6 Gallery
 Photo grid with circle-crop treatment, filter by zone, lazy-loaded.
 7.7 Find Us and Contact
-A live map with FOB's pin and a Use my location button that shows the distance in km and the travel time in minutes and draws the route, plus a Directions button, address, WhatsApp, phone, hours, parking and landmark notes.
+Official venue address: 2, Lawani Ode Street, Alakara Bus Stop, Ashipa, Ayobo, Lagos, Nigeria (Coordinates: 6.6130° N, 3.2659° E).
+Interactive features:
+	•	On-demand Google Maps Embed API displaying the venue pin with zero initial data footprint.
+	•	Use my location button: triggers browser Geolocation API to calculate direct straight-line distance, estimated Lagos road distance, and real-time traffic travel duration in minutes (driving vs walking).
+	•	Google Maps Navigation API Connection: native "Start Navigation" button generates turn-by-turn navigation via `https://www.google.com/maps/dir/?api=1...` passing user's GPS origin and Ayobo destination directly into the user's native maps app (Google Maps on Android/desktop, Apple Maps on iOS).
+	•	Venue details: parking capacity (free secure parking with 24/7 security & CCTV), landmark notes (Alakara Bus Stop, Ashipa Road), operating hours, direct phone, and WhatsApp contact.
 7.8 FAQ and 404
 Full FAQ grouped by topic. A playful 404 with a bouncing O.
 8. Functional requirements
@@ -335,6 +340,12 @@ Must
 FR-37
 Broadcast Matchday Lower-Third: On matchdays, the global ticker transforms into a high-contrast sports broadcast lower-third displaying upcoming kickoffs, live scores, and venue capacity
 Should
+FR-38
+Google Maps Navigation API Integration: Directions buttons and route calculation interface connect directly to the Google Maps Directions API (`https://www.google.com/maps/dir/?api=1...`), passing user origin GPS coordinates and destination at 2, Lawani Ode Street, Alakara Bus Stop, Ashipa, Ayobo, Lagos for native turn-by-turn navigation
+Must
+FR-39
+Match-Day Beer Bar, Shawarma & Live Grills: Viewing centre and refreshments interfaces present sub-zero beer buckets, shawarma rolls, and charcoal-grilled whole fish/meats with table delivery flows under the zero-pricing model
+Must
 CMS requirements
 Staff must be able to do these without a developer. Two roles: Admin (owner) and Editor (shift staff, can edit fixtures, live scores, and venue status).
 	•	Fixtures & LiveScores: home team, away team (plain text), competition, date, kick-off time, doors-open time, live score (home/away), live match minute/period, goal scorers list, status, optional note (for example, big derby, come early).
@@ -509,6 +520,18 @@ Sports Design Director & Lead Developer
 Arena Zone Nomenclature: Rebrand 7 zones with pro sports arena designations (e.g., FIBA-spec, Strachan 6811 cloth, 4K laser wall, 105dB stadium audio) while preserving zero-pricing WhatsApp conversion flow.
 1, 7.2, 7.3, 8
 Brand Strategy & Product Owner
+22
+Venue Address Migration: Official venue address updated site-wide to 2, Lawani Ode Street, Alakara Bus Stop, Ashipa, Ayobo, Lagos, Nigeria.
+1, 6, 7.7, 8, 14, 22
+Operations & Management
+23
+Google Maps Navigation API Connection: Connect Google Maps Directions API (`https://www.google.com/maps/dir/?api=1...`) passing visitor's GPS origin coordinates and destination at Ayobo for direct turn-by-turn navigation.
+7.7, 8 (FR-12, FR-29, FR-38), 14, 22
+Lead Developer
+24
+Beer Bar, Shawarma & Live Charcoal Grills Menu: Overhaul football viewing refreshments into an integrated beer bar with sub-zero buckets, sharing pitchers, double-sausage shawarma, and live charcoal grills under zero-pricing model.
+1, 7.3, 8 (FR-39), 11
+Food & Beverage / Sports Experience
 14. Technical implementation: HTML, CSS and vanilla JavaScript
 File structure:
 /fob-site
@@ -567,5 +590,6 @@ Sample Fixture & LiveScore JSON format:
   ]
 }
 Document control
+Version 1.6: 20 October 2026. Venue address migrated to 2, Lawani Ode Street, Alakara Bus Stop, Ashipa, Ayobo, Lagos; connected Google Maps Directions API for native GPS turn-by-turn navigation; upgraded football viewing menu to Beer Bar, Shawarma & Live Charcoal Grills (FR-38, FR-39, Decisions 22–24).
 Version 1.5: 20 October 2026. Sports broadcast overhaul: introduced broadcast lower-third matchday marquee, tabular numeric scoreboard typography, recent team form discs, CSS live match momentum gauge, and pro arena zone nomenclature while retaining zero-pricing WhatsApp conversion flow.
 Version 1.4: 20 October 2026. Removed all pricing across the site, added top football competitions sync, and implemented real-time LiveScore model with goal scorers preview.
