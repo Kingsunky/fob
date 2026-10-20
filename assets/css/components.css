@@ -1,0 +1,798 @@
+/* FOB Website Components (PRD Version 1.4: Zero-Pricing, LiveScore Model, ANI-19) */
+
+/* Buttons (PRD Section 18: Primary & Secondary Buttons, ANI-09) */
+.fob-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--font-text);
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border-radius: var(--radius-pill);
+  padding: 0.75rem 1.5rem;
+  min-height: 48px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: transform var(--dur-fast) var(--ease-spring),
+              background var(--dur-fast) var(--ease-out),
+              color var(--dur-fast) var(--ease-out),
+              box-shadow var(--dur-fast) var(--ease-out),
+              border-color var(--dur-fast) var(--ease-out);
+  position: relative;
+  user-select: none;
+}
+
+.fob-btn:active {
+  transform: scale(0.96); /* ANI-09 */
+}
+
+/* Primary Button: Volt on dark, Ink with Volt text on light */
+.fob-btn--primary {
+  background-color: var(--fob-volt);
+  color: var(--fob-ink);
+  box-shadow: 0 4px 20px rgba(215, 255, 31, 0.25);
+}
+
+.fob-btn--primary:hover {
+  background-color: #E2FF4D;
+  box-shadow: 0 6px 24px rgba(215, 255, 31, 0.4);
+  transform: translateY(-1px);
+}
+
+.fob-btn--primary:active {
+  transform: translateY(0) scale(0.96);
+}
+
+.ground-paper .fob-btn--primary {
+  background-color: var(--fob-ink);
+  color: var(--fob-volt);
+  box-shadow: 0 4px 20px rgba(14, 14, 44, 0.2);
+}
+
+.ground-paper .fob-btn--primary:hover {
+  background-color: #171746;
+  box-shadow: 0 6px 24px rgba(14, 14, 44, 0.3);
+}
+
+/* Secondary Button: 2px outline, never competes with primary */
+.fob-btn--secondary {
+  background: transparent;
+  color: var(--fob-white);
+  border: 2px solid var(--fob-white-40);
+}
+
+.fob-btn--secondary:hover {
+  border-color: var(--fob-white);
+  background: var(--fob-white-08);
+}
+
+.ground-paper .fob-btn--secondary {
+  color: var(--fob-ink);
+  border-color: var(--fob-ink-50);
+}
+
+.ground-paper .fob-btn--secondary:hover {
+  border-color: var(--fob-ink);
+  background: var(--fob-ink-06);
+}
+
+/* Compact button for nav & cards */
+.fob-btn--sm {
+  padding: 0.45rem 1rem;
+  min-height: 38px;
+  font-size: 0.85rem;
+}
+
+.fob-btn--lg {
+  padding: 1rem 2rem;
+  min-height: 56px;
+  font-size: 1.1rem;
+}
+
+/* Zone Badges (PRD Section 18) */
+.fob-zone-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--fob-ink);
+  border: 1px solid var(--fob-white-16);
+  color: var(--fob-white);
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.fob-zone-badge__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* Status Chips (PRD Section 8, 18, Decision 8) */
+.fob-status-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: var(--fob-ink);
+  border: 1px solid var(--fob-white-16);
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--fob-white);
+}
+
+.fob-status-chip__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.fob-status-chip--open .fob-status-chip__dot {
+  background-color: var(--fob-volt);
+  box-shadow: 0 0 8px var(--fob-volt);
+}
+
+.fob-status-chip--filling-up .fob-status-chip__dot {
+  background-color: var(--fob-orange);
+  box-shadow: 0 0 8px var(--fob-orange);
+}
+
+.fob-status-chip--full .fob-status-chip__dot {
+  background-color: var(--fob-red);
+  box-shadow: 0 0 8px var(--fob-red);
+}
+
+.fob-status-chip--ask .fob-status-chip__dot {
+  background-color: var(--fob-cyan);
+}
+
+/* Live Pulse State (ANI-07) */
+.fob-live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(255, 61, 165, 0.15);
+  border: 1px solid var(--fob-magenta);
+  color: var(--fob-magenta);
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.fob-live-badge__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--fob-magenta);
+  animation: fob-pulse 1.4s infinite cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+@keyframes fob-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.6);
+    opacity: 0.4;
+  }
+}
+
+/* Neutral Team Discs (ILL-53: plain text initials in zone colour) */
+.fob-team-disc {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--fob-white-08);
+  border: 2px solid var(--fob-magenta);
+  color: var(--fob-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+/* Fixture Card & LiveScore Model (PRD Section 7.3, 7.4, ILL-50, ILL-54) */
+.fob-fixture-card {
+  background-color: var(--fob-ink);
+  border: 1px solid var(--fob-white-16);
+  border-radius: var(--radius-card);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.25rem;
+  transition: transform var(--dur-base) var(--ease-out),
+              border-color var(--dur-base) var(--ease-out),
+              box-shadow var(--dur-base) var(--ease-out);
+  position: relative;
+  overflow: hidden;
+}
+
+.fob-fixture-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(215, 255, 31, 0.4);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.fob-fixture-card--big-match {
+  border: 2px solid var(--fob-magenta);
+}
+
+.fob-fixture-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.fob-fixture-card__league {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--fob-volt);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* LiveScore Matchup Row */
+.fob-fixture-card__matchup-row {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0.75rem 0;
+}
+
+.fob-fixture-card__team-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.fob-team-name {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--fob-white);
+  line-height: 1.2;
+}
+
+.fob-fixture-card__score-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background: var(--fob-white-08);
+  border-radius: var(--radius-input);
+  border: 1px solid var(--fob-white-16);
+  min-width: 80px;
+}
+
+.fob-fixture-card__score {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: var(--fob-white);
+  letter-spacing: 0.04em;
+  line-height: 1;
+  transition: transform var(--dur-base) var(--ease-spring), color var(--dur-fast);
+}
+
+.fob-fixture-card__score.is-live-score {
+  color: var(--fob-volt);
+}
+
+/* ANI-19: Score bounce on goal */
+.fob-fixture-card__score.is-goal-pop {
+  transform: scale(1.35);
+  color: var(--fob-magenta);
+}
+
+.fob-fixture-card__period-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--fob-white-70);
+  margin-top: 0.25rem;
+  text-transform: uppercase;
+}
+
+/* Goal Scorers Preview on Card (PRD Section 7.3, 7.4: FR-34) */
+.fob-goals-preview {
+  background: rgba(14, 14, 44, 0.7);
+  border: 1px solid rgba(255, 61, 165, 0.3);
+  border-radius: var(--radius-input);
+  padding: 0.75rem 1rem;
+  font-size: 0.8rem;
+}
+
+.fob-goals-preview__header {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 800;
+  color: var(--fob-magenta);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  margin-bottom: 0.4rem;
+}
+
+.fob-goals-preview__timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.fob-goal-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--fob-white-90);
+}
+
+.fob-goal-item__min {
+  background: var(--fob-white-16);
+  padding: 0.1rem 0.4rem;
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+  font-size: 0.7rem;
+  color: var(--fob-volt);
+}
+
+.fob-goal-item__scorer {
+  font-weight: 700;
+}
+
+.fob-goal-pen {
+  color: var(--fob-orange);
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+
+/* ANI-19: Live Goal Flash Banner */
+.fob-goal-flash-banner {
+  position: fixed;
+  top: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--fob-magenta);
+  color: #FFF;
+  border-radius: var(--radius-pill);
+  padding: 0.85rem 1.75rem;
+  box-shadow: 0 10px 40px rgba(255, 61, 165, 0.6);
+  z-index: 9999;
+  animation: fob-goal-banner-anim 0.5s var(--ease-spring);
+}
+
+.fob-goal-flash-inner {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-display);
+  font-weight: 800;
+}
+
+.fob-goal-tag {
+  background: var(--fob-ink);
+  color: var(--fob-volt);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+}
+
+@keyframes fob-goal-banner-anim {
+  from { transform: translateX(-50%) translateY(-30px); opacity: 0; }
+  to { transform: translateX(-50%) translateY(0); opacity: 1; }
+}
+
+/* Top Football Competitions Filter Bar */
+.fob-comp-filter-bar {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+[data-comp-filter].is-selected {
+  background: var(--fob-volt) !important;
+  color: var(--fob-ink) !important;
+  border-color: var(--fob-volt) !important;
+  font-weight: 800 !important;
+}
+
+.fob-fixture-card__times {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  padding: 0.75rem 0.85rem;
+  background: var(--fob-white-08);
+  border-radius: var(--radius-input);
+  font-size: 0.85rem;
+}
+
+.fob-fixture-card__time-label {
+  color: var(--fob-white-70);
+  display: block;
+  font-size: 0.75rem;
+  margin-bottom: 0.2rem;
+}
+
+.fob-fixture-card__time-val {
+  font-weight: 700;
+  color: var(--fob-white);
+}
+
+.fob-fixture-card__footer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.fob-fixture-card__actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.fob-fixture-card__actions .fob-btn {
+  flex: 1;
+}
+
+/* Marquee Band (PRD Section 10: ANI-05, ILL-05) */
+.fob-marquee {
+  background-color: var(--fob-ink);
+  border-top: 1px solid var(--fob-white-16);
+  border-bottom: 1px solid var(--fob-white-16);
+  padding: 1rem 0;
+  overflow: hidden;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.fob-marquee__inner {
+  display: inline-flex;
+  gap: 2rem;
+  animation: fob-marquee-scroll 25s linear infinite;
+  will-change: transform;
+}
+
+.fob-marquee:hover .fob-marquee__inner {
+  animation-play-state: paused;
+}
+
+.fob-marquee__item {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--fob-volt);
+  display: inline-flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.fob-marquee__sep {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--fob-white-40);
+  display: inline-block;
+}
+
+@keyframes fob-marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Native Accordion Component (PRD Section 10: ANI-12) */
+.fob-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.fob-accordion__item {
+  background-color: var(--fob-ink);
+  border: 1px solid var(--fob-white-16);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  transition: border-color var(--dur-fast) var(--ease-out);
+}
+
+.fob-accordion__item:hover {
+  border-color: rgba(215, 255, 31, 0.4);
+}
+
+.ground-paper .fob-accordion__item {
+  background-color: var(--fob-white);
+  border-color: var(--fob-ink-12);
+}
+
+.fob-accordion__summary {
+  padding: 1.25rem 1.5rem;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  user-select: none;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+.fob-accordion__summary::-webkit-details-marker {
+  display: none;
+}
+
+.fob-accordion__icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--fob-white-08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 400;
+  transition: transform var(--dur-base) var(--ease-out), background var(--dur-fast) var(--ease-out);
+  flex-shrink: 0;
+}
+
+.fob-accordion__item[open] .fob-accordion__icon {
+  transform: rotate(45deg);
+  background: var(--fob-volt);
+  color: var(--fob-ink);
+}
+
+.fob-accordion__body {
+  padding: 0 1.5rem 1.5rem 1.5rem;
+  color: var(--fob-white-70);
+  line-height: 1.6;
+}
+
+.ground-paper .fob-accordion__body {
+  color: var(--fob-ink-80);
+}
+
+/* Lock it in Bottom Sheet Dialog (PRD Section 10, 19, 23: FR-19) */
+.fob-dialog-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(14, 14, 44, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 2000;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity var(--dur-base) var(--ease-out), visibility var(--dur-base);
+}
+
+@media (min-width: 768px) {
+  .fob-dialog-backdrop {
+    align-items: center;
+  }
+}
+
+.fob-dialog-backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.fob-sheet {
+  background: var(--fob-ink);
+  border: 1px solid var(--fob-white-16);
+  border-radius: 28px 28px 0 0;
+  width: 100%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 1.75rem 1.5rem 2rem;
+  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.6);
+  transform: translateY(100%);
+  transition: transform var(--dur-base) var(--ease-spring);
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .fob-sheet {
+    border-radius: 28px;
+    transform: scale(0.95) translateY(20px);
+    padding: 2.25rem;
+  }
+}
+
+.fob-dialog-backdrop.is-open .fob-sheet {
+  transform: translateY(0);
+}
+
+@media (min-width: 768px) {
+  .fob-dialog-backdrop.is-open .fob-sheet {
+    transform: scale(1) translateY(0);
+  }
+}
+
+.fob-sheet__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.fob-sheet__close {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--fob-white-08);
+  color: var(--fob-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  transition: background var(--dur-fast);
+}
+
+.fob-sheet__close:hover {
+  background: var(--fob-white-16);
+}
+
+.fob-sheet__step {
+  margin-bottom: 1.5rem;
+}
+
+.fob-sheet__step-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--fob-volt);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+}
+
+/* Zone Picker Chips in Sheet */
+.fob-sheet__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.fob-chip-btn {
+  background: var(--fob-white-08);
+  border: 1px solid var(--fob-white-16);
+  color: var(--fob-white);
+  border-radius: var(--radius-pill);
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--dur-fast) var(--ease-out);
+}
+
+.fob-chip-btn:hover {
+  background: var(--fob-white-16);
+}
+
+.fob-chip-btn.is-selected {
+  background: var(--fob-volt);
+  color: var(--fob-ink);
+  border-color: var(--fob-volt);
+  font-weight: 700;
+}
+
+/* Input Fields in Sheet */
+.fob-sheet__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.fob-input {
+  width: 100%;
+  background: var(--fob-white-08);
+  border: 1px solid var(--fob-white-16);
+  border-radius: var(--radius-input);
+  padding: 0.75rem 1rem;
+  color: var(--fob-white);
+  font-family: var(--font-text);
+  font-size: 0.95rem;
+}
+
+.fob-input:focus {
+  outline: 2px solid var(--fob-volt);
+}
+
+/* Live WhatsApp Preview Box */
+.fob-sheet__preview {
+  background: rgba(30, 215, 96, 0.08);
+  border: 1px dashed rgba(30, 215, 96, 0.4);
+  border-radius: var(--radius-input);
+  padding: 0.85rem 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.85rem;
+  color: var(--fob-white-90);
+  line-height: 1.4;
+}
+
+.fob-sheet__preview-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--fob-green);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+/* Crew Avatar Stack (PRD Section 11: ILL-14) */
+.fob-avatar-stack {
+  display: flex;
+  align-items: center;
+}
+
+.fob-avatar-stack__img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 3px solid var(--fob-ink);
+  margin-left: -12px;
+  background-color: var(--fob-blue);
+  overflow: hidden;
+  position: relative;
+}
+
+.fob-avatar-stack__img:first-child {
+  margin-left: 0;
+}
+
+/* Custom Cursor O (PRD Section 10: ANI-15, desktop only) */
+.fob-cursor-o {
+  display: none;
+  position: fixed;
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--fob-volt);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  transition: width 0.15s ease-out, height 0.15s ease-out, background 0.15s ease-out;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .fob-cursor-o {
+    display: block;
+  }
+}
+
+.fob-cursor-o.is-hover {
+  width: 48px;
+  height: 48px;
+  background: rgba(215, 255, 31, 0.2);
+  border-width: 3px;
+}

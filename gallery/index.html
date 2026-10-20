@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0E0E2C">
+  <title>Gallery • Crew in Action Across 7 Zones • FOB Lagos</title>
+  <meta name="description" content="Explore real moments, match-day vibes, and sports action at FOB recreational centre in Lekki Phase 1, Lagos.">
+  <link rel="canonical" href="https://foblagos.com/gallery/">
+
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/layout.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
+</head>
+<body class="ground-ink">
+
+  <a href="#main-content" class="fob-skip-link">Skip to main content</a>
+  <div style="display: none;" id="svg-sprite-holder"></div>
+  <script>
+    fetch('/assets/svg/sprite.svg').then(res => res.text()).then(svg => {
+      document.getElementById('svg-sprite-holder').innerHTML = svg;
+    }).catch(() => {});
+  </script>
+
+  <!-- Sticky Header -->
+  <header class="fob-header">
+    <div class="fob-header__inner">
+      <nav class="fob-nav-pill" aria-label="Main Navigation">
+        <a href="/" class="fob-logo">
+          <span>F</span><span class="fob-logo__o">O</span><span>B</span>
+        </a>
+        <ul class="fob-nav__menu">
+          <li><a href="/football-pitch/" class="fob-nav__link">Pitch</a></li>
+          <li><a href="/football-viewing/" class="fob-nav__link">Watch Matches</a></li>
+          <li><a href="/gym/" class="fob-nav__link">Gym</a></li>
+          <li><a href="/basketball/" class="fob-nav__link">Basketball</a></li>
+          <li><a href="/pricing/" class="fob-nav__link">Pricing</a></li>
+          <li><a href="/gallery/" class="fob-nav__link is-active">Gallery</a></li>
+          <li><a href="/find-us/" class="fob-nav__link">Find Us</a></li>
+        </ul>
+        <div class="fob-nav__actions">
+          <button type="button" class="fob-btn fob-btn--primary fob-btn--sm" data-fob-sheet>
+            Lock it in
+          </button>
+          <button type="button" class="fob-menu-toggle" aria-label="Open Mobile Menu" aria-controls="fob-mobile-nav">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="fob-mobile-nav" id="fob-mobile-nav" role="dialog" aria-modal="true">
+    <div class="fob-mobile-nav__header">
+      <a href="/" class="fob-logo"><span>F</span><span class="fob-logo__o">O</span><span>B</span></a>
+      <button type="button" class="fob-sheet__close" id="fob-mobile-close-btn">&times;</button>
+    </div>
+    <div class="fob-mobile-nav__links">
+      <a href="/football-pitch/">Football Pitch</a>
+      <a href="/football-viewing/">Viewing Centre</a>
+      <a href="/gym/">Gym & Fitness</a>
+      <a href="/basketball/">Basketball Court</a>
+      <a href="/snooker/">Snooker Lounge</a>
+      <a href="/table-tennis/">Table Tennis</a>
+      <a href="/gaming/">Gaming Centre</a>
+      <a href="/pricing/">All Pricing</a>
+      <a href="/events/">Events & Parties</a>
+      <a href="/find-us/">Find Us & Map</a>
+    </div>
+  </div>
+
+  <main id="main-content">
+
+    <section class="fob-section ground-ink" style="padding-top: 5rem;">
+      <div class="fob-container">
+        <div style="text-align: center; max-width: 650px; margin: 0 auto 2.5rem;">
+          <span class="fob-section-tag">Authentic Moments</span>
+          <h1 style="font-size: var(--step-h1); font-weight: 900; color: #FFF; margin-top: 0.5rem; text-transform: uppercase;">
+            FOB in Action
+          </h1>
+          <p style="color: var(--fob-white-70); font-size: 1.15rem; margin-top: 0.5rem;">
+            Real people, real energy, under evening floodlights. Filter by zone to see our facilities in action.
+          </p>
+        </div>
+
+        <!-- Filter Chips (PRD Section 7.6, 23.5) -->
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center; margin-bottom: 3rem;">
+          <button type="button" class="fob-chip-btn is-selected" data-gallery-filter="all">All Zones</button>
+          <button type="button" class="fob-chip-btn" data-gallery-filter="pitch">Pitch</button>
+          <button type="button" class="fob-chip-btn" data-gallery-filter="viewing">Viewing</button>
+          <button type="button" class="fob-chip-btn" data-gallery-filter="gym">Gym</button>
+          <button type="button" class="fob-chip-btn" data-gallery-filter="basketball">Basketball</button>
+          <button type="button" class="fob-chip-btn" data-gallery-filter="snooker">Snooker</button>
+          <button type="button" class="fob-chip-btn" data-gallery-filter="gaming">Gaming</button>
+        </div>
+
+        <!-- Photo Grid with Circle Crop & 24px Radius Cards (PRD Section 7.6, 18) -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem;" id="gallery-grid">
+          <!-- Item 1: Pitch -->
+          <div data-gallery-zone="pitch" style="border-radius: var(--radius-card); overflow: hidden; border: 1px solid var(--fob-white-16); aspect-ratio: 4/3;">
+            <img src="/assets/img/football_pitch.jpg" alt="5-a-side pitch action under floodlights" style="width:100%; height:100%; object-fit:cover;" loading="lazy">
+          </div>
+
+          <!-- Item 2: Hero Crew Circle Crop -->
+          <div data-gallery-zone="pitch" style="border-radius: 50%; overflow: hidden; border: 3px solid var(--fob-volt); aspect-ratio: 1/1; max-width: 320px; margin: auto;">
+            <img src="/assets/img/hero_crew.jpg" alt="Crew celebrating together at FOB" style="width:100%; height:100%; object-fit:cover;" loading="lazy">
+          </div>
+
+          <!-- Item 3: Viewing Lounge -->
+          <div data-gallery-zone="viewing" style="border-radius: var(--radius-card); overflow: hidden; border: 1px solid var(--fob-white-16); aspect-ratio: 4/3;">
+            <img src="/assets/img/viewing_centre.jpg" alt="Ecstatic football fans watching match on 4K wall" style="width:100%; height:100%; object-fit:cover;" loading="lazy">
+          </div>
+
+          <!-- Item 4: Basketball Court -->
+          <div data-gallery-zone="basketball" style="border-radius: var(--radius-card); overflow: hidden; border: 1px solid var(--fob-white-16); aspect-ratio: 4/3;">
+            <img src="/assets/img/basketball.jpg" alt="Basketball player driving to hoop" style="width:100%; height:100%; object-fit:cover;" loading="lazy">
+          </div>
+
+          <!-- Item 5: Gym Conditioning -->
+          <div data-gallery-zone="gym" style="border-radius: var(--radius-card); overflow: hidden; border: 1px solid var(--fob-white-16); aspect-ratio: 4/3;">
+            <img src="/assets/img/gym.jpg" alt="Athlete lifting heavy barbell in modern gym" style="width:100%; height:100%; object-fit:cover;" loading="lazy">
+          </div>
+
+          <!-- Item 6: Snooker Lounge -->
+          <div data-gallery-zone="snooker" style="border-radius: var(--radius-card); overflow: hidden; border: 1px solid var(--fob-white-16); aspect-ratio: 4/3;">
+            <img src="/assets/img/snooker.jpg" alt="Friends playing on tournament snooker table" style="width:100%; height:100%; object-fit:cover;" loading="lazy">
+          </div>
+
+          <!-- Item 7: Gaming Lounge -->
+          <div data-gallery-zone="gaming" style="border-radius: var(--radius-card); overflow: hidden; border: 1px solid var(--fob-white-16); aspect-ratio: 4/3;">
+            <img src="/assets/svg/gaming_scene.svg" alt="Esports gaming station with controllers" style="width:100%; height:100%; object-fit:cover;" loading="lazy">
+          </div>
+
+          <!-- Item 8: Table Tennis -->
+          <div data-gallery-zone="snooker" style="border-radius: var(--radius-card); overflow: hidden; border: 1px solid var(--fob-white-16); aspect-ratio: 4/3;">
+            <img src="/assets/svg/table_tennis_scene.svg" alt="Table tennis arena and paddles" style="width:100%; height:100%; object-fit:cover;" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="fob-footer">
+    <div class="fob-container">
+      <div class="fob-footer__bottom">
+        <div>&copy; 2026 FOB Recreational Centre Lagos.</div>
+        <div class="fob-footer__legal"><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/assets/js/main.js"></script>
+</body>
+</html>

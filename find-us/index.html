@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0E0E2C">
+  <title>Find Us & Live Route • Lawani Ode Street, Ashipa Ayobo • FOB Lagos</title>
+  <meta name="description" content="Get interactive live route, distance in km and traffic travel time to FOB Recreation Centre at 2 Lawani Ode Street, Alakara Bus Stop, Ashipa, Ayobo, Lagos. Free secure parking.">
+  <link rel="canonical" href="https://foblagos.com/find-us/">
+
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/layout.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
+</head>
+<body class="ground-ink">
+
+  <a href="#main-content" class="fob-skip-link">Skip to main content</a>
+  <div style="display: none;" id="svg-sprite-holder"></div>
+  <script>
+    fetch('/assets/svg/sprite.svg').then(res => res.text()).then(svg => {
+      document.getElementById('svg-sprite-holder').innerHTML = svg;
+    }).catch(() => {});
+  </script>
+
+  <!-- Sticky Header -->
+  <header class="fob-header">
+    <div class="fob-header__inner">
+      <nav class="fob-nav-pill" aria-label="Main Navigation">
+        <a href="/" class="fob-logo">
+          <span>F</span><span class="fob-logo__o">O</span><span>B</span>
+        </a>
+        <ul class="fob-nav__menu">
+          <li><a href="/football-pitch/" class="fob-nav__link">Pitch</a></li>
+          <li><a href="/football-viewing/" class="fob-nav__link">Watch Matches</a></li>
+          <li><a href="/gym/" class="fob-nav__link">Gym</a></li>
+          <li><a href="/basketball/" class="fob-nav__link">Basketball</a></li>
+          <li><a href="/football-viewing/" class="fob-nav__link">LiveScores</a></li>
+          <li><a href="/events/" class="fob-nav__link">Events</a></li>
+          <li><a href="/find-us/" class="fob-nav__link is-active">Find Us</a></li>
+        </ul>
+        <div class="fob-nav__actions">
+          <button type="button" class="fob-btn fob-btn--primary fob-btn--sm" data-fob-sheet>
+            Lock it in
+          </button>
+          <button type="button" class="fob-menu-toggle" aria-label="Open Mobile Menu" aria-controls="fob-mobile-nav">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="fob-mobile-nav" id="fob-mobile-nav" role="dialog" aria-modal="true">
+    <div class="fob-mobile-nav__header">
+      <a href="/" class="fob-logo"><span>F</span><span class="fob-logo__o">O</span><span>B</span></a>
+      <button type="button" class="fob-sheet__close" id="fob-mobile-close-btn">&times;</button>
+    </div>
+    <div class="fob-mobile-nav__links">
+      <a href="/football-pitch/">Football Pitch</a>
+      <a href="/football-viewing/">Viewing Centre</a>
+      <a href="/gym/">Gym & Fitness</a>
+      <a href="/basketball/">Basketball Court</a>
+      <a href="/snooker/">Snooker Lounge</a>
+      <a href="/table-tennis/">Table Tennis</a>
+      <a href="/gaming/">Gaming Centre</a>
+      <a href="/football-viewing/">LiveScores & Fixtures <span class="fob-mobile-nav__badge" style="color:var(--fob-volt);">Live</span></a>
+      <a href="/events/">Events & Parties</a>
+      <a href="/find-us/">Find Us & Map</a>
+    </div>
+  </div>
+
+  <main id="main-content">
+
+    <section class="fob-section ground-ink" style="padding-top: 5rem;">
+      <div class="fob-container">
+        <div style="max-width: 700px; margin-bottom: 2.5rem;">
+          <span class="fob-section-tag">Directions & Location</span>
+          <h1 style="font-size: var(--step-h1); font-weight: 900; color: #FFF; margin-top: 0.5rem; text-transform: uppercase;">
+            Find Us & Live Route
+          </h1>
+          <p style="color: var(--fob-white-70); font-size: 1.15rem; margin-top: 0.75rem;">
+            2, Lawani Ode Street, Alakara Bus Stop, Ashipa, Ayobo, Lagos. Calculate your real travel time in current Lagos traffic, or tap Directions for turn-by-turn navigation.
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr; gap: 2.5rem; align-items: start;">
+
+          <!-- Map & Route Calculation Block (PRD Section 22: FR-25 to FR-33) -->
+          <div>
+            <div class="fob-map-wrap">
+              <!-- Placeholder shown until visitor taps "Show the map" -->
+              <div class="fob-map-placeholder">
+                <div style="display: flex; flex-direction: column; align-items: center; gap: 1rem; padding: 2rem;">
+                  <img src="https://img.icons8.com/3d-fluency/94/google-maps-new.png" alt="Map icon" width="80" height="80" loading="lazy">
+                  <h3 style="color: #FFF; font-size: 1.3rem; font-weight: 800; text-align: center;">See FOB on Google Maps</h3>
+                  <p style="color: var(--fob-white-70); text-align: center; font-size: 0.9rem;">Interactive map with route & distance calculator</p>
+                </div>
+                <button type="button" class="fob-btn fob-btn--primary" id="fob-show-map-btn" data-fob-event="show_map_click">
+                  Show Interactive Map
+                </button>
+                <span style="font-size: 0.75rem; color: var(--fob-white-40); margin-top: 0.75rem;">
+                  Loads Google Maps on demand to save mobile data
+                </span>
+              </div>
+
+              <!-- Live Interactive Map Container (injected by map.js) -->
+              <div id="fob-live-map" aria-label="Interactive Google Map of FOB Location"></div>
+            </div>
+
+            <!-- Map Controls & Travel Mode -->
+            <div class="fob-map-controls">
+              <!-- Location Trigger (FR-26) -->
+              <button type="button" class="fob-btn fob-btn--primary" id="fob-locate-btn" data-fob-event="use_my_location">
+                <img src="https://img.icons8.com/3d-fluency/94/marker.png" alt="" width="22" height="22" loading="lazy" style="vertical-align: middle;">
+                Use my location
+              </button>
+
+              <!-- Travel Mode Toggle (FR-27: Driving vs Walking) -->
+              <div class="fob-mode-toggle" role="group" aria-label="Travel Mode">
+                <button type="button" class="fob-mode-btn is-active" data-mode="driving">
+                  🚗 Driving
+                </button>
+                <button type="button" class="fob-mode-btn" data-mode="walking">
+                  🚶 Walking
+                </button>
+              </div>
+
+              <!-- Native Directions Button (FR-29: Google Maps on Android/desktop, Apple Maps on iOS) -->
+              <a href="https://www.google.com/maps/dir/?api=1&destination=6.6130,3.2659&travelmode=driving" class="fob-btn fob-btn--secondary" id="fob-directions-btn" target="_blank" rel="noopener noreferrer" data-fob-event="directions_click">
+                <img src="https://img.icons8.com/3d-fluency/94/navigation.png" alt="" width="22" height="22" loading="lazy" style="vertical-align: middle;">
+                Directions in Maps App
+              </a>
+            </div>
+
+            <!-- Route Summary (FR-27, FR-33: real text in live region) -->
+            <div id="fob-route-summary" class="fob-route-summary" style="display: none;" aria-live="polite"></div>
+
+            <p style="font-size: 0.75rem; color: var(--fob-white-40); margin-top: 0.75rem;">
+              * Location is processed entirely in your browser and is never stored by FOB.
+            </p>
+          </div>
+
+          <!-- Address, Parking & Landmark Details -->
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1rem;">
+            <div class="fob-spec-card">
+              <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem;">
+                <img src="https://img.icons8.com/3d-fluency/94/home.png" alt="" width="32" height="32" loading="lazy">
+                <div class="fob-spec-card__label">Venue Address</div>
+              </div>
+              <div class="fob-spec-card__val">2, Lawani Ode Street</div>
+              <p style="font-size: 0.9rem; color: var(--fob-white-70); margin-top: 0.5rem;">
+                Alakara Bus Stop, Ashipa, Ayobo, Lagos, Nigeria.<br>
+                Ask for Alakara bus stop, Ashipa road.
+              </p>
+            </div>
+
+            <div class="fob-spec-card">
+              <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem;">
+                <img src="https://img.icons8.com/3d-fluency/94/parking.png" alt="" width="32" height="32" loading="lazy">
+                <div class="fob-spec-card__label">On-Site Parking</div>
+              </div>
+              <div class="fob-spec-card__val">Free Secure Spaces</div>
+              <p style="font-size: 0.9rem; color: var(--fob-white-70); margin-top: 0.5rem;">
+                Manned security with CCTV surveillance and perimeter lighting.
+              </p>
+            </div>
+
+            <div class="fob-spec-card">
+              <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem;">
+                <img src="https://img.icons8.com/3d-fluency/94/clock.png" alt="" width="32" height="32" loading="lazy">
+                <div class="fob-spec-card__label">Operating Hours</div>
+              </div>
+              <div class="fob-spec-card__val">7:00 am – 11:00 pm</div>
+              <p style="font-size: 0.9rem; color: var(--fob-white-70); margin-top: 0.5rem;">
+                Friday & Saturday open until 1:00 am late night.
+              </p>
+            </div>
+
+            <div class="fob-spec-card">
+              <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem;">
+                <img src="https://img.icons8.com/3d-fluency/94/phone.png" alt="" width="32" height="32" loading="lazy">
+                <div class="fob-spec-card__label">Direct Contact</div>
+              </div>
+              <div class="fob-spec-card__val">+234 803 000 0362</div>
+              <div style="display: flex; gap: 0.5rem; margin-top: 0.75rem;">
+                <a href="https://wa.me/2348030000362" target="_blank" rel="noopener noreferrer" class="fob-btn fob-btn--primary fob-btn--sm">WhatsApp</a>
+                <a href="tel:+2348030000362" class="fob-btn fob-btn--secondary fob-btn--sm">Call Now</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="fob-footer">
+    <div class="fob-container">
+      <div class="fob-footer__bottom">
+        <div>&copy; 2026 FOB Recreational Centre Lagos.</div>
+        <div class="fob-footer__legal"><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0E0E2C">
+  <title>Terms of Service • FOB Lagos</title>
+  <meta name="description" content="Terms of service, pitch booking rules, safety guidelines, and code of conduct for FOB Recreational Centre in Lekki Phase 1, Lagos.">
+  <link rel="canonical" href="https://foblagos.com/terms/">
+
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/layout.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
+</head>
+<body class="ground-ink">
+
+  <a href="#main-content" class="fob-skip-link">Skip to main content</a>
+  <div style="display: none;" id="svg-sprite-holder"></div>
+  <script>
+    fetch('/assets/svg/sprite.svg').then(res => res.text()).then(svg => {
+      document.getElementById('svg-sprite-holder').innerHTML = svg;
+    }).catch(() => {});
+  </script>
+
+  <!-- Sticky Header -->
+  <header class="fob-header">
+    <div class="fob-header__inner">
+      <nav class="fob-nav-pill" aria-label="Main Navigation">
+        <a href="/" class="fob-logo"><span>F</span><span class="fob-logo__o">O</span><span>B</span></a>
+        <ul class="fob-nav__menu">
+          <li><a href="/" class="fob-nav__link">Home</a></li>
+          <li><a href="/pricing/" class="fob-nav__link">Pricing</a></li>
+          <li><a href="/find-us/" class="fob-nav__link">Find Us</a></li>
+        </ul>
+        <div class="fob-nav__actions">
+          <button type="button" class="fob-btn fob-btn--primary fob-btn--sm" data-fob-sheet>Lock it in</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="fob-section ground-ink" style="padding-top: 5rem;">
+      <div class="fob-container" style="max-width: 800px;">
+        <span class="fob-section-tag">Guidelines & Conduct</span>
+        <h1 style="font-size: var(--step-h1); font-weight: 900; color: #FFF; margin-top: 0.5rem; text-transform: uppercase;">
+          Terms of Service
+        </h1>
+        <p style="color: var(--fob-white-70); margin-top: 0.5rem; font-size: 0.95rem;">Last updated: 20 October 2026</p>
+
+        <div style="margin-top: 2.5rem; color: var(--fob-white-90); line-height: 1.8; display: flex; flex-direction: column; gap: 1.5rem;">
+          <p>
+            Welcome to FOB Recreational Centre. By visiting our venue or booking any of our seven sport zones, you agree to comply with these terms.
+          </p>
+
+          <h2 style="font-size: 1.5rem; color: var(--fob-volt); margin-top: 1rem;">1. Bookings & Cancellations</h2>
+          <p>
+            Pitch and court slots are held upon staff confirmation. Rescheduling is permitted up to 4 hours prior to scheduled kickoff. In the event of extreme weather, credits are transferred to your next booking.
+          </p>
+
+          <h2 style="font-size: 1.5rem; color: var(--fob-volt); margin-top: 1rem;">2. Equipment & Footwear</h2>
+          <p>
+            Metal cleats/studs are strictly prohibited on the 5-a-side pitch. Only turf trainers or rubber studs are allowed. Non-marking court sneakers are mandatory on the indoor basketball court.
+          </p>
+
+          <h2 style="font-size: 1.5rem; color: var(--fob-volt); margin-top: 1rem;">3. Safety & Sportsmanship</h2>
+          <p>
+            FOB is dedicated to high-energy sports and good vibes. Reckless play, abusive conduct, or aggression will result in immediate removal from the premises without refund.
+          </p>
+
+          <h2 style="font-size: 1.5rem; color: var(--fob-volt); margin-top: 1rem;">4. Viewing Centre Admissions</h2>
+          <p>
+            Viewing centre match admissions are granted per match on a first-come, first-served basis. FOB reserves the right to manage venue capacity for guest safety and comfort.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="fob-footer">
+    <div class="fob-container">
+      <div class="fob-footer__bottom">
+        <div>&copy; 2026 FOB Recreational Centre Lagos.</div>
+        <div class="fob-footer__legal"><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/assets/js/main.js"></script>
+</body>
+</html>

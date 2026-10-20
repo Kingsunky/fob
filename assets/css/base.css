@@ -1,0 +1,173 @@
+/* FOB Website Base Styles (PRD Section 9, 18, 23.3) */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--fob-ink);
+  color: var(--fob-white);
+}
+
+body {
+  font-family: var(--font-text);
+  font-size: var(--step-body);
+  line-height: 1.5;
+  color: var(--fob-white);
+  background-color: var(--fob-ink);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+/* Skip link for accessibility (WCAG 2.2 AA) */
+.fob-skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  z-index: 9999;
+  background: var(--fob-volt);
+  color: var(--fob-ink);
+  padding: 0.75rem 1.25rem;
+  font-weight: 700;
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  transition: top var(--dur-fast) var(--ease-out);
+}
+
+.fob-skip-link:focus {
+  top: 1rem;
+}
+
+/* Focus States (PRD Section 18) */
+:focus-visible {
+  outline: 3px solid var(--fob-volt);
+  outline-offset: 2px;
+}
+
+.ground-paper :focus-visible {
+  outline: 3px solid var(--fob-ink);
+  outline-offset: 2px;
+}
+
+/* Typography Hierarchy */
+h1, h2, h3, h4, .fob-display {
+  font-family: var(--font-display);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: var(--step-h1);
+  font-weight: 800;
+}
+
+h2 {
+  font-size: var(--step-h2);
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+h3 {
+  font-size: var(--step-h3);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+p {
+  max-width: 65ch;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img, svg, picture {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* Ground Styles (PRD Section 18) */
+.ground-ink {
+  background-color: var(--fob-ink);
+  color: var(--fob-white);
+}
+
+.ground-blue {
+  background-color: var(--fob-blue);
+  color: var(--fob-white);
+}
+
+.ground-paper {
+  background-color: var(--fob-paper);
+  color: var(--fob-ink);
+}
+
+.ground-paper h1,
+.ground-paper h2,
+.ground-paper h3,
+.ground-paper h4 {
+  color: var(--fob-ink);
+}
+
+.ground-volt {
+  background-color: var(--fob-volt);
+  color: var(--fob-ink);
+}
+
+/* Layout Container */
+.fob-container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-pad);
+  padding-right: var(--container-pad);
+}
+
+/* Section Spacing */
+.fob-section {
+  padding-top: var(--space-12);
+  padding-bottom: var(--space-12);
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .fob-section {
+    padding-top: var(--space-16);
+    padding-bottom: var(--space-16);
+  }
+}
+
+/* Visually Hidden for accessibility */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}

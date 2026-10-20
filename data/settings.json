@@ -1,0 +1,29 @@
+{
+  "name": "FOB Recreational Centre",
+  "tagline": "Bring your crew.",
+  "whatsappNumber": "2348030000362",
+  "whatsappDisplay": "+234 803 000 0362",
+  "phoneNumber": "+2348030000362",
+  "phoneDisplay": "+234 803 000 0362",
+  "address": "12 Admiralty Way, Lekki Phase 1, Lagos, Nigeria",
+  "landmark": "Opposite The Palms Mall junction, Lekki Phase 1",
+  "parking": "Secure on-site parking for 45+ vehicles with CCTV and 24/7 security",
+  "coordinates": {
+    "lat": 6.4474,
+    "lng": 3.4723
+  },
+  "timezone": "Africa/Lagos",
+  "staleHours": 3,
+  "replyTime": "Replies in ~5 mins",
+  "yearsOpen": "Since 2023",
+  "socials": {
+    "instagram": "https://instagram.com/foblagos",
+    "twitter": "https://x.com/foblagos",
+    "tiktok": "https://tiktok.com/@foblagos"
+  },
+  "banner": {
+    "enabled": true,
+    "text": "Champions League Match Night tonight • Big Screen • Cold Drinks • Lock it in early!",
+    "link": "/football-viewing/"
+  }
+}

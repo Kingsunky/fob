@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0E0E2C">
+  <title>Table Tennis Arena • Fast Rallies & Battles • FOB Lagos</title>
+  <meta name="description" content="Competition Butterfly table tennis tables in Lekki Phase 1, Lagos. Anti-glare mats, carbon-composite paddles, 3-star balls. Singles, doubles, and crew tournaments.">
+  <link rel="canonical" href="https://foblagos.com/table-tennis/">
+
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/layout.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
+</head>
+<body class="ground-ink">
+
+  <a href="#main-content" class="fob-skip-link">Skip to main content</a>
+  <div style="display: none;" id="svg-sprite-holder"></div>
+  <script>
+    fetch('/assets/svg/sprite.svg').then(res => res.text()).then(svg => {
+      document.getElementById('svg-sprite-holder').innerHTML = svg;
+    }).catch(() => {});
+  </script>
+
+  <!-- Sticky Header -->
+  <header class="fob-header">
+    <div class="fob-header__inner">
+      <nav class="fob-nav-pill" aria-label="Main Navigation">
+        <a href="/" class="fob-logo">
+          <span>F</span><span class="fob-logo__o">O</span><span>B</span>
+        </a>
+        <ul class="fob-nav__menu">
+          <li><a href="/football-pitch/" class="fob-nav__link">Pitch</a></li>
+          <li><a href="/football-viewing/" class="fob-nav__link">Watch Matches</a></li>
+          <li><a href="/gym/" class="fob-nav__link">Gym</a></li>
+          <li><a href="/basketball/" class="fob-nav__link">Basketball</a></li>
+          <li><a href="/table-tennis/" class="fob-nav__link is-active">Table Tennis</a></li>
+          <li><a href="/football-viewing/" class="fob-nav__link">LiveScores</a></li>
+          <li><a href="/events/" class="fob-nav__link">Events</a></li>
+          <li><a href="/find-us/" class="fob-nav__link">Find Us</a></li>
+        </ul>
+        <div class="fob-nav__actions">
+          <button type="button" class="fob-btn fob-btn--primary fob-btn--sm" data-fob-sheet data-fob-sheet-zone="Table Tennis">
+            Lock it in
+          </button>
+          <button type="button" class="fob-menu-toggle" aria-label="Open Mobile Menu" aria-controls="fob-mobile-nav">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="fob-mobile-nav" id="fob-mobile-nav" role="dialog" aria-modal="true">
+    <div class="fob-mobile-nav__header">
+      <a href="/" class="fob-logo"><span>F</span><span class="fob-logo__o">O</span><span>B</span></a>
+      <button type="button" class="fob-sheet__close" id="fob-mobile-close-btn">&times;</button>
+    </div>
+    <div class="fob-mobile-nav__links">
+      <a href="/football-pitch/">Football Pitch</a>
+      <a href="/football-viewing/">Viewing Centre & LiveScores</a>
+      <a href="/gym/">Gym & Fitness</a>
+      <a href="/basketball/">Basketball Court</a>
+      <a href="/snooker/">Snooker Lounge</a>
+      <a href="/table-tennis/">Table Tennis</a>
+      <a href="/gaming/">Gaming Centre</a>
+      <a href="/events/">Events & Parties</a>
+      <a href="/find-us/">Find Us & Map</a>
+    </div>
+  </div>
+
+  <main id="main-content">
+
+    <!-- Header Band (Cyan #00D1FF) -->
+    <section class="fob-zone-hero-band" style="--zone-band-color: var(--fob-cyan); color: #0E0E2C;">
+      <div class="fob-container fob-zone-hero-band__grid">
+        <div>
+          <span class="fob-zone-badge" style="background:#0E0E2C; color:#FFF; margin-bottom:1rem;">
+            <span class="fob-zone-badge__dot" style="background:var(--fob-cyan);"></span>
+            Zone 06 • Table Tennis
+          </span>
+          <h1 style="font-size: var(--step-h1); font-weight: 900; line-height: 1; color: #0E0E2C; text-transform: uppercase;">
+            Speed & Spin
+          </h1>
+          <p style="font-size: 1.25rem; font-weight: 600; margin-top: 1rem; color: #0E0E2C; max-width: 50ch;">
+            Competition Butterfly tables, anti-glare floor mats, high-response bounce, carbon-composite paddles and 3-star tournament balls.
+          </p>
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem;">
+            <button type="button" class="fob-btn fob-btn--primary" data-fob-sheet data-fob-sheet-zone="Table Tennis">
+              Lock in a table
+            </button>
+            <a href="tel:+2348030000362" class="fob-btn fob-btn--secondary" style="border-color:#0E0E2C; color:#0E0E2C;">
+              Call to Book
+            </a>
+          </div>
+        </div>
+        <div>
+          <div style="border-radius: var(--radius-card); overflow: hidden; border: 3px solid #0E0E2C; box-shadow: 0 15px 40px rgba(0,0,0,0.25);">
+            <img src="/assets/svg/table_tennis_scene.svg" alt="Table tennis arena with paddles and ball in action" width="700" height="400">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Zone Specs -->
+    <section class="fob-section ground-ink">
+      <div class="fob-container">
+        <div class="fob-zone-specs-grid">
+          <div class="fob-spec-card">
+            <div class="fob-spec-card__label">Player Capacity</div>
+            <div class="fob-spec-card__val">2 to 4 players</div>
+            <p style="font-size: 0.85rem; color: var(--fob-white-70); margin-top: 0.5rem;">Intense 1v1 singles or 2v2 doubles rallies.</p>
+          </div>
+          <div class="fob-spec-card">
+            <div class="fob-spec-card__label">Operating Hours</div>
+            <div class="fob-spec-card__val">9:00 am – 11:00 pm daily</div>
+            <p style="font-size: 0.85rem; color: var(--fob-white-70); margin-top: 0.5rem;">Evenings until 1:00 am on Fridays and Saturdays.</p>
+          </div>
+          <div class="fob-spec-card">
+            <div class="fob-spec-card__label">Gear Provided</div>
+            <div class="fob-spec-card__val">Paddles & 3-Star Balls</div>
+            <p style="font-size: 0.85rem; color: var(--fob-white-70); margin-top: 0.5rem;">Includes 4 carbon-composite paddles & tournament counter.</p>
+          </div>
+        </div>
+
+        <!-- Table Tennis Formats (PRD Zero-Pricing Policy) -->
+        <div style="margin-top: 3.5rem;">
+          <h2 style="font-size: var(--step-h2); font-weight: 800; color: #FFF; margin-bottom: 1.5rem;">
+            Table Match Formats & Battles
+          </h2>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+            <div class="fob-spec-card">
+              <span class="fob-zone-badge" style="background:var(--fob-white-08); color:var(--fob-volt); margin-bottom:0.75rem;">DAY RALLY</span>
+              <h3 style="color:#FFF; font-size:1.25rem; margin-bottom:0.5rem;">Off-Peak Rally Slot</h3>
+              <p style="color:var(--fob-white-70); font-size:0.85rem; margin-bottom:1.5rem;">Monday – Friday before 5:00 pm. Casual singles or practice drill sessions. Two premium carbon paddles and ITTF 3-star balls provided.</p>
+              <button type="button" class="fob-btn fob-btn--primary fob-btn--sm" data-fob-sheet data-fob-sheet-zone="Table Tennis">Reserve Rally Slot</button>
+            </div>
+            <div class="fob-spec-card" style="border-color:var(--fob-cyan);">
+              <span class="fob-zone-badge" style="background:var(--fob-cyan); color:var(--fob-ink); margin-bottom:0.75rem;">CHAMPIONSHIP</span>
+              <h3 style="color:#FFF; font-size:1.25rem; margin-bottom:0.5rem;">Peak Evening & Weekend Play</h3>
+              <p style="color:var(--fob-white-70); font-size:0.85rem; margin-bottom:1.5rem;">Evenings (5pm+) and weekends. Full competition lighting, non-slip Taraflex floor, magnetic score display, and fast spin-friendly ITTF tables.</p>
+              <button type="button" class="fob-btn fob-btn--primary fob-btn--sm" data-fob-sheet data-fob-sheet-zone="Table Tennis">Reserve Prime Table</button>
+            </div>
+            <div class="fob-spec-card">
+              <span class="fob-zone-badge" style="background:var(--fob-volt); color:var(--fob-ink); margin-bottom:0.75rem;">DOUBLES BATTLE</span>
+              <h3 style="color:#FFF; font-size:1.25rem; margin-bottom:0.5rem;">Crew 4-Player Doubles Pack</h3>
+              <p style="color:var(--fob-white-70); font-size:0.85rem; margin-bottom:1.5rem;">90-minute extended session with 4 high-grade paddles, continuous ball refills, referee score flipper, and lounge sideline seating.</p>
+              <button type="button" class="fob-btn fob-btn--primary fob-btn--sm" data-fob-sheet data-fob-sheet-zone="Table Tennis">Lock in Doubles Pack</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Zone FAQ -->
+        <div style="margin-top: 3.5rem; max-width: 800px;">
+          <h3 style="font-size: 1.5rem; font-weight: 800; color: #FFF; margin-bottom: 1rem;">Table Tennis FAQ</h3>
+          <div class="fob-accordion">
+            <details class="fob-accordion__item" open>
+              <summary class="fob-accordion__summary">
+                <span>Can we play without bringing our own equipment?</span>
+                <span class="fob-accordion__icon">+</span>
+              </summary>
+              <div class="fob-accordion__body">
+                Yes! Every table booking includes premium carbon paddles and multiple tournament 3-star balls. You're also welcome to bring your personal custom paddle.
+              </div>
+            </details>
+            <details class="fob-accordion__item">
+              <summary class="fob-accordion__summary">
+                <span>Do you organize table tennis tournaments?</span>
+                <span class="fob-accordion__icon">+</span>
+              </summary>
+              <div class="fob-accordion__body">
+                Yes, FOB hosts a monthly Lagos Table Tennis King of the Table tournament with cash prizes and medals. Enquire at the desk or follow our Instagram for registration dates.
+              </div>
+            </details>
+            <details class="fob-accordion__item">
+              <summary class="fob-accordion__summary">
+                <span>Is the area air-conditioned?</span>
+                <span class="fob-accordion__icon">+</span>
+              </summary>
+              <div class="fob-accordion__body">
+                Yes, our indoor table tennis arena is fully air-conditioned with draft-free ventilation so ball flight remains 100% true.
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Zones Strip -->
+    <section class="fob-section ground-paper">
+      <div class="fob-container">
+        <h3 style="font-size: 1.5rem; font-weight: 800; color: var(--fob-ink); margin-bottom: 1.5rem;">Explore Other Zones</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+          <a href="/snooker/" class="fob-zone-card" style="background:#FFF; border-color:var(--fob-ink-12);">
+            <div class="fob-zone-card__circle" style="border-color:var(--fob-cyan); color:var(--fob-cyan);"><svg width="34" height="34"><use href="#zone-snooker"/></svg></div>
+            <strong style="color:var(--fob-ink);">Snooker Lounge</strong>
+          </a>
+          <a href="/gaming/" class="fob-zone-card" style="background:#FFF; border-color:var(--fob-ink-12);">
+            <div class="fob-zone-card__circle" style="border-color:var(--fob-purple); color:var(--fob-purple);"><svg width="34" height="34"><use href="#zone-gaming"/></svg></div>
+            <strong style="color:var(--fob-ink);">Gaming Centre</strong>
+          </a>
+          <a href="/basketball/" class="fob-zone-card" style="background:#FFF; border-color:var(--fob-ink-12);">
+            <div class="fob-zone-card__circle" style="border-color:var(--fob-orange); color:var(--fob-orange);"><svg width="34" height="34"><use href="#zone-basketball"/></svg></div>
+            <strong style="color:var(--fob-ink);">Basketball Court</strong>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="fob-footer">
+    <div class="fob-container">
+      <div class="fob-footer__bottom">
+        <div>&copy; 2026 FOB Recreational Centre Lagos.</div>
+        <div class="fob-footer__legal"><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/assets/js/main.js"></script>
+</body>
+</html>

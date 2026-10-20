@@ -1,0 +1,22 @@
+{
+  "updated": "2026-10-20T12:00:00+01:00",
+  "timezone": "Africa/Lagos",
+  "schedule": {
+    "monday": { "open": "07:00", "close": "23:00", "label": "7:00 am – 11:00 pm" },
+    "tuesday": { "open": "07:00", "close": "23:00", "label": "7:00 am – 11:00 pm" },
+    "wednesday": { "open": "07:00", "close": "23:00", "label": "7:00 am – 11:00 pm" },
+    "thursday": { "open": "07:00", "close": "23:00", "label": "7:00 am – 11:00 pm" },
+    "friday": { "open": "07:00", "close": "01:00", "label": "7:00 am – 1:00 am (late night)" },
+    "saturday": { "open": "07:00", "close": "01:00", "label": "7:00 am – 1:00 am (late night)" },
+    "sunday": { "open": "08:00", "close": "23:00", "label": "8:00 am – 11:00 pm" }
+  },
+  "specialOverrides": [
+    {
+      "date": "2026-10-20",
+      "open": "07:00",
+      "close": "00:00",
+      "reason": "Champions League Late Match Night (Arsenal vs Chelsea & UCL)"
+    }
+  ],
+  "peakHoursNote": "Peak hours start from 5:00 pm on weekdays and all day on weekends."
+}

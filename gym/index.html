@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0E0E2C">
+  <title>Gym & Strength Conditioning • Pure Iron • FOB Lagos</title>
+  <meta name="description" content="Sleek, high-performance gym in Lekki Phase 1, Lagos. Olympic barbells, dumbbells, functional turf track, calisthenics rigs and cardio. No queues, no egos.">
+  <link rel="canonical" href="https://foblagos.com/gym/">
+
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/layout.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
+</head>
+<body class="ground-ink">
+
+  <a href="#main-content" class="fob-skip-link">Skip to main content</a>
+  <div style="display: none;" id="svg-sprite-holder"></div>
+  <script>
+    fetch('/assets/svg/sprite.svg').then(res => res.text()).then(svg => {
+      document.getElementById('svg-sprite-holder').innerHTML = svg;
+    }).catch(() => {});
+  </script>
+
+  <!-- Sticky Header -->
+  <header class="fob-header">
+    <div class="fob-header__inner">
+      <nav class="fob-nav-pill" aria-label="Main Navigation">
+        <a href="/" class="fob-logo">
+          <span>F</span><span class="fob-logo__o">O</span><span>B</span>
+        </a>
+        <ul class="fob-nav__menu">
+          <li><a href="/football-pitch/" class="fob-nav__link">Pitch</a></li>
+          <li><a href="/football-viewing/" class="fob-nav__link">Watch Matches</a></li>
+          <li><a href="/gym/" class="fob-nav__link is-active">Gym</a></li>
+          <li><a href="/basketball/" class="fob-nav__link">Basketball</a></li>
+          <li><a href="/football-viewing/" class="fob-nav__link">LiveScores</a></li>
+          <li><a href="/events/" class="fob-nav__link">Events</a></li>
+          <li><a href="/find-us/" class="fob-nav__link">Find Us</a></li>
+        </ul>
+        <div class="fob-nav__actions">
+          <button type="button" class="fob-btn fob-btn--primary fob-btn--sm" data-fob-sheet data-fob-sheet-zone="Gym & Fitness">
+            Lock it in
+          </button>
+          <button type="button" class="fob-menu-toggle" aria-label="Open Mobile Menu" aria-controls="fob-mobile-nav">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="fob-mobile-nav" id="fob-mobile-nav" role="dialog" aria-modal="true">
+    <div class="fob-mobile-nav__header">
+      <a href="/" class="fob-logo"><span>F</span><span class="fob-logo__o">O</span><span>B</span></a>
+      <button type="button" class="fob-sheet__close" id="fob-mobile-close-btn">&times;</button>
+    </div>
+    <div class="fob-mobile-nav__links">
+      <a href="/football-pitch/">Football Pitch</a>
+      <a href="/football-viewing/">Viewing Centre & LiveScores</a>
+      <a href="/gym/">Gym & Fitness</a>
+      <a href="/basketball/">Basketball Court</a>
+      <a href="/snooker/">Snooker Lounge</a>
+      <a href="/table-tennis/">Table Tennis</a>
+      <a href="/gaming/">Gaming Centre</a>
+      <a href="/events/">Events & Parties</a>
+      <a href="/find-us/">Find Us & Map</a>
+    </div>
+  </div>
+
+  <main id="main-content">
+
+    <!-- Header Band (PRD Section 7.2: Red #FF2E4D) -->
+    <section class="fob-zone-hero-band" style="--zone-band-color: var(--fob-red); color: #FFF;">
+      <div class="fob-container fob-zone-hero-band__grid">
+        <div>
+          <span class="fob-zone-badge" style="background:#0E0E2C; color:#FFF; margin-bottom:1rem;">
+            <span class="fob-zone-badge__dot" style="background:var(--fob-red);"></span>
+            Zone 03 • Gym & Fitness
+          </span>
+          <h1 style="font-size: var(--step-h1); font-weight: 900; line-height: 1; color: #FFF; text-transform: uppercase;">
+            Pure Iron
+          </h1>
+          <p style="font-size: 1.25rem; font-weight: 600; margin-top: 1rem; color: rgba(255,255,255,0.9); max-width: 50ch;">
+            Heavy iron, power racks, kettlebells, calisthenics rigs and functional turf. Pay per session or monthly with zero lock-in contracts.
+          </p>
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem;">
+            <button type="button" class="fob-btn fob-btn--primary" data-fob-sheet data-fob-sheet-zone="Gym & Fitness">
+              Lock in a session
+            </button>
+            <a href="tel:+2348030000362" class="fob-btn fob-btn--secondary" style="border-color:#FFF; color:#FFF;">
+              Call to Join
+            </a>
+          </div>
+        </div>
+        <div>
+          <div style="border-radius: var(--radius-card); overflow: hidden; border: 3px solid #FFF; box-shadow: 0 15px 40px rgba(0,0,0,0.3);">
+            <img src="/assets/img/gym.jpg" alt="Athletes lifting heavy weights in modern gym" width="700" height="400">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Zone Specs -->
+    <section class="fob-section ground-ink">
+      <div class="fob-container">
+        <div class="fob-zone-specs-grid">
+          <div class="fob-spec-card">
+            <div class="fob-spec-card__label">Access Model</div>
+            <div class="fob-spec-card__val">Solo or Training Pairs</div>
+            <p style="font-size: 0.85rem; color: var(--fob-white-70); margin-top: 0.5rem;">Day passes, 10-session packs, or unlimited monthly passes available.</p>
+          </div>
+          <div class="fob-spec-card">
+            <div class="fob-spec-card__label">Operating Hours</div>
+            <div class="fob-spec-card__val">6:30 am – 11:00 pm daily</div>
+            <p style="font-size: 0.85rem; color: var(--fob-white-70); margin-top: 0.5rem;">Early bird access from 6:30 am for pre-work lifting.</p>
+          </div>
+          <div class="fob-spec-card">
+            <div class="fob-spec-card__label">What to Bring</div>
+            <div class="fob-spec-card__val">Gym wear & clean trainers</div>
+            <p style="font-size: 0.85rem; color: var(--fob-white-70); margin-top: 0.5rem;">Workout towel required. Secure digital lockers & hot showers on site.</p>
+          </div>
+        </div>
+
+        <!-- Gym Training Formats (PRD Zero-Pricing Policy) -->
+        <div style="margin-top: 3.5rem;">
+          <h2 style="font-size: var(--step-h2); font-weight: 800; color: #FFF; margin-bottom: 1.5rem;">
+            Training Formats & Access
+          </h2>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+            <div class="fob-spec-card">
+              <span class="fob-zone-badge" style="background:var(--fob-white-08); color:var(--fob-volt); margin-bottom:0.75rem;">DAY SESSION</span>
+              <h3 style="color:#FFF; font-size:1.25rem; margin-bottom:0.5rem;">Off-Peak Day Pass</h3>
+              <p style="color:var(--fob-white-70); font-size:0.85rem; margin-bottom:1.5rem;">Monday – Friday before 4:00 pm. Uninterrupted access to power racks, dumbbells up to 50kg, functional turf track and cardio zone.</p>
+              <button type="button" class="fob-btn fob-btn--primary fob-btn--sm" data-fob-sheet data-fob-sheet-zone="Gym & Fitness">Lock in Day Session</button>
+            </div>
+            <div class="fob-spec-card" style="border-color:var(--fob-red);">
+              <span class="fob-zone-badge" style="background:var(--fob-red); color:#FFF; margin-bottom:0.75rem;">PRIME IRON</span>
+              <h3 style="color:#FFF; font-size:1.25rem; margin-bottom:0.5rem;">Peak Evening & Weekend Pass</h3>
+              <p style="color:var(--fob-white-70); font-size:0.85rem; margin-bottom:1.5rem;">Evenings after 4:00 pm & weekends. High-energy atmosphere with heavy beats, dedicated squat racks, and certified floor spots.</p>
+              <button type="button" class="fob-btn fob-btn--primary fob-btn--sm" data-fob-sheet data-fob-sheet-zone="Gym & Fitness">Lock in Prime Pass</button>
+            </div>
+            <div class="fob-spec-card">
+              <span class="fob-zone-badge" style="background:var(--fob-volt); color:var(--fob-ink); margin-bottom:0.75rem;">ALL-ACCESS</span>
+              <h3 style="color:#FFF; font-size:1.25rem; margin-bottom:0.5rem;">Monthly Unlimited Membership</h3>
+              <p style="color:var(--fob-white-70); font-size:0.85rem; margin-bottom:1.5rem;">7-day unlimited access across all hours, digital locker assignment, rainfall showers, and complimentary monthly trainer consultation.</p>
+              <button type="button" class="fob-btn fob-btn--primary fob-btn--sm" data-fob-sheet data-fob-sheet-zone="Gym & Fitness">Lock in Membership</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3-Photo Gallery Strip -->
+        <div style="margin-top: 3.5rem;">
+          <h3 style="font-size: 1.5rem; font-weight: 800; color: #FFF; margin-bottom: 1rem;">Gym Space & Equipment</h3>
+          <div class="fob-gallery-strip">
+            <div class="fob-gallery-strip__item">
+              <img src="/assets/img/gym.jpg" alt="Athletes lifting heavy weights" loading="lazy">
+            </div>
+            <div class="fob-gallery-strip__item">
+              <img src="/assets/img/hero_crew.jpg" alt="Fit friends in workout apparel" loading="lazy">
+            </div>
+            <div class="fob-gallery-strip__item">
+              <img src="/assets/img/football_pitch.jpg" alt="Outdoor turf conditioning track" loading="lazy">
+            </div>
+          </div>
+        </div>
+
+        <!-- Zone FAQ -->
+        <div style="margin-top: 3.5rem; max-width: 800px;">
+          <h3 style="font-size: 1.5rem; font-weight: 800; color: #FFF; margin-bottom: 1rem;">Gym FAQ</h3>
+          <div class="fob-accordion">
+            <details class="fob-accordion__item" open>
+              <summary class="fob-accordion__summary">
+                <span>Do I have to sign up for a long-term contract?</span>
+                <span class="fob-accordion__icon">+</span>
+              </summary>
+              <div class="fob-accordion__body">
+                Never. We believe in zero friction. You can pay per day (₦4,000–₦5,000) whenever you want, or renew monthly without automated card deductions or cancellation fees.
+              </div>
+            </details>
+            <details class="fob-accordion__item">
+              <summary class="fob-accordion__summary">
+                <span>Are personal trainers available on site?</span>
+                <span class="fob-accordion__icon">+</span>
+              </summary>
+              <div class="fob-accordion__body">
+                Yes! Our certified strength and conditioning coaches are available for 1-on-1 sessions, HIIT circuits, and athletic programming. Enquire at the desk or via WhatsApp.
+              </div>
+            </details>
+            <details class="fob-accordion__item">
+              <summary class="fob-accordion__summary">
+                <span>Are showers and changing rooms clean and secure?</span>
+                <span class="fob-accordion__icon">+</span>
+              </summary>
+              <div class="fob-accordion__body">
+                Spotless. Our changing rooms feature hot rainfall showers, high-pressure water, hair dryers, and complimentary digital pin lockers cleaned continuously throughout the day.
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Zones Strip -->
+    <section class="fob-section ground-paper">
+      <div class="fob-container">
+        <h3 style="font-size: 1.5rem; font-weight: 800; color: var(--fob-ink); margin-bottom: 1.5rem;">Explore Other Zones</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+          <a href="/football-pitch/" class="fob-zone-card" style="background:#FFF; border-color:var(--fob-ink-12);">
+            <div class="fob-zone-card__circle" style="border-color:var(--fob-green); color:var(--fob-green);"><svg width="34" height="34"><use href="#zone-pitch"/></svg></div>
+            <strong style="color:var(--fob-ink);">Football Pitch</strong>
+          </a>
+          <a href="/basketball/" class="fob-zone-card" style="background:#FFF; border-color:var(--fob-ink-12);">
+            <div class="fob-zone-card__circle" style="border-color:var(--fob-orange); color:var(--fob-orange);"><svg width="34" height="34"><use href="#zone-basketball"/></svg></div>
+            <strong style="color:var(--fob-ink);">Basketball Court</strong>
+          </a>
+          <a href="/football-viewing/" class="fob-zone-card" style="background:#FFF; border-color:var(--fob-ink-12);">
+            <div class="fob-zone-card__circle" style="border-color:var(--fob-magenta); color:var(--fob-magenta);"><svg width="34" height="34"><use href="#zone-viewing"/></svg></div>
+            <strong style="color:var(--fob-ink);">Viewing Centre</strong>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="fob-footer">
+    <div class="fob-container">
+      <div class="fob-footer__bottom">
+        <div>&copy; 2026 FOB Recreational Centre Lagos.</div>
+        <div class="fob-footer__legal"><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "name": "FOB Recreational Centre Lagos",
+  "short_name": "FOB",
+  "description": "FOB is Lagos's premier multi-sport recreational centre. Bring your crew for football, viewing, gym, basketball, snooker, table tennis, and gaming.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0E0E2C",
+  "theme_color": "#0E0E2C",
+  "icons": [
+    {
+      "src": "/assets/svg/sprite.svg#fob-o",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/assets/svg/sprite.svg#fob-o",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ]
+}

@@ -1,0 +1,230 @@
+{
+  "updated": "2026-10-20T12:00:00+01:00",
+  "currency": "₦",
+  "zones": [
+    {
+      "slug": "football-pitch",
+      "name": "Football Pitch",
+      "zoneO": "pitch",
+      "color": "#1ED760",
+      "tagline": "5-a-side floodlit FIFA-grade turf. Fast ball, zero slide burns.",
+      "groupSize": "Up to 14 players (7v7 or 5v5 + subs)",
+      "whatToBring": "Turf boots or trainers, team bibs, water container (bibs & ball provided free on request)",
+      "rates": [
+        {
+          "tier": "Off-Peak (Mon–Fri before 5pm)",
+          "price": 25000,
+          "unit": "per hour",
+          "peak": false,
+          "note": "Great for daytime training & student friendlies"
+        },
+        {
+          "tier": "Peak (Weeknights from 5pm & all Weekends)",
+          "price": 35000,
+          "unit": "per hour",
+          "peak": true,
+          "note": "Includes full LED stadium floodlights & match ball"
+        },
+        {
+          "tier": "Weekend 2-Hour Tournament Slot",
+          "price": 60000,
+          "unit": "2 hours",
+          "peak": true,
+          "note": "Save ₦10,000 on block bookings"
+        }
+      ]
+    },
+    {
+      "slug": "football-viewing",
+      "name": "Football Viewing Centre",
+      "zoneO": "viewing",
+      "color": "#FF3DA5",
+      "tagline": "Lagos's sharpest match-day atmosphere. 4K laser wall, stadium audio, icy drinks.",
+      "groupSize": "Solo, pairs, or crew tables up to 12",
+      "whatToBring": "Your crew and match energy. Walk-in first come first served.",
+      "rates": [
+        {
+          "tier": "Standard League Match Pass",
+          "price": 3500,
+          "unit": "per person / match",
+          "peak": false,
+          "note": "Includes guaranteed stadium seat + complimentary hot popcorn"
+        },
+        {
+          "tier": "Big Match Pass (Derbies & UCL Knockouts)",
+          "price": 4000,
+          "unit": "per person / match",
+          "peak": true,
+          "note": "Includes premium seat, cold drink token & popcorn"
+        },
+        {
+          "tier": "VIP Crew Booth (Seats 6)",
+          "price": 30000,
+          "unit": "per match / booth",
+          "peak": true,
+          "note": "Dedicated private screen, ice bucket with 6 drinks & finger food platter"
+        }
+      ]
+    },
+    {
+      "slug": "gym",
+      "name": "Gym & Conditioning",
+      "zoneO": "gym",
+      "color": "#FF2E4D",
+      "tagline": "Pure iron, heavy bags and functional turf. No queues, no egos.",
+      "groupSize": "Solo athletes or training partners",
+      "whatToBring": "Gym wear, clean trainers, workout towel and water bottle",
+      "rates": [
+        {
+          "tier": "Day Pass (Off-Peak before 4pm)",
+          "price": 4000,
+          "unit": "per visit",
+          "peak": false,
+          "note": "Full gym, functional turf & locker access"
+        },
+        {
+          "tier": "Day Pass (Peak / Weekend)",
+          "price": 5000,
+          "unit": "per visit",
+          "peak": true,
+          "note": "All weights, cardio, calisthenics rigs & showers"
+        },
+        {
+          "tier": "Monthly All-Access Pass",
+          "price": 35000,
+          "unit": "per month",
+          "peak": false,
+          "note": "Unlimited 7-day access + 1 free fitness assessment"
+        }
+      ]
+    },
+    {
+      "slug": "basketball",
+      "name": "Basketball Court",
+      "zoneO": "basketball",
+      "color": "#FF6B1A",
+      "tagline": "High-grip FIBA-spec court, spring-loaded breakaway hoops, pro acoustics.",
+      "groupSize": "Up to 10 players (3v3 or full court 5v5)",
+      "whatToBring": "Court sneakers (non-marking soles), basketball (or use ours free)",
+      "rates": [
+        {
+          "tier": "Off-Peak (Mon–Fri before 5pm)",
+          "price": 15000,
+          "unit": "per hour",
+          "peak": false,
+          "note": "Half-court or full court practice"
+        },
+        {
+          "tier": "Peak (Weeknights 5pm+ & Weekends)",
+          "price": 22000,
+          "unit": "per hour",
+          "peak": true,
+          "note": "Full court with scoreboard and night lighting"
+        },
+        {
+          "tier": "Shootaround Solo Pass",
+          "price": 3000,
+          "unit": "per hour",
+          "peak": false,
+          "note": "Open shooting sessions when court is not booked"
+        }
+      ]
+    },
+    {
+      "slug": "snooker",
+      "name": "Snooker Lounge",
+      "zoneO": "snooker",
+      "color": "#00D1FF",
+      "tagline": "Tournament slate tables, precision Hainsworth cloth, pro Aramith balls.",
+      "groupSize": "2 to 4 players per table",
+      "whatToBring": "Bring your personal cue or use our balanced Ash cues",
+      "rates": [
+        {
+          "tier": "Standard Table (English 8-Ball)",
+          "price": 3000,
+          "unit": "per hour",
+          "peak": false,
+          "note": "Clean cloth, triangle & master chalk provided"
+        },
+        {
+          "tier": "Tournament Full-Size Snooker Table",
+          "price": 4500,
+          "unit": "per hour",
+          "peak": true,
+          "note": "12ft steel block cushions, heated slate"
+        },
+        {
+          "tier": "Crew 2-Hour Rack Pack",
+          "price": 5500,
+          "unit": "2 hours",
+          "peak": false,
+          "note": "Great for competitive friendly rounds"
+        }
+      ]
+    },
+    {
+      "slug": "table-tennis",
+      "name": "Table Tennis",
+      "zoneO": "table-tennis",
+      "color": "#00D1FF",
+      "tagline": "Competition Butterfly tables, anti-glare floor mats, responsive bounce.",
+      "groupSize": "2 to 4 players (singles or doubles)",
+      "whatToBring": "Indoor sports shoes, your favorite paddle (free gear available)",
+      "rates": [
+        {
+          "tier": "Standard Table Play",
+          "price": 2500,
+          "unit": "per hour",
+          "peak": false,
+          "note": "Includes 2 carbon-composite bats & 3-star balls"
+        },
+        {
+          "tier": "Peak / Weekend Hour",
+          "price": 3500,
+          "unit": "per hour",
+          "peak": true,
+          "note": "Includes tournament score counter"
+        },
+        {
+          "tier": "Crew 4-Player Double Battle",
+          "price": 5000,
+          "unit": "90 mins",
+          "peak": true,
+          "note": "Includes 4 bats and unlimited 3-star balls"
+        }
+      ]
+    },
+    {
+      "slug": "gaming",
+      "name": "Gaming Lounge",
+      "zoneO": "gaming",
+      "color": "#8B5CF6",
+      "tagline": "PlayStation 5 & Xbox Series X rigs, 4K 120Hz displays, low latency fibre.",
+      "groupSize": "1 to 8 players (solo campaigns to FIFA/2K crew battles)",
+      "whatToBring": "Just your gaming skills (controllers & PS Plus / Game Pass loaded)",
+      "rates": [
+        {
+          "tier": "Single Station Pass (PS5 / Xbox)",
+          "price": 3000,
+          "unit": "per hour",
+          "peak": false,
+          "note": "EA Sports FC 25, NBA 2K25, Mortal Kombat 1, Call of Duty"
+        },
+        {
+          "tier": "2-Player Couch Battle",
+          "price": 5000,
+          "unit": "per hour",
+          "peak": true,
+          "note": "2 controllers, 65-inch OLED display, plush gaming beanbags"
+        },
+        {
+          "tier": "Crew 4-Player Station (2 Hours)",
+          "price": 16000,
+          "unit": "2 hours",
+          "peak": true,
+          "note": "Dedicated private pod for FIFA / 2K tournaments"
+        }
+      ]
+    }
+  ]
+}

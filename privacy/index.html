@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0E0E2C">
+  <title>Privacy Policy • FOB Lagos</title>
+  <meta name="description" content="FOB Recreational Centre privacy policy under the Nigeria Data Protection Act. We respect your privacy: zero user accounts, zero tracking cookies.">
+  <link rel="canonical" href="https://foblagos.com/privacy/">
+
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/layout.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
+</head>
+<body class="ground-ink">
+
+  <a href="#main-content" class="fob-skip-link">Skip to main content</a>
+  <div style="display: none;" id="svg-sprite-holder"></div>
+  <script>
+    fetch('/assets/svg/sprite.svg').then(res => res.text()).then(svg => {
+      document.getElementById('svg-sprite-holder').innerHTML = svg;
+    }).catch(() => {});
+  </script>
+
+  <!-- Sticky Header -->
+  <header class="fob-header">
+    <div class="fob-header__inner">
+      <nav class="fob-nav-pill" aria-label="Main Navigation">
+        <a href="/" class="fob-logo"><span>F</span><span class="fob-logo__o">O</span><span>B</span></a>
+        <ul class="fob-nav__menu">
+          <li><a href="/" class="fob-nav__link">Home</a></li>
+          <li><a href="/pricing/" class="fob-nav__link">Pricing</a></li>
+          <li><a href="/find-us/" class="fob-nav__link">Find Us</a></li>
+        </ul>
+        <div class="fob-nav__actions">
+          <button type="button" class="fob-btn fob-btn--primary fob-btn--sm" data-fob-sheet>Lock it in</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="fob-section ground-ink" style="padding-top: 5rem;">
+      <div class="fob-container" style="max-width: 800px;">
+        <span class="fob-section-tag">Data Protection</span>
+        <h1 style="font-size: var(--step-h1); font-weight: 900; color: #FFF; margin-top: 0.5rem; text-transform: uppercase;">
+          Privacy Policy
+        </h1>
+        <p style="color: var(--fob-white-70); margin-top: 0.5rem; font-size: 0.95rem;">Last updated: 20 October 2026 • Compliant with the Nigeria Data Protection Act (NDPA)</p>
+
+        <div style="margin-top: 2.5rem; color: var(--fob-white-90); line-height: 1.8; display: flex; flex-direction: column; gap: 1.5rem;">
+          <p>
+            At <strong>FOB Recreational Centre</strong> ("FOB", "we", "us"), we believe in transparency, speed, and privacy. Our website does not require user accounts, passwords, or personal profiles.
+          </p>
+
+          <h2 style="font-size: 1.5rem; color: var(--fob-volt); margin-top: 1rem;">1. Information We Collect</h2>
+          <p>
+            When you use our website, we do not store personal details on our servers. When you click "Lock it in", the website formats a booking template on your own device and opens your native WhatsApp application. Your booking details and phone number are handled directly within WhatsApp pursuant to Meta's privacy policy.
+          </p>
+
+          <h2 style="font-size: 1.5rem; color: var(--fob-volt); margin-top: 1rem;">2. Device Location Data</h2>
+          <p>
+            If you tap "Use my location" on our Find Us page, your browser's Geolocation API calculates the approximate travel distance and time to FOB in Lekki Phase 1. Your coordinates are used locally in your browser memory and are never stored, logged or tracked by FOB.
+          </p>
+
+          <h2 style="font-size: 1.5rem; color: var(--fob-volt); margin-top: 1rem;">3. Cookies & Analytics</h2>
+          <p>
+            We use privacy-friendly, cookieless metrics to measure general page views and button interactions (such as WhatsApp taps). We do not use cross-site tracking cookies, advertising identifiers, or invasive telemetry.
+          </p>
+
+          <h2 style="font-size: 1.5rem; color: var(--fob-volt); margin-top: 1rem;">4. Contact Us</h2>
+          <p>
+            If you have questions regarding your data or our policies under the Nigeria Data Protection Act, please contact our team at 12 Admiralty Way, Lekki Phase 1, Lagos, or via phone / WhatsApp at +234 803 000 0362.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="fob-footer">
+    <div class="fob-container">
+      <div class="fob-footer__bottom">
+        <div>&copy; 2026 FOB Recreational Centre Lagos.</div>
+        <div class="fob-footer__legal"><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/assets/js/main.js"></script>
+</body>
+</html>

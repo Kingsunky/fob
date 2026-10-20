@@ -1,0 +1,537 @@
+FOB Website: Product Requirements Document (PRD)
+Version 1.4 (LiveScore model, top football competitions sync, and zero-pricing scope) | 20 October 2026 | Status: ready for client sign-off | Prepared by the FOB project team (Brand Strategy, Creative Direction, Art Direction, Copy, UX/UI, Development, Production)
+1. Summary
+FOB is a recreational centre in Lagos with seven zones: football pitch, football viewing centre, gym, basketball court, snooker, table tennis and gaming. This document defines the requirements for the FOB website: what it must do, how it must look and move, and every illustration, animation, and real-time live match data asset that has to be produced for it.
+The website has one job: turn a mobile visitor into a person who walks through the door or sends a WhatsApp message. Bookings across zones run through WhatsApp, phone and walk-in. The viewing centre operates as a live match-day hub with real-time score synchronization across top football competitions, first come first served. All public pricing has been deliberately removed from the site to focus entirely on atmosphere, live match energy, availability, and fast WhatsApp bookings. The quality bar the site is built to is in section 17, and the brand system it is built from is in section 18.
+Product principles
+	•	Sleek in structure, fun in moments. Layout, type and photography stay clean. Colour, copy, motion and small surprises carry the fun.
+	•	Mobile first, data-light. Most visitors will arrive on a phone on mobile data.
+	•	The next action is always visible: Lock it in, See you there, Call, or Directions.
+	•	The O is the hero. It is the logo, the zone icon, the loader, the cursor and the interactive toy.
+	•	Nothing hidden: live matches, real-time scores, goal previews, hours and status are always one tap away.
+	•	Zero pricing friction: the site eliminates all pricing tables and payment barriers; availability and reservations happen directly via WhatsApp. Also includes Goal‑Score Flash animation (ANI‑19).
+2. Goals and success metrics
+Business goals
+	•	Increase walk-ins and WhatsApp enquiries across all seven zones.
+	•	Make the viewing centre the most visited page, driven by real-time match-day fixtures, top football competition sync, and live scores.
+	•	Grow group and event revenue (birthdays, team outings, corporate nights, tournaments).
+	•	Give FOB a brand and website that look established from launch day.
+Metrics (targets to be confirmed after a 30-day baseline)
+Metric
+How it is measured
+Initial target
+WhatsApp and call taps
+Click events on every Lock it in, Ask on WhatsApp and Call button
+8% of mobile sessions
+Directions taps
+Click events on map links
+4% of sessions
+Fixture & LiveScore page views
+Views of Today at FOB and the fixtures page on match days
+45% of match-day sessions
+Mobile load speed
+Largest Contentful Paint on a mid-range Android over 4G
+2.5 seconds or better
+Accessibility
+Automated audit plus manual keyboard and screen reader check
+WCAG 2.2 AA
+LiveScore sync latency
+Latency from official goal event to preview update on site
+Under 30 seconds
+3. Reference study: PocketApp (pocketapp.com)
+The brief names pocketapp.com as the reference for design, illustration, animation and brand direction. This is the Lagos mobile money app (a Nigerian fintech wallet). If a different site was intended, tell us and this section will be redone.
+The notes below are based on the site's published page content and asset names. We take patterns and principles from the reference. We do not copy its layout, artwork, copy or assets.
+What the reference does and how FOB uses it
+Area
+What PocketApp does
+FOB translation
+Brand colour
+One strong purple (theme colour #6b35ec) on near-black grounds, with white type
+Ink (#0E0E2C) and electric blue (#2F3CFF) grounds, with volt lime (#D7FF1F) as the single hero accent
+Headline
+Oversized all-caps hero line in plain, direct language
+Oversized rounded caps hero line, for example BRING YOUR CREW. Short, verb-led, one joke at most
+Hero visual
+A photo of a hand holding a phone, layered with wave pattern graphics behind and in front
+A crew-in-action photo with layered O-grid pattern graphics behind and in front, so the pattern can drift at different speeds
+Interaction choices
+A send your way section with four options (type, scan, paste, tag), each with its own icon and a short looping video
+A pick your game section with seven zone Os. Each O has a short looping animation in its own colour
+Feature blocks
+Phone screenshot plus a short headline plus one line of copy, repeated
+Photo or illustration plus a short headline plus one line, repeated for pitch, viewing, gym, courts, tables and gaming
+Tabbed section
+A built around your lifestyle area with three tabs (bills, groups, cards)
+A built around your night area with tabs: Play, Watch, Train
+Social proof
+Avatar stack for groups; trust badges for licence and deposit insurance
+Illustrated crew avatar stack; trust strip with opening hours, location and years open (no regulatory badges needed)
+Looping type
+A repeating all-caps marquee band
+A repeating BRING YOUR CREW band in volt on ink
+Playful interaction
+Tap me hints on two money guns that fire falling naira notes
+Tap the O: a ball that kicks out sport balls and volt sparks that fall and bounce
+Hero feature
+One hero feature given its own full-width block with a bold intro label
+The viewing centre gets the same treatment, with a Today at FOB live match and LiveScore strip
+FAQ
+Accordion of plain-language questions
+FAQ accordion on Home and on each zone page
+Conversion
+Repeated Download buttons plus a QR code for desktop visitors
+Repeated Lock it in and Call buttons. On desktop, a QR code that opens WhatsApp on the visitor's phone
+Footer
+Address, phone, email, socials, legal links
+Address, WhatsApp, phone, socials, hours
+What we deliberately do differently
+	•	PocketApp sells a financial product and leans on trust badges. FOB sells an experience, so we lean on live football energy, top competition sync, and community culture.
+	•	FOB carries seven zone colours, used only as small badges, icons and section headers.
+	•	No pricing tables: all pricing has been removed to maximize conversion speed directly into WhatsApp conversations.
+	•	Real-time LiveScore model: match preview cards feature live home/away scores, match clock (e.g. 1H 34', HT, 2H 78', FT), and live goal scorer previews.
+4. Brand direction (locked)
+	•	Wordmark: Route B, a slim ink pill holding white FOB letters with a volt-lime O. The O is slightly oversized and is the only bright element.
+	•	Concept: FOB is the home base for your crew.
+	•	Personality: confident, quick, playful, never try-hard.
+	•	Tagline: FOB. Bring your crew.
+	•	Voice rules: short sentences, verbs first, one joke per screen at most.
+Palette
+Colour
+Hex
+Role
+Deep ink
+#0E0E2C
+Anchor ground, text on light
+Electric blue
+#2F3CFF
+Main brand ground, section backgrounds
+Volt lime
+#D7FF1F
+Hero accent: the O, highlights and every primary call to action, on ink or blue
+Hot orange
+#FF6B1A
+Basketball zone, filling-up status, small highlights
+Red
+#FF2E4D
+Gym zone, urgent states
+Cyan
+#00D1FF
+Snooker and table tennis zones
+Purple
+#8B5CF6
+Gaming zone
+Pitch green
+#1ED760
+Football pitch zone
+Magenta
+#FF3DA5
+Football viewing zone, live score highlight
+Off-white
+#F4F4FF
+Light sections
+Colour rules
+	•	One bright colour leads on any screen. The others support.
+	•	Volt lime sits only on ink or blue, never on white.
+	•	Text on orange is ink, not white (white on orange fails contrast for small text).
+	•	Body text is near-black on off-white or off-white on ink.
+	•	Zone colours are used only for badges, icons and section headers.
+Typography (locked)
+	•	Display: Outfit ExtraBold (800) for headlines and Outfit Bold (700) for sub-heads. Locked in the working session.
+	•	Text: Plus Jakarta Sans Regular (400) and Bold (700) for body, live scores, fixtures and labels. Locked in the working session.
+	•	Four font files in total, self-hosted, subsetted to Latin, WOFF2 only, with a system fallback stack.
+Shape and motion language
+	•	Circles, pills and soft corners. Buttons are pills.
+	•	Things roll, bounce or pop. Every animation is short and purposeful.
+5. Audience and key journeys
+Audiences
+	•	The crew organiser (16-35): books for friends or a team, wants availability, time and a fast reply.
+	•	The match-day fan: wants to know today's fixtures, top competition games, live scores, goal scorers, doors time and whether it is full.
+	•	The solo newcomer: gym or gaming, wants to know what is here, what gear is provided and where it is.
+	•	The event planner: birthdays, corporate outings, school and community tournaments.
+Core journeys
+	•	Crew organiser: Home, pick a zone, check availability and hours, tap Lock it in, WhatsApp opens with a pre-filled message.
+	•	Match-day fan: Home, Today at FOB strip, check live score and goal scorers on card preview, See you there plus Directions, or Ask on WhatsApp.
+	•	Solo newcomer: Home, zone page, Call or Directions.
+	•	Event planner: Home, Events page, enquiry on WhatsApp with party type and group size.
+WhatsApp message templates
+	•	Zone enquiry: Hi FOB, I'd like to book [zone] on [date] at [time] for [number] people.
+	•	Fixture check: Hi FOB, is there space for [match] at [time]?
+	•	Event enquiry: Hi FOB, I'm planning a [event type] for [number] people on [date].
+6. Scope and sitemap
+In scope (launch)
+	•	Brand-led marketing website, mobile first, responsive to desktop, built in plain HTML, CSS and vanilla JavaScript (section 23).
+	•	Seven zone pages plus Home, Live Fixtures & LiveScore (viewing centre), Events and Parties, Gallery, Find Us and Contact, FAQ, 404.
+	•	LiveScore and top football competitions sync: automatic real-time feed tracking top matches in UEFA Champions League, Premier League, La Liga, Serie A, and FA Cup with live scores and goal scorer previews.
+	•	A simple CMS so staff manage fixtures, competition sync, status, hours, events and photos.
+	•	WhatsApp and tap-to-call flows, directions links, basic analytics, local SEO.
+Out of scope (launch)
+	•	Public pricing tables, online seat or table reservations, online payments and memberships.
+	•	User accounts and logins.
+	•	Club crests, league logos and player images (rights-protected; team names appear in plain text only).
+Sitemap
+	•	Home
+	•	Play: Football pitch, Basketball court, Snooker, Table tennis
+	•	Watch: Football viewing (Today at FOB, LiveScores & Fixtures, Top Competitions, Refreshments)
+	•	Train: Gym
+	•	Games: Gaming centre
+	•	Events and Parties
+	•	Gallery
+	•	Find Us and Contact
+	•	FAQ
+	•	Legal: Privacy, Terms
+7. Page requirements
+7.1 Home
+Sections in order, with the PocketApp pattern each follows:
+	•	Sticky header: pill navigation, FOB wordmark, Lock it in button. (Reference: persistent download button.)
+	•	Hero: oversized headline, one line of support copy, two buttons (Lock it in, See today's matches). Crew photo with layered O-grid pattern, floating balls and a Tap the O hint. The hero fills 85% of the mobile screen height so Today at FOB peeks below it, and on match days the headline and button switch to the next fixture with live score preview if underway.
+	•	Trust strip: opening hours, location, zones count, WhatsApp reply time.
+	•	Today at FOB: horizontal strip of top competition football matches with live score display (home score vs away score), match period/clock, goal scorers preview, kick-off, doors time, and live status.
+	•	Pick your game: seven circular zone entries. Each animates on hover or when scrolled into view.
+	•	Built around your night: tabs for Play, Watch, Train, each with a photo or illustration, a headline and one line.
+	•	Marquee band: BRING YOUR CREW repeating.
+	•	How it works: three steps (Pick, Message, Show up) with icons.
+	•	Events and parties teaser with crew avatar stack.
+	•	FAQ accordion: six questions (hours, can I just walk in, how do I book, live scores on screen, can I bring a group, what food and drinks are there).
+	•	Final call to action with QR code on desktop for WhatsApp.
+	•	Footer: address, WhatsApp, phone, socials, hours, legal.
+7.2 Zone page template (x6, plus the viewing page)
+	•	Header band in the zone's colour with the zone O, name and tagline.
+	•	Hero illustration or photo of the activity.
+	•	Zone specifications, equipment provided, opening hours, what to bring, crew size (no pricing tables).
+	•	Lock it in button (WhatsApp pre-filled for that zone) and Call button.
+	•	Three-photo gallery strip.
+	•	Zone FAQ (three questions).
+	•	Related zones strip.
+7.3 Football viewing page (Watch & LiveScores)
+	•	Today at FOB strip, top competition selector (All, Champions League, Premier League, La Liga, Serie A), followed by the fixture list for the next 7 days.
+	•	LiveScore Model on every fixture card:
+		- Teams in plain text with neutral team discs.
+		- Competition badge (e.g. UEFA Champions League, Premier League).
+		- Live match status: Upcoming, 1H (First Half), HT (Half-Time), 2H (Second Half), FT (Full-Time).
+		- Live score display: prominent bold score counter (e.g. 2 - 1).
+		- Match clock / minute: e.g. 74'.
+		- Goal Scorers Preview on Card: lists recent goal events directly on preview (e.g. Saka 34', Palmer 58' pen).
+		- Real-time GOAL badge alert that pulses when a score changes.
+		- Status chip (open, filling up, full, live).
+		- Primary button: See you there. Secondary: Ask on WhatsApp. Directions link on every card.
+	•	First come first served message shown clearly: Big one. Come early.
+	•	Live state: the magenta O pulses while a match is live on screen.
+	•	Refreshments section with a menu of match-day food and drinks (no prices listed).
+	•	Empty state: No match today. Check tomorrow.
+7.4 LiveScore Model & Top Football Competitions Sync Engine
+To establish FOB as Lagos's premier match-day authority, the site syncs top football matches across major domestic and international competitions, powered by a lightweight client-side polling and data-sync model:
+	•	Competitions in scope:
+		1. UEFA Champions League
+		2. English Premier League
+		3. Spanish La Liga
+		4. Italian Serie A
+		5. Emirates FA Cup & Carabao Cup
+		6. Nigerian Super Eagles & NPFL featured matches
+	•	LiveScore Data Schema (`livescore.json` / sync endpoint):
+		- `id`: unique fixture string (e.g. `2026-10-20-real-madrid-bayern`)
+		- `home`: string (home club name)
+		- `away`: string (away club name)
+		- `competition`: string (league/cup name)
+		- `kickoff`: ISO 8601 timestamp
+		- `doors`: ISO 8601 timestamp
+		- `status`: enum (`scheduled`, `live`, `halftime`, `finished`, `postponed`)
+		- `period`: string (`1H`, `HT`, `2H`, `FT`)
+		- `minute`: integer (current match minute)
+		- `score`: object `{ home: number, away: number }`
+		- `goals`: array of objects `[{ minute: string, team: 'home' | 'away', player: string, type: 'normal' | 'penalty' | 'owngoal' }]`
+		- `bigMatch`: boolean
+		- `venueStatus`: enum (`open`, `filling up`, `full`)
+		- `statusUpdated`: ISO 8601 timestamp
+	•	Goal Score Preview on Cards:
+		- If `goals` array is populated, card preview renders a compact goal timeline: e.g., ⚽ Saka 34', Palmer 58' (pen).
+		- When a live score change is detected via polling, the score counter animates with a spring pop, and a temporary `GOAL!` flash badge illuminates for 15 seconds.
+	•	Sync Cadence:
+		- When at least one match is in `live` or `halftime` state: polls live feed every 30 seconds.
+		- When matches are scheduled or finished: polls feed every 5 minutes.
+		- If feed drops or device is offline: displays last cached scores with timestamp and falls back gracefully.
+7.5 Events and Parties
+Three package cards (birthday, team outing, tournament), what is included, group sizes, and an enquiry button that opens WhatsApp with the event template (pricing removed; custom quotes provided on WhatsApp).
+7.6 Gallery
+Photo grid with circle-crop treatment, filter by zone, lazy-loaded.
+7.7 Find Us and Contact
+A live map with FOB's pin and a Use my location button that shows the distance in km and the travel time in minutes and draws the route, plus a Directions button, address, WhatsApp, phone, hours, parking and landmark notes.
+7.8 FAQ and 404
+Full FAQ grouped by topic. A playful 404 with a bouncing O.
+8. Functional requirements
+ID
+Requirement
+Priority
+FR-01
+Sticky header with a Lock it in button on every page
+Must
+FR-02
+Lock it in opens WhatsApp (wa.me link) with a pre-filled, zone-aware message from the templates in section 5
+Must
+FR-03
+Tap-to-call button (tel: link) next to every WhatsApp button
+Must
+FR-04
+Today at FOB shows top football competition matches dated today with live score and period, sorted by kick-off time
+Must
+FR-05
+Venue status (open, filling up, full) is updated with visible last-updated time
+Must
+FR-06
+If a match-day venue status has not been updated for 3 hours, the card falls back to Ask on WhatsApp instead of showing a stale status
+Must
+FR-07
+Fixtures leave the live list 3 hours after full-time and move to an archive
+Should
+FR-08
+Live state: the zone O pulses between kick-off and full-time with an active LIVE badge
+Should
+FR-09
+Top Football Competitions Sync & LiveScore Data Model: automated sync feeds live match clock, home/away scores, and goal events (player, minute, team) directly to match cards
+Must
+FR-10
+Opening hours in West Africa Time, with special-hours overrides and an Open now badge
+Must
+FR-11
+On desktop, a QR code that opens WhatsApp on the visitor's phone
+Should
+FR-12
+Directions button opens Google Maps or Apple Maps depending on the device (extended by FR-25 to FR-33 in section 22)
+Must
+FR-13
+FAQ accordions on Home and on each zone page (zero pricing mentions)
+Should
+FR-14
+Gallery with zone filter and lazy loading
+Should
+FR-15
+Local business structured data, per-page titles and descriptions, and a share image per zone
+Must
+FR-16
+Analytics events on every WhatsApp, call, directions and fixture/livescore interaction
+Must
+FR-17
+Minimal, privacy-friendly analytics; consent banner only if required by the chosen tool
+Must
+FR-18
+Custom 404 page with a playful O animation and a link home
+Could
+FR-34
+Goal Score Preview & Live Ticker: fixture cards render goal scorers with minute and player; a goal event triggers a visual flash alert and score animation
+Must
+FR-35
+Zero-Pricing Policy: all pricing tables, rates rows, and per-match ticket prices are omitted across the site to channel inquiries directly to WhatsApp
+Must
+CMS requirements
+Staff must be able to do these without a developer. Two roles: Admin (owner) and Editor (shift staff, can edit fixtures, live scores, and venue status).
+	•	Fixtures & LiveScores: home team, away team (plain text), competition, date, kick-off time, doors-open time, live score (home/away), live match minute/period, goal scorers list, status, optional note (for example, big derby, come early).
+	•	Zones: name, tagline, features, specs, hours, photos, FAQ items.
+	•	Events: package name, description, group sizes, inclusions.
+	•	Global settings: WhatsApp number, phone number, address, map link, hours, special-hours notice, social links, site-wide banner message.
+9. Non-functional requirements
+Performance (mobile data first)
+	•	Largest Contentful Paint 2.5 seconds or better on a mid-range Android phone over 4G.
+	•	First load under 1.2 MB transferred, with JavaScript under 150 KB compressed.
+	•	LiveScore polling uses lightweight delta payloads (< 5 KB per poll).
+	•	Images in AVIF or WebP with responsive sizes; heroes under 150 KB on mobile.
+	•	Fonts: two families maximum, WOFF2, subsetted, font-display swap.
+Accessibility (WCAG 2.2 AA)
+	•	LiveScore updates announce goal events via an `aria-live="polite"` region.
+	•	Contrast checked for every colour pair.
+	•	Full keyboard use, visible focus states in volt on ink or ink on volt.
+	•	Tap targets at least 44 by 44 pixels.
+10. Motion and animation specification
+ID
+Animation
+Trigger
+Spec
+Reduced-motion fallback
+ANI-01
+Hero entrance
+Page load
+Pill slides in, F and B settle, the O drops from above and bounces twice (800 ms)
+Fade in
+ANI-02
+Hero pattern drift
+Scroll
+O-grid pattern layers move at different speeds behind and in front of the photo
+Static pattern
+ANI-03
+Tap the O toy
+Tap or click the hero O
+A burst of sport balls and volt sparks falls and bounces, then settles off-screen (2 seconds)
+Single soft pop, no particles
+ANI-04
+Zone O hover loops
+Hover, or scroll into view
+Each O morphs into its object and plays a short action loop
+Static icon
+ANI-05
+Marquee band
+Always on
+BRING YOUR CREW scrolls at slow, steady speed
+Static single line
+ANI-06
+Fixture card reveal
+Scroll into view
+Cards slide up and fade, 60 ms stagger
+Instant
+ANI-07
+Live pulse
+Match in progress
+Magenta O breathes, with a small LIVE badge
+Static LIVE label
+ANI-08
+Status chip change
+Status updates
+Chip colour and label cross-fade (200 ms)
+Instant
+ANI-09
+Button press
+Tap
+Pill compresses to 96% and springs back (150 ms)
+None
+ANI-10
+Header pill
+Scroll down and up
+Header shrinks to a compact O and Lock it in on scroll down, expands on scroll up
+Fixed header
+ANI-11
+Tab switch
+Tap a tab
+Content slides sideways and fades (250 ms)
+Fade
+ANI-12
+Accordion
+Tap
+Height eases open, plus icon rotates (200 ms)
+Instant
+ANI-13
+O loader
+Loading state
+O rolls along a short line
+Static O
+ANI-14
+Opening WhatsApp state
+After Lock it in tap
+Short confirmation: You're in. Bring your crew. with the O bouncing once
+Static text
+ANI-15
+Cursor O (desktop only)
+Pointer move
+Small volt O follows the cursor and grows over buttons
+Normal cursor
+ANI-16
+404 bounce
+Page load
+O bounces across the screen and settles
+Static O
+ANI-18
+Count-up stats
+Scroll into view
+Numbers on the trust strip count up once
+Final numbers shown
+ANI-19
+Goal Score Flash & Pulse
+Goal event received
+Card flashes GOAL badge, score numbers pop to 125% and spring back (600 ms)
+Instant score update
+11. Illustration inventory
+A. Brand core: ILL-01 to 09 (wordmark, O mark, O-grid, spark confetti, pill kit, utility icons, dividers)
+B. Home page: ILL-10 to 16 (floating sport Os, tap me bubble, trust strip icons, how it works spots, crew avatar stack, tabs scenes, desktop QR frame)
+C. Zone set: 7 animated Os, 7 hero scenes, 21 spot icons
+D. Viewing centre, fixtures & LiveScore:
+	•	ILL-50: Fixture card with teams, times, live score display, goal scorers preview, and venue status
+	•	ILL-51: Status chip set: open, filling up, full, live
+	•	ILL-52: LIVE badge with animated pulse
+	•	ILL-53: Neutral team discs showing team initials
+	•	ILL-54: LiveScore goal alert badge and score counter display
+	•	ILL-55: Refreshment menu icons
+	•	ILL-56: Empty state: No match today
+	•	ILL-57: Come early illustration: clock and queue forming
+	•	ILL-58: Stale-status fallback: Ask on WhatsApp
+E. Journeys and contact: ILL-60 to 64
+F. Events and parties: ILL-70 to 72
+G. System states: ILL-80 to 84 (404 bouncing O, loader, offline notice, closed today, success state)
+12. Delivery plan and acceptance criteria
+	•	All 7 zone pages plus Home, Football Viewing with LiveScores, Events, Gallery, Find Us, FAQ, 404, and Offline mode built.
+	•	Top football competitions sync feeds real-time scores, period, and goal scorers.
+	•	All pricing removed across all pages, components, data files, and copy.
+	•	All animations (ANI-01 to ANI-19) function smoothly and respect reduced motion.
+	•	Lock it in sheet opens cleanly on 3 taps and directs into WhatsApp.
+	•	Find Us map displays distance in km and travel time in minutes with driving/walking toggle.
+13. Decision log additions (Version 1.4)
+#
+Decision
+Sections changed
+Raised by
+16
+Remove all pricing across the website (rates tables, pricing page, per-match tickets) to streamline user conversion directly to WhatsApp.
+1, 2, 5, 6, 7, 8, 23
+Product Owner
+17
+Implement top football competitions sync (UCL, EPL, La Liga, Serie A) with real-time LiveScore model showing live clock, scores, and goal scorers on card preview.
+1, 6, 7.3, 7.4, 8, 10
+Lead Developer
+18
+Add ANI-19 Goal Score Flash & Pulse micro-animation when live goals are detected.
+10, 11
+Creative Director
+14. Technical implementation: HTML, CSS and vanilla JavaScript
+File structure:
+/fob-site
+  index.html
+  404.html
+  offline.html
+  /football-pitch/index.html
+  /football-viewing/index.html     (Today at FOB, LiveScores, top competitions, refreshments)
+  /gym/index.html
+  /basketball/index.html
+  /snooker/index.html
+  /table-tennis/index.html
+  /gaming/index.html
+  /events/index.html
+  /gallery/index.html
+  /find-us/index.html
+  /faq/index.html
+  /privacy/index.html
+  /terms/index.html
+  /assets
+    /css   tokens.css  base.css  layout.css  components.css  pages.css
+    /js    main.js  config.js  data.js  fixtures.js  livescore.js  hours.js  whatsapp.js
+           sheet.js  share.js  map.js  motion.js  tap-the-o.js  analytics.js
+    /svg   sprite.svg  zone-os/  illustrations/
+    /img   (photos)
+  /data    fixtures.json  livescore.json  hours.json  settings.json
+  sw.js
+  manifest.webmanifest
+  robots.txt
+  sitemap.xml
+Sample Fixture & LiveScore JSON format:
+{
+  "updated": "2026-10-20T20:15:00+01:00",
+  "competitions": ["UEFA Champions League", "Premier League", "La Liga", "Serie A"],
+  "fixtures": [
+    {
+      "id": "ucl-2026-rm-bayern",
+      "competition": "UEFA Champions League",
+      "home": "Real Madrid",
+      "away": "Bayern Munich",
+      "kickoff": "2026-10-20T20:00:00+01:00",
+      "doors": "2026-10-20T18:30:00+01:00",
+      "status": "live",
+      "period": "2H",
+      "minute": 74,
+      "score": { "home": 2, "away": 1 },
+      "goals": [
+        { "minute": "23'", "team": "home", "player": "Vinícius Jr.", "score": "1-0" },
+        { "minute": "52'", "team": "away", "player": "Harry Kane", "score": "1-1" },
+        { "minute": "68'", "team": "home", "player": "Jude Bellingham", "score": "2-1" }
+      ],
+      "venueStatus": "filling up",
+      "bigMatch": true,
+      "note": "European Heavyweight Clash. 4K Laser Projection + Stadium Sound."
+    }
+  ]
+}
+Document control
+Version 1.4: 20 October 2026. Removed all pricing across the site, added top football competitions sync, and implemented real-time LiveScore model with goal scorers preview.

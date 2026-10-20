@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0E0E2C">
+  <title>FOB Recreation Centre Lagos • Bring Your Crew</title>
+  <meta name="description" content="FOB is Lagos's home base for sports & vibes: 5-a-side floodlit football pitch, 4K laser viewing centre, gym, FIBA basketball court, tournament snooker, table tennis & gaming lounge in Lekki Phase 1.">
+  <link rel="canonical" href="https://foblagos.com/">
+
+  <!-- Open Graph / Social Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="FOB Recreation Centre Lagos • Bring Your Crew">
+  <meta property="og:description" content="7 sports zones under one roof in Lekki Phase 1. Pitches, match-day viewing, gym, courts, snooker, tables, and gaming. Lock it in with your crew.">
+  <meta property="og:image" content="/assets/img/hero_crew.jpg">
+  <meta property="og:url" content="https://foblagos.com/">
+
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="/manifest.webmanifest">
+
+  <!-- Preload Critical Font & Hero Image (PRD Section 23.7) -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@800;900&display=swap" as="style">
+  <link rel="preload" href="/assets/img/hero_crew.jpg" as="image" fetchpriority="high">
+
+  <!-- Core CSS (PRD Section 23.2) -->
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/layout.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
+
+  <!-- Local Business Structured Data (SportsActivityLocation) (PRD Section 23.3) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsActivityLocation",
+    "name": "FOB Recreation Centre",
+    "image": "https://foblagos.com/assets/img/hero_crew.jpg",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "2, Lawani Ode Street, Alakara Bus Stop, Ashipa",
+      "addressLocality": "Ayobo",
+      "addressRegion": "Lagos",
+      "addressCountry": "NG"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 6.6130,
+      "longitude": 3.2659
+    },
+    "telephone": "+2348030000362",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
+        "opens": "07:00",
+        "closes": "23:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Friday", "Saturday"],
+        "opens": "07:00",
+        "closes": "01:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Sunday"],
+        "opens": "08:00",
+        "closes": "23:00"
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="ground-ink">
+
+  <!-- Accessibility Skip Link -->
+  <a href="#main-content" class="fob-skip-link">Skip to main content</a>
+
+  <!-- Global SVG Sprite Inclusion -->
+  <div style="display: none;" id="svg-sprite-holder"></div>
+  <script>
+    fetch('/assets/svg/sprite.svg')
+      .then(res => res.text())
+      .then(svg => { document.getElementById('svg-sprite-holder').innerHTML = svg; })
+      .catch(() => {});
+  </script>
+
+  <!-- Site-Wide Announcement Banner -->
+  <aside class="fob-banner" aria-label="Venue Announcement">
+    <span>Champions League Match Night tonight • 4K Screen • Cold Drinks</span>
+    <a href="/football-viewing/">See Match Guide &rarr;</a>
+  </aside>
+
+  <!-- Sticky Header with Floating Nav Pill (PRD Section 7.1, 10: ANI-10) -->
+  <header class="fob-header" id="fob-main-header">
+    <div class="fob-header__inner">
+      <nav class="fob-nav-pill" aria-label="Main Navigation">
+        <!-- Logo -->
+        <a href="/" class="fob-logo" aria-label="FOB Recreation Centre Home">
+          <span>F</span>
+          <span class="fob-logo__o">O</span>
+          <span>B</span>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <ul class="fob-nav__menu">
+          <li><a href="/football-pitch/" class="fob-nav__link">Pitch</a></li>
+          <li><a href="/football-viewing/" class="fob-nav__link">Watch Matches</a></li>
+          <li><a href="/gym/" class="fob-nav__link">Gym</a></li>
+          <li><a href="/basketball/" class="fob-nav__link">Basketball</a></li>
+          <li><a href="/football-viewing/" class="fob-nav__link">LiveScores</a></li>
+          <li><a href="/events/" class="fob-nav__link">Events</a></li>
+          <li><a href="/find-us/" class="fob-nav__link">Find Us</a></li>
+        </ul>
+
+        <!-- Actions -->
+        <div class="fob-nav__actions">
+          <button type="button" class="fob-btn fob-btn--primary fob-btn--sm" data-fob-sheet data-fob-event="nav_lock_it_in">
+            Lock it in
+          </button>
+          <button type="button" class="fob-menu-toggle" aria-label="Open Mobile Menu" aria-controls="fob-mobile-nav">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="fob-mobile-nav" id="fob-mobile-nav" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <div class="fob-mobile-nav__header">
+      <a href="/" class="fob-logo">
+        <span>F</span><span class="fob-logo__o">O</span><span>B</span>
+      </a>
+      <button type="button" class="fob-sheet__close" id="fob-mobile-close-btn" aria-label="Close menu">&times;</button>
+    </div>
+    <div class="fob-mobile-nav__links">
+      <a href="/football-pitch/">Football Pitch <span class="fob-mobile-nav__badge" style="color:var(--fob-green);">5-a-side</span></a>
+      <a href="/football-viewing/">Viewing Centre <span class="fob-mobile-nav__badge" style="color:var(--fob-magenta);">Live Matches</span></a>
+      <a href="/gym/">Gym & Fitness <span class="fob-mobile-nav__badge" style="color:var(--fob-red);">Pure Iron</span></a>
+      <a href="/basketball/">Basketball Court <span class="fob-mobile-nav__badge" style="color:var(--fob-orange);">FIBA Spec</span></a>
+      <a href="/snooker/">Snooker Lounge <span class="fob-mobile-nav__badge" style="color:var(--fob-cyan);">Slate Tables</span></a>
+      <a href="/table-tennis/">Table Tennis <span class="fob-mobile-nav__badge" style="color:var(--fob-cyan);">Battles</span></a>
+      <a href="/gaming/">Gaming Centre <span class="fob-mobile-nav__badge" style="color:var(--fob-purple);">PS5 / 4K</span></a>
+      <a href="/football-viewing/">LiveScores & Fixtures <span class="fob-mobile-nav__badge" style="color:var(--fob-volt);">Live</span></a>
+      <a href="/events/">Events & Parties</a>
+      <a href="/gallery/">Photo Gallery</a>
+      <a href="/find-us/">Find Us & Map</a>
+      <a href="/faq/">FAQ</a>
+    </div>
+    <div class="fob-mobile-nav__footer">
+      <button type="button" class="fob-btn fob-btn--primary fob-btn--lg" style="width:100%;" data-fob-sheet>
+        Lock it in
+      </button>
+      <a href="tel:+2348030000362" class="fob-btn fob-btn--secondary" style="width:100%;" data-fob-event="call_click">
+        Call FOB: +234 803 000 0362
+      </a>
+    </div>
+  </div>
+
+  <main id="main-content">
+
+    <!-- HERO SECTION (PRD Section 7.1, 10: ANI-01..03, Decision 2: 85vh height) -->
+    <section class="fob-hero" aria-labelledby="hero-title">
+      <div class="fob-hero__bg-grid" aria-hidden="true"></div>
+
+      <div class="fob-container fob-hero__grid">
+        <div class="fob-hero__content">
+          <div class="fob-hero__badge" id="fob-hero-badge">
+            <span class="fob-live-badge__dot"></span>
+            ASHIPA AYOBO, LAGOS • 7 SPORT ZONES
+          </div>
+
+          <h1 class="fob-hero__title" id="hero-title">
+            BRING YOUR CREW<span class="hero-o" title="Tap the O!"><span class="fob-tap-hint">Tap me!</span>.</span>
+          </h1>
+
+          <p class="fob-hero__desc">
+            5-a-side floodlit turf, 4K laser match-day viewing, gym, FIBA basketball, tournament snooker, table tennis & esports gaming. One location, zero hassle.
+          </p>
+
+          <div class="fob-hero__actions">
+            <button type="button" class="fob-btn fob-btn--primary fob-btn--lg" data-fob-sheet data-fob-event="hero_lock_it_in">
+              Lock it in
+            </button>
+            <a href="/football-viewing/" class="fob-btn fob-btn--secondary fob-btn--lg" id="fob-hero-match-action" data-fob-event="hero_matches_click">
+              See today's matches
+            </a>
+          </div>
+        </div>
+
+        <div class="fob-hero__visual">
+          <!-- Floating Zone Sprites (ILL-10) -->
+          <div class="fob-hero__floating-o fob-hero__floating-o--1" aria-hidden="true" title="Football">
+            <svg width="34" height="34" viewBox="0 0 64 64"><use href="#zone-pitch"/></svg>
+          </div>
+          <div class="fob-hero__floating-o fob-hero__floating-o--2" aria-hidden="true" title="Basketball">
+            <svg width="34" height="34" viewBox="0 0 64 64"><use href="#zone-basketball"/></svg>
+          </div>
+          <div class="fob-hero__floating-o fob-hero__floating-o--3" aria-hidden="true" title="Gaming">
+            <svg width="34" height="34" viewBox="0 0 64 64"><use href="#zone-gaming"/></svg>
+          </div>
+
+          <!-- Hero Crew Photo in Circle Crop -->
+          <div class="fob-hero__photo-wrap">
+            <img src="/assets/img/hero_crew.jpg" alt="A joyful crew of friends celebrating together under stadium floodlights at FOB recreational centre in Lagos" width="600" height="600" fetchpriority="high">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST STRIP (PRD Section 7.1, 8: FR-10, ANI-18, ILL-12) -->
+    <section class="fob-trust-strip" aria-label="FOB Key Facts & Live Status">
+      <div class="fob-container fob-trust-strip__grid">
+        <!-- Stat 1: Open Hours with Live Status -->
+        <div class="fob-trust-item">
+          <div class="fob-trust-item__icon">
+            <img src="https://img.icons8.com/3d-fluency/94/clock--v1.png" alt="Hours" width="32" height="32" loading="lazy">
+          </div>
+          <div>
+            <div style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.2rem;">
+              <span id="fob-live-hours-badge" class="fob-status-chip fob-status-chip--open">Open Now</span>
+            </div>
+            <div class="fob-trust-item__sub" id="fob-live-hours-schedule">7:00 am – 11:00 pm (WAT)</div>
+          </div>
+        </div>
+
+        <!-- Stat 2: Location -->
+        <div class="fob-trust-item">
+          <div class="fob-trust-item__icon">
+            <img src="https://img.icons8.com/3d-fluency/94/marker.png" alt="Location" width="32" height="32" loading="lazy">
+          </div>
+          <div>
+            <div class="fob-trust-item__title">Ashipa, Ayobo</div>
+            <div class="fob-trust-item__sub">Lawani Ode St, Lagos</div>
+          </div>
+        </div>
+
+        <!-- Stat 3: 7 Sport Zones -->
+        <div class="fob-trust-item">
+          <div class="fob-trust-item__icon">
+            <span style="font-family: var(--font-display); font-weight: 900; font-size: 1.25rem;">7</span>
+          </div>
+          <div>
+            <div class="fob-trust-item__title" data-fob-count="7" data-fob-suffix=" Dedicated Zones">7 Dedicated Zones</div>
+            <div class="fob-trust-item__sub">All under one secure roof</div>
+          </div>
+        </div>
+
+        <!-- Stat 4: Reply Time -->
+        <div class="fob-trust-item">
+          <div class="fob-trust-item__icon">
+            <img src="https://img.icons8.com/3d-fluency/94/whatsapp.png" alt="WhatsApp" width="32" height="32" loading="lazy">
+          </div>
+          <div>
+            <div class="fob-trust-item__title">~5 Min Reply</div>
+            <div class="fob-trust-item__sub">On WhatsApp & Calls</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TODAY AT FOB (PRD Section 7.1, 7.3, 8: FR-04 to FR-08) -->
+    <section class="fob-section fob-today-section" id="today-at-fob" aria-labelledby="today-title">
+      <div class="fob-container">
+        <div class="fob-section-header">
+          <div>
+            <span class="fob-section-tag">Match-Day Central</span>
+            <h2 id="today-title" style="font-size: var(--step-h2); font-weight: 800; color: #FFF;">Today at FOB</h2>
+          </div>
+          <div>
+            <a href="/football-viewing/" class="fob-btn fob-btn--secondary fob-btn--sm">
+              View 7-day schedule &rarr;
+            </a>
+          </div>
+        </div>
+
+        <div class="fob-fixtures-grid" id="fob-today-fixtures">
+          <!-- Dynamically populated from data/fixtures.json with fallback -->
+          <article class="fob-fixture-card fob-fixture-card--big-match" data-fixture-id="fix-today-01" data-competition="Premier League">
+            <div class="fob-fixture-card__top">
+              <span class="fob-fixture-card__league">Premier League</span>
+              <span class="fob-live-badge"><span class="fob-live-badge__dot"></span>2H 76'</span>
+            </div>
+            <div class="fob-fixture-card__matchup-row">
+              <div class="fob-fixture-card__team-col">
+                <span class="fob-team-disc">AR</span>
+                <span class="fob-team-name">Arsenal</span>
+              </div>
+              <div class="fob-fixture-card__score-center">
+                <div class="fob-fixture-card__score is-live-score">2 - 1</div>
+                <span class="fob-fixture-card__period-tag">2H 76'</span>
+              </div>
+              <div class="fob-fixture-card__team-col" style="align-items: flex-end;">
+                <span class="fob-team-disc">CH</span>
+                <span class="fob-team-name" style="text-align: right;">Chelsea</span>
+              </div>
+            </div>
+            <div class="fob-goals-preview" aria-label="Goal Scorers">
+              <div class="fob-goals-preview__header"><span class="fob-goals-preview__icon">⚽</span><span>Goal Scorers</span></div>
+              <div class="fob-goals-preview__timeline">
+                <div class="fob-goal-item"><span class="fob-goal-item__min">18'</span><strong class="fob-goal-item__scorer">Saka</strong><span class="fob-goal-item__team">(Arsenal)</span></div>
+                <div class="fob-goal-item"><span class="fob-goal-item__min">42'</span><strong class="fob-goal-item__scorer">Palmer</strong> <span class="fob-goal-pen">(PEN)</span><span class="fob-goal-item__team">(Chelsea)</span></div>
+                <div class="fob-goal-item"><span class="fob-goal-item__min">64'</span><strong class="fob-goal-item__scorer">Rice</strong><span class="fob-goal-item__team">(Arsenal)</span></div>
+              </div>
+            </div>
+            <div class="fob-fixture-card__times">
+              <div><span class="fob-fixture-card__time-label">Kick-Off</span><span class="fob-fixture-card__time-val">5:30 pm</span></div>
+              <div><span class="fob-fixture-card__time-label">Doors Open</span><span class="fob-fixture-card__time-val" style="color:var(--fob-volt); font-weight:800;">4:00 pm</span></div>
+            </div>
+            <div class="fob-fixture-card__footer">
+              <div class="fob-fixture-card__actions">
+                <a href="/find-us/" class="fob-btn fob-btn--primary fob-btn--sm">See you there</a>
+                <a href="https://wa.me/2348030000362?text=Hi%20FOB%2C%20is%20there%20space%20for%20Arsenal%20vs%20Chelsea%3F" target="_blank" rel="noopener noreferrer" class="fob-btn fob-btn--secondary fob-btn--sm">Ask on WhatsApp</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="fob-fixture-card fob-fixture-card--big-match" data-fixture-id="fix-today-02" data-competition="Champions League">
+            <div class="fob-fixture-card__top">
+              <span class="fob-fixture-card__league">UEFA Champions League</span>
+              <span class="fob-status-chip fob-status-chip--open"><span class="fob-status-chip__dot"></span>Open</span>
+            </div>
+            <div class="fob-fixture-card__matchup-row">
+              <div class="fob-fixture-card__team-col">
+                <span class="fob-team-disc">RM</span>
+                <span class="fob-team-name">Real Madrid</span>
+              </div>
+              <div class="fob-fixture-card__score-center">
+                <div class="fob-fixture-card__score">VS</div>
+                <span class="fob-fixture-card__period-tag">8:00 pm</span>
+              </div>
+              <div class="fob-fixture-card__team-col" style="align-items: flex-end;">
+                <span class="fob-team-disc">BM</span>
+                <span class="fob-team-name" style="text-align: right;">Bayern Munich</span>
+              </div>
+            </div>
+            <div class="fob-fixture-card__times">
+              <div><span class="fob-fixture-card__time-label">Kick-Off</span><span class="fob-fixture-card__time-val">8:00 pm</span></div>
+              <div><span class="fob-fixture-card__time-label">Doors Open</span><span class="fob-fixture-card__time-val" style="color:var(--fob-volt); font-weight:800;">6:30 pm</span></div>
+            </div>
+            <div class="fob-fixture-card__footer">
+              <div class="fob-fixture-card__actions">
+                <a href="/find-us/" class="fob-btn fob-btn--primary fob-btn--sm">See you there</a>
+                <a href="https://wa.me/2348030000362?text=Hi%20FOB%2C%20is%20there%20space%20for%20Real%20Madrid%20vs%20Bayern%3F" target="_blank" rel="noopener noreferrer" class="fob-btn fob-btn--secondary fob-btn--sm">Ask on WhatsApp</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PICK YOUR GAME (PRD Section 7.1, 10: ANI-04) -->
+    <section class="fob-section ground-ink" aria-labelledby="pick-game-title">
+      <div class="fob-container">
+        <div style="text-align: center; max-width: 650px; margin: 0 auto 3rem;">
+          <span class="fob-section-tag">Choose Your Arena</span>
+          <h2 id="pick-game-title" style="font-size: var(--step-h2); font-weight: 800; color: #FFF; margin-top: 0.5rem;">Pick Your Game</h2>
+          <p style="color: var(--fob-white-70); margin-top: 0.75rem;">Seven purpose-built spaces with pro gear and zero compromise. Tap any zone to explore specs, hours, and lock it in.</p>
+        </div>
+
+        <div class="fob-zones-grid">
+          <!-- 1. Football Pitch -->
+          <a href="/football-pitch/" class="fob-zone-card" style="--zone-color: var(--fob-green);">
+            <div class="fob-zone-card__circle">
+              <svg width="40" height="40" viewBox="0 0 64 64"><use href="#zone-pitch"/></svg>
+            </div>
+            <div class="fob-zone-card__name">Football Pitch</div>
+            <span style="font-size: 0.75rem; color: var(--fob-white-70);">5-a-side Astro</span>
+          </a>
+
+          <!-- 2. Viewing Centre -->
+          <a href="/football-viewing/" class="fob-zone-card" style="--zone-color: var(--fob-magenta);">
+            <div class="fob-zone-card__circle">
+              <svg width="40" height="40" viewBox="0 0 64 64"><use href="#zone-viewing"/></svg>
+            </div>
+            <div class="fob-zone-card__name">Viewing Centre</div>
+            <span style="font-size: 0.75rem; color: var(--fob-white-70);">4K Laser Wall</span>
+          </a>
+
+          <!-- 3. Gym -->
+          <a href="/gym/" class="fob-zone-card" style="--zone-color: var(--fob-red);">
+            <div class="fob-zone-card__circle">
+              <svg width="40" height="40" viewBox="0 0 64 64"><use href="#zone-gym"/></svg>
+            </div>
+            <div class="fob-zone-card__name">Gym & Fitness</div>
+            <span style="font-size: 0.75rem; color: var(--fob-white-70);">Pure Iron</span>
+          </a>
+
+          <!-- 4. Basketball -->
+          <a href="/basketball/" class="fob-zone-card" style="--zone-color: var(--fob-orange);">
+            <div class="fob-zone-card__circle">
+              <svg width="40" height="40" viewBox="0 0 64 64"><use href="#zone-basketball"/></svg>
+            </div>
+            <div class="fob-zone-card__name">Basketball</div>
+            <span style="font-size: 0.75rem; color: var(--fob-white-70);">FIBA Court</span>
+          </a>
+
+          <!-- 5. Snooker -->
+          <a href="/snooker/" class="fob-zone-card" style="--zone-color: var(--fob-cyan);">
+            <div class="fob-zone-card__circle">
+              <svg width="40" height="40" viewBox="0 0 64 64"><use href="#zone-snooker"/></svg>
+            </div>
+            <div class="fob-zone-card__name">Snooker Lounge</div>
+            <span style="font-size: 0.75rem; color: var(--fob-white-70);">Slate Tables</span>
+          </a>
+
+          <!-- 6. Table Tennis -->
+          <a href="/table-tennis/" class="fob-zone-card" style="--zone-color: var(--fob-cyan);">
+            <div class="fob-zone-card__circle">
+              <svg width="40" height="40" viewBox="0 0 64 64"><use href="#zone-table-tennis"/></svg>
+            </div>
+            <div class="fob-zone-card__name">Table Tennis</div>
+            <span style="font-size: 0.75rem; color: var(--fob-white-70);">Fast Battles</span>
+          </a>
+
+          <!-- 7. Gaming -->
+          <a href="/gaming/" class="fob-zone-card" style="--zone-color: var(--fob-purple);">
+            <div class="fob-zone-card__circle">
+              <svg width="40" height="40" viewBox="0 0 64 64"><use href="#zone-gaming"/></svg>
+            </div>
+            <div class="fob-zone-card__name">Gaming Lounge</div>
+            <span style="font-size: 0.75rem; color: var(--fob-white-70);">PS5 & 4K</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- BUILT AROUND YOUR NIGHT (PRD Section 7.1, 10: ANI-11, ILL-15) -->
+    <section class="fob-section ground-paper" aria-labelledby="night-tabs-title">
+      <div class="fob-container">
+        <div style="text-align: center; max-width: 600px; margin: 0 auto 2rem;">
+          <span class="fob-section-tag" style="color: var(--fob-blue);">Built Around Your Crew</span>
+          <h2 id="night-tabs-title" style="font-size: var(--step-h2); font-weight: 800; color: var(--fob-ink); margin-top: 0.5rem;">How Do You Want to Spend Tonight?</h2>
+        </div>
+
+        <!-- Tab Controls -->
+        <div class="fob-tabs-nav" role="tablist">
+          <button type="button" class="fob-tab-btn is-active" data-tab="play" role="tab" aria-selected="true" id="tab-play">Play Hard</button>
+          <button type="button" class="fob-tab-btn" data-tab="watch" role="tab" aria-selected="false" id="tab-watch">Watch Live</button>
+          <button type="button" class="fob-tab-btn" data-tab="train" role="tab" aria-selected="false" id="tab-train">Train Strong</button>
+        </div>
+
+        <!-- Panel 1: Play -->
+        <div class="fob-tab-panel is-active" id="tab-panel-play" role="tabpanel" aria-labelledby="tab-play">
+          <div class="fob-tab-panel__grid">
+            <div class="fob-tab-panel__img">
+              <img src="/assets/img/football_pitch.jpg" alt="5-a-side floodlit football pitch in action at night" loading="lazy">
+            </div>
+            <div>
+              <span class="fob-zone-badge" style="margin-bottom: 1rem;"><span class="fob-zone-badge__dot" style="background:var(--fob-green);"></span>Football & Hoops</span>
+              <h3 style="font-size: 2rem; color: var(--fob-ink); margin-bottom: 1rem;">Under floodlights, on your terms.</h3>
+              <p style="color: var(--fob-ink-80); margin-bottom: 1.5rem;">
+                Whether it's a grudge match on the 5-a-side turf, buzzer-beaters on the basketball court, or 8-ball racks on slate snooker tables, FOB gives your crew the arena they deserve.
+              </p>
+              <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <button type="button" class="fob-btn fob-btn--primary" data-fob-sheet data-fob-sheet-zone="Football Pitch">Lock in a pitch</button>
+                <a href="/football-viewing/" class="fob-btn fob-btn--secondary">LiveScores & Fixtures</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 2: Watch -->
+        <div class="fob-tab-panel" id="tab-panel-watch" role="tabpanel" aria-labelledby="tab-watch">
+          <div class="fob-tab-panel__grid">
+            <div class="fob-tab-panel__img">
+              <img src="/assets/img/viewing_centre.jpg" alt="Passionate fans watching a match on big screen in FOB viewing lounge" loading="lazy">
+            </div>
+            <div>
+              <span class="fob-zone-badge" style="margin-bottom: 1rem;"><span class="fob-zone-badge__dot" style="background:var(--fob-magenta);"></span>Match-Day Lounge</span>
+              <h3 style="font-size: 2rem; color: var(--fob-ink); margin-bottom: 1rem;">Lagos's loudest match-day roar.</h3>
+              <p style="color: var(--fob-ink-80); margin-bottom: 1.5rem;">
+                Laser-sharp 4K projection, bone-rattling stadium sound, cold beers, pepper soup and banter. First come, first served — arrive when doors open.
+              </p>
+              <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <a href="/football-viewing/" class="fob-btn fob-btn--primary">Check today's fixtures</a>
+                <a href="/find-us/" class="fob-btn fob-btn--secondary">Directions & parking</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 3: Train -->
+        <div class="fob-tab-panel" id="tab-panel-train" role="tabpanel" aria-labelledby="tab-train">
+          <div class="fob-tab-panel__grid">
+            <div class="fob-tab-panel__img">
+              <img src="/assets/img/gym.jpg" alt="Athletes lifting weights in modern gym" loading="lazy">
+            </div>
+            <div>
+              <span class="fob-zone-badge" style="margin-bottom: 1rem;"><span class="fob-zone-badge__dot" style="background:var(--fob-red);"></span>Strength & Conditioning</span>
+              <h3 style="font-size: 2rem; color: var(--fob-ink); margin-bottom: 1rem;">Pure iron. Zero distractions.</h3>
+              <p style="color: var(--fob-ink-80); margin-bottom: 1.5rem;">
+                Power racks, functional turf track, Olympic plates and cardio rigs. Open daily for training sessions and athletic conditioning without long-term contracts.
+              </p>
+              <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <a href="/gym/" class="fob-btn fob-btn--primary">Explore gym facilities</a>
+                <button type="button" class="fob-btn fob-btn--secondary" data-fob-sheet data-fob-sheet-zone="Gym & Fitness">Lock in a session</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MARQUEE BAND (PRD Section 10: ANI-05, ILL-05) -->
+    <div class="fob-marquee" aria-hidden="true">
+      <div class="fob-marquee__inner">
+        <span class="fob-marquee__item">BRING YOUR CREW <span class="fob-marquee__sep"></span></span>
+        <span class="fob-marquee__item">FOB LAGOS <span class="fob-marquee__sep"></span></span>
+        <span class="fob-marquee__item">LOCK IT IN <span class="fob-marquee__sep"></span></span>
+        <span class="fob-marquee__item">7 ZONES • ONE HOME BASE <span class="fob-marquee__sep"></span></span>
+        <span class="fob-marquee__item">BRING YOUR CREW <span class="fob-marquee__sep"></span></span>
+        <span class="fob-marquee__item">FOB LAGOS <span class="fob-marquee__sep"></span></span>
+        <span class="fob-marquee__item">LOCK IT IN <span class="fob-marquee__sep"></span></span>
+        <span class="fob-marquee__item">7 ZONES • ONE HOME BASE <span class="fob-marquee__sep"></span></span>
+      </div>
+    </div>
+
+    <!-- HOW IT WORKS (PRD Section 7.1, ILL-13) -->
+    <section class="fob-section ground-ink" aria-labelledby="steps-title">
+      <div class="fob-container">
+        <div style="text-align: center; max-width: 600px; margin: 0 auto 3rem;">
+          <span class="fob-section-tag">Fast & Painless</span>
+          <h2 id="steps-title" style="font-size: var(--step-h2); font-weight: 800; color: #FFF; margin-top: 0.5rem;">How It Works</h2>
+          <p style="color: var(--fob-white-70); margin-top: 0.5rem;">No accounts, no downloads, no waiting. Done in three quick steps.</p>
+        </div>
+
+        <div class="fob-steps-grid">
+          <!-- Step 1 -->
+          <div class="fob-step-card">
+            <span class="fob-step-card__num">01</span>
+            <h3 class="fob-step-card__title">Pick your zone</h3>
+            <p class="fob-step-card__desc">Choose from our 7 spaces: football turf, match viewing, basketball court, snooker, table tennis, gym or gaming.</p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="fob-step-card">
+            <span class="fob-step-card__num">02</span>
+            <h3 class="fob-step-card__title">Tap Lock it in</h3>
+            <p class="fob-step-card__desc">Select day and crew size in 3 quick taps. WhatsApp opens with your message already written. Staff confirm in ~5 mins.</p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="fob-step-card">
+            <span class="fob-step-card__num">03</span>
+            <h3 class="fob-step-card__title">Show up & play</h3>
+            <p class="fob-step-card__desc">Head to 2, Lawani Ode Street, Alakara Bus Stop, Ashipa, Ayobo. Free secure parking, clean gear ready, and your court or table is locked.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EVENTS & PARTIES TEASER (PRD Section 7.1, 7.5, ILL-14, ILL-70) -->
+    <section class="fob-section ground-blue" aria-labelledby="events-teaser-title">
+      <div class="fob-container">
+        <div style="display: grid; grid-template-columns: 1fr; gap: 2.5rem; align-items: center;">
+          <div style="background: var(--fob-ink); border: 1px solid var(--fob-white-16); border-radius: 28px; padding: clamp(2rem, 5vw, 3.5rem); display: flex; flex-direction: column; gap: 1.5rem;">
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+              <span class="fob-section-tag" style="color: var(--fob-volt);">Parties & Tournaments</span>
+              <!-- Crew Avatar Stack (ILL-14) -->
+              <div class="fob-avatar-stack" aria-label="Crew members">
+                <div class="fob-avatar-stack__img" style="background: var(--fob-green);" title="Football Crew"></div>
+                <div class="fob-avatar-stack__img" style="background: var(--fob-magenta);" title="Viewing Crew"></div>
+                <div class="fob-avatar-stack__img" style="background: var(--fob-orange);" title="Hoops Crew"></div>
+                <div class="fob-avatar-stack__img" style="background: var(--fob-cyan);" title="Snooker Crew"></div>
+                <div class="fob-avatar-stack__img" style="background: var(--fob-purple);" title="Gaming Crew"></div>
+              </div>
+            </div>
+
+            <h2 id="events-teaser-title" style="font-size: var(--step-h2); font-weight: 800; color: #FFF; line-height: 1.1;">
+              Own the whole centre for your crew.
+            </h2>
+
+            <p style="color: var(--fob-white-70); font-size: 1.1rem; line-height: 1.6;">
+              Birthdays, team outings, corporate tournaments, and private watch parties. Packages include private pitch or court time, food & drink catering, sound setup, and dedicated staff.
+            </p>
+
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 0.5rem;">
+              <a href="/events/" class="fob-btn fob-btn--primary">
+                Explore Event Packages
+              </a>
+              <a href="https://wa.me/2348030000362?text=Hi%20FOB%2C%20I%27m%20planning%20a%20private%20event%20for%20my%20crew." target="_blank" rel="noopener noreferrer" class="fob-btn fob-btn--secondary">
+                Enquire on WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ ACCORDION (PRD Section 7.1, 10: ANI-12, FR-13) -->
+    <section class="fob-section ground-ink" aria-labelledby="home-faq-title">
+      <div class="fob-container" style="max-width: 800px;">
+        <div style="text-align: center; margin-bottom: 2.5rem;">
+          <span class="fob-section-tag">Got Questions?</span>
+          <h2 id="home-faq-title" style="font-size: var(--step-h2); font-weight: 800; color: #FFF; margin-top: 0.5rem;">Frequently Asked</h2>
+          <p style="color: var(--fob-white-70); margin-top: 0.5rem;">Everything you need to know before walking through our doors.</p>
+        </div>
+
+        <div class="fob-accordion">
+          <!-- Question 1 -->
+          <details class="fob-accordion__item" open>
+            <summary class="fob-accordion__summary">
+              <span>How do live match screenings and football competitions work?</span>
+              <span class="fob-accordion__icon">+</span>
+            </summary>
+            <div class="fob-accordion__body">
+              We screen all top football competitions live on our 4K laser projection wall with stadium surround sound — including UEFA Champions League, Premier League, La Liga, Serie A, and cup fixtures. Real-time scores and goal scorers are synced on our <a href="/football-viewing/" style="color:var(--fob-volt); text-decoration:underline;">LiveScores Schedule</a>. Seating is open and first come, first served.
+            </div>
+          </details>
+
+          <!-- Question 2 -->
+          <details class="fob-accordion__item">
+            <summary class="fob-accordion__summary">
+              <span>Can I just walk in, or must I book beforehand?</span>
+              <span class="fob-accordion__icon">+</span>
+            </summary>
+            <div class="fob-accordion__body">
+              Walk-ins are always welcome for the football viewing centre, gym passes, open shootaround, and unreserved tables/gaming stations. For football pitches, tournament snooker and prime weekend slots, booking beforehand via WhatsApp is strongly recommended so your slot is guaranteed.
+            </div>
+          </details>
+
+          <!-- Question 3 -->
+          <details class="fob-accordion__item">
+            <summary class="fob-accordion__summary">
+              <span>What are your opening hours?</span>
+              <span class="fob-accordion__icon">+</span>
+            </summary>
+            <div class="fob-accordion__body">
+              We are open 7 days a week: Monday to Thursday from 7:00 am to 11:00 pm; Friday and Saturday from 7:00 am to 1:00 am (late night); Sunday from 8:00 am to 11:00 pm. On major UEFA Champions League or derby match nights, hours extend until the final whistle!
+            </div>
+          </details>
+
+          <!-- Question 4 -->
+          <details class="fob-accordion__item">
+            <summary class="fob-accordion__summary">
+              <span>What food, drinks and refreshments are available?</span>
+              <span class="fob-accordion__icon">+</span>
+            </summary>
+            <div class="fob-accordion__body">
+              Our on-site sports bar and kitchen serves ice-cold beers, energy drinks, cocktails, mocktails, fresh juices, and match-day favourites: spicy chicken wings, goat meat asun, suya platters, small chops, burgers and popcorn.
+            </div>
+          </details>
+
+          <!-- Question 5 -->
+          <details class="fob-accordion__item">
+            <summary class="fob-accordion__summary">
+              <span>Is there secure parking and where are you located?</span>
+              <span class="fob-accordion__icon">+</span>
+            </summary>
+            <div class="fob-accordion__body">
+              Yes, we have secure on-site parking with 24/7 security and CCTV. We are located at 2, Lawani Ode Street, Alakara Bus Stop, Ashipa, Ayobo, Lagos.
+            </div>
+          </details>
+
+          <!-- Question 6 -->
+          <details class="fob-accordion__item">
+            <summary class="fob-accordion__summary">
+              <span>How do I book for a large group, birthday or corporate night?</span>
+              <span class="fob-accordion__icon">+</span>
+            </summary>
+            <div class="fob-accordion__body">
+              Simply tap our <a href="/events/" style="color:var(--fob-volt); text-decoration:underline;">Events Page</a> or send us a WhatsApp message with your estimated crew size and preferred date. Our event coordinator will reply within minutes to lock in your custom package.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA & DESKTOP QR CODE (PRD Section 7.1: FR-11, ILL-16) -->
+    <section class="fob-section ground-ink" style="border-top: 1px solid var(--fob-white-16);">
+      <div class="fob-container">
+        <div style="background: var(--fob-blue); border-radius: 28px; padding: clamp(2rem, 5vw, 3.5rem); display: grid; grid-template-columns: 1fr; gap: 2rem; align-items: center;">
+          <div>
+            <span class="fob-section-tag">Instant Booking</span>
+            <h2 style="font-size: var(--step-h2); font-weight: 800; color: #FFF; margin-top: 0.5rem; line-height: 1.1;">
+              Ready to bring your crew?
+            </h2>
+            <p style="color: var(--fob-white-90); margin-top: 0.75rem; font-size: 1.1rem; max-width: 50ch;">
+              Send a quick message on WhatsApp or give us a call. We reply in under 5 minutes.
+            </p>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem;">
+              <button type="button" class="fob-btn fob-btn--primary fob-btn--lg" data-fob-sheet>
+                Lock it in on WhatsApp
+              </button>
+              <a href="tel:+2348030000362" class="fob-btn fob-btn--secondary fob-btn--lg" data-fob-event="call_click">
+                Call: +234 803 000 0362
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER (PRD Section 7.1, 8, 23.2) -->
+  <footer class="fob-footer">
+    <div class="fob-container">
+      <div class="fob-footer__grid">
+        <div class="fob-footer__brand">
+          <a href="/" class="fob-logo">
+            <span>F</span><span class="fob-logo__o">O</span><span>B</span>
+          </a>
+          <p>
+            Lagos's premier multi-sport recreational centre. Seven zones under one roof: football pitch, viewing centre, gym, basketball, snooker, table tennis & gaming.
+          </p>
+          <div style="margin-top: 1.25rem; font-size: 0.9rem; color: var(--fob-white-70);">
+            <strong>Address:</strong> 2, Lawani Ode Street, Alakara Bus Stop, Ashipa, Ayobo, Lagos, Nigeria<br>
+            <strong>WhatsApp / Phone:</strong> +234 803 000 0362
+          </div>
+        </div>
+
+        <div class="fob-footer__col">
+          <h4>Sport Zones</h4>
+          <ul>
+            <li><a href="/football-pitch/">Football Pitch</a></li>
+            <li><a href="/football-viewing/">Viewing Centre</a></li>
+            <li><a href="/gym/">Gym & Fitness</a></li>
+            <li><a href="/basketball/">Basketball Court</a></li>
+            <li><a href="/snooker/">Snooker Lounge</a></li>
+            <li><a href="/table-tennis/">Table Tennis</a></li>
+            <li><a href="/gaming/">Gaming Centre</a></li>
+          </ul>
+        </div>
+
+        <div class="fob-footer__col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="/football-viewing/">LiveScores & Match-Day</a></li>
+            <li><a href="/events/">Events & Parties</a></li>
+            <li><a href="/gallery/">Photo Gallery</a></li>
+            <li><a href="/find-us/">Find Us & Live Route</a></li>
+            <li><a href="/faq/">Frequently Asked Questions</a></li>
+          </ul>
+        </div>
+
+        <div class="fob-footer__col">
+          <h4>Hours & Connect</h4>
+          <ul>
+            <li><span>Mon – Thu: 7am – 11pm</span></li>
+            <li><span>Fri – Sat: 7am – 1am</span></li>
+            <li><span>Sun: 8am – 11pm</span></li>
+            <li><a href="https://instagram.com/foblagos" target="_blank" rel="noopener noreferrer">Instagram: @foblagos</a></li>
+            <li><a href="https://x.com/foblagos" target="_blank" rel="noopener noreferrer">X / Twitter: @foblagos</a></li>
+            <li><a href="https://tiktok.com/@foblagos" target="_blank" rel="noopener noreferrer">TikTok: @foblagos</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="fob-footer__bottom">
+        <div>&copy; 2026 FOB Recreational Centre Lagos. All rights reserved. Built to world-class standards.</div>
+        <div class="fob-footer__legal">
+          <a href="/privacy/">Privacy Policy</a>
+          <a href="/terms/">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts: ES Modules (PRD Section 23.1, 23.5) -->
+  <script type="module" src="/assets/js/main.js"></script>
+</body>
+</html>

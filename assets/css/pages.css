@@ -1,0 +1,749 @@
+/* FOB Website Page Styles (PRD Section 7, 10, 18, 22, 23) */
+
+/* ==========================================================================
+   1. HOME HERO (PRD Section 7.1, 10: ANI-01, ANI-02, ANI-03, Decision 2)
+   ========================================================================== */
+.fob-hero {
+  min-height: 85vh; /* Decision 2: 85% mobile height so Today at FOB peeks */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 3rem 0 4rem;
+  background-color: var(--fob-ink);
+}
+
+@media (min-width: 900px) {
+  .fob-hero {
+    min-height: 90vh;
+    padding: 4rem 0 5rem;
+  }
+}
+
+/* Hero Background O-Grid Pattern (ILL-03, ANI-02) */
+.fob-hero__bg-grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.12;
+  background-image: radial-gradient(circle, var(--fob-volt) 2px, transparent 2px);
+  background-size: 36px 36px;
+  will-change: transform;
+}
+
+.fob-hero__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+@media (min-width: 900px) {
+  .fob-hero__grid {
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 3.5rem;
+  }
+}
+
+.fob-hero__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.fob-hero__badge {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(47, 60, 255, 0.25);
+  border: 1px solid rgba(47, 60, 255, 0.6);
+  color: var(--fob-white);
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.fob-hero__title {
+  font-size: var(--step-display);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+  color: var(--fob-white);
+}
+
+.fob-hero__title span.hero-o {
+  color: var(--fob-volt);
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  transition: transform var(--dur-fast) var(--ease-spring);
+}
+
+.fob-hero__title span.hero-o:hover {
+  transform: scale(1.1);
+}
+
+/* Tap the O hint bubble (ILL-11, ANI-03) */
+.fob-tap-hint {
+  position: absolute;
+  top: -2.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--fob-volt);
+  color: var(--fob-ink);
+  font-family: var(--font-text);
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-pill);
+  white-space: nowrap;
+  animation: fob-bounce-pulse 1.8s infinite ease-in-out;
+  pointer-events: none;
+}
+
+.fob-tap-hint::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px 5px 0;
+  border-style: solid;
+  border-color: var(--fob-volt) transparent;
+}
+
+@keyframes fob-bounce-pulse {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-6px); }
+}
+
+.fob-hero__desc {
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  color: var(--fob-white-70);
+  line-height: 1.5;
+}
+
+.fob-hero__actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+/* Hero Visual & Crew Composition */
+.fob-hero__visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fob-hero__photo-wrap {
+  width: 100%;
+  max-width: 480px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%; /* Circle-first composition (PRD Section 11) */
+  overflow: hidden;
+  position: relative;
+  border: 4px solid var(--fob-volt);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+.fob-hero__photo-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Floating Sport Objects (ILL-10) */
+.fob-hero__floating-o {
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  animation: fob-float 4s ease-in-out infinite;
+  z-index: 3;
+}
+
+.fob-hero__floating-o--1 {
+  top: -10px;
+  left: 10px;
+  background: var(--fob-green);
+  animation-delay: 0s;
+}
+
+.fob-hero__floating-o--2 {
+  bottom: 20px;
+  left: -15px;
+  background: var(--fob-orange);
+  animation-delay: 1.2s;
+}
+
+.fob-hero__floating-o--3 {
+  top: 40px;
+  right: -10px;
+  background: var(--fob-purple);
+  animation-delay: 2.1s;
+}
+
+@keyframes fob-float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(8deg); }
+}
+
+/* Tap the O Canvas Container (ANI-03) */
+#fob-toy-canvas {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* ==========================================================================
+   2. TRUST STRIP (PRD Section 7.1, 8: FR-10, ANI-18, ILL-12)
+   ========================================================================== */
+.fob-trust-strip {
+  background-color: var(--fob-ink);
+  border-top: 1px solid var(--fob-white-16);
+  border-bottom: 1px solid var(--fob-white-16);
+  padding: 1.5rem 0;
+}
+
+.fob-trust-strip__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .fob-trust-strip__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.fob-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.fob-trust-item__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--fob-white-08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--fob-volt);
+  flex-shrink: 0;
+}
+
+.fob-trust-item__title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--fob-white);
+  line-height: 1.1;
+}
+
+.fob-trust-item__sub {
+  font-size: 0.8rem;
+  color: var(--fob-white-70);
+}
+
+/* ==========================================================================
+   3. TODAY AT FOB (PRD Section 7.1, 7.3, 8: FR-04 to FR-08)
+   ========================================================================== */
+.fob-today-section {
+  background-color: var(--fob-blue);
+  color: var(--fob-white);
+}
+
+.fob-section-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .fob-section-header {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+}
+
+.fob-section-tag {
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--fob-volt);
+  display: block;
+}
+
+.fob-fixtures-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .fob-fixtures-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1100px) {
+  .fob-fixtures-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ==========================================================================
+   4. PICK YOUR GAME (PRD Section 7.1, 10: ANI-04)
+   ========================================================================== */
+.fob-zones-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+@media (min-width: 600px) {
+  .fob-zones-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1000px) {
+  .fob-zones-grid {
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1rem;
+  }
+}
+
+.fob-zone-card {
+  background: var(--fob-ink);
+  border: 1px solid var(--fob-white-16);
+  border-radius: var(--radius-card);
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  text-decoration: none;
+  transition: transform var(--dur-base) var(--ease-spring),
+              border-color var(--dur-base) var(--ease-out),
+              box-shadow var(--dur-base) var(--ease-out);
+}
+
+.fob-zone-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--zone-color, var(--fob-volt));
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.4);
+}
+
+.fob-zone-card__circle {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background: var(--fob-white-08);
+  border: 3px solid var(--zone-color, var(--fob-volt));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--zone-color, var(--fob-volt));
+  transition: transform var(--dur-fast) var(--ease-spring), background var(--dur-fast);
+}
+
+.fob-zone-card:hover .fob-zone-card__circle {
+  transform: scale(1.15) rotate(10deg);
+  background: var(--zone-color, var(--fob-volt));
+  color: var(--fob-ink);
+}
+
+.fob-zone-card__name {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--fob-white);
+  line-height: 1.2;
+}
+
+/* ==========================================================================
+   5. BUILT AROUND YOUR NIGHT (PRD Section 7.1, 10: ANI-11, ILL-15)
+   ========================================================================== */
+.fob-tabs-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--fob-ink);
+  border: 1px solid var(--fob-white-16);
+  padding: 0.4rem;
+  border-radius: var(--radius-pill);
+  width: fit-content;
+  margin: 0 auto 2.5rem;
+}
+
+.fob-tab-btn {
+  padding: 0.6rem 1.5rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--fob-white-70);
+  background: transparent;
+  cursor: pointer;
+  transition: all var(--dur-fast) var(--ease-out);
+}
+
+.fob-tab-btn.is-active {
+  background: var(--fob-volt);
+  color: var(--fob-ink);
+}
+
+.fob-tab-panel {
+  display: none;
+  animation: fob-fade-in var(--dur-base) var(--ease-out);
+}
+
+.fob-tab-panel.is-active {
+  display: block;
+}
+
+.fob-tab-panel__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+@media (min-width: 800px) {
+  .fob-tab-panel__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.fob-tab-panel__img {
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  border: 1px solid var(--fob-white-16);
+}
+
+.fob-tab-panel__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@keyframes fob-fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   6. HOW IT WORKS (PRD Section 7.1, ILL-13)
+   ========================================================================== */
+.fob-steps-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .fob-steps-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.fob-step-card {
+  background: var(--fob-ink);
+  border: 1px solid var(--fob-white-16);
+  border-radius: var(--radius-card);
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+}
+
+.fob-step-card__num {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--fob-volt);
+  line-height: 1;
+}
+
+.fob-step-card__title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--fob-white);
+}
+
+.fob-step-card__desc {
+  color: var(--fob-white-70);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   7. ZONE PAGE TEMPLATE (PRD Section 7.2)
+   ========================================================================== */
+.fob-zone-hero-band {
+  background-color: var(--zone-band-color, var(--fob-green));
+  color: var(--fob-ink);
+  padding: 3.5rem 0 3rem;
+  position: relative;
+}
+
+.fob-zone-hero-band__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+@media (min-width: 800px) {
+  .fob-zone-hero-band__grid {
+    grid-template-columns: 1.2fr 0.8fr;
+  }
+}
+
+.fob-zone-specs-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+  .fob-zone-specs-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.fob-spec-card {
+  background: var(--fob-white-08);
+  border: 1px solid var(--fob-white-16);
+  border-radius: var(--radius-card);
+  padding: 1.5rem;
+}
+
+.fob-spec-card__label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--fob-volt);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.fob-spec-card__val {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--fob-white);
+}
+
+.fob-gallery-strip {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+  .fob-gallery-strip {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.fob-gallery-strip__item {
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  border: 1px solid var(--fob-white-16);
+}
+
+.fob-gallery-strip__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--dur-base) var(--ease-out);
+}
+
+.fob-gallery-strip__item:hover img {
+  transform: scale(1.05);
+}
+
+/* ==========================================================================
+   8. PRICING MATRIX TABLE (PRD Section 7.4)
+   ========================================================================== */
+.fob-pricing-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 0.75rem;
+}
+
+.fob-pricing-row {
+  background: var(--fob-ink);
+  border: 1px solid var(--fob-white-16);
+  border-radius: var(--radius-input);
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+
+.fob-pricing-row td {
+  padding: 1.25rem 1.5rem;
+  border-top: 1px solid var(--fob-white-16);
+  border-bottom: 1px solid var(--fob-white-16);
+}
+
+.fob-pricing-row td:first-child {
+  border-left: 1px solid var(--fob-white-16);
+  border-top-left-radius: var(--radius-input);
+  border-bottom-left-radius: var(--radius-input);
+}
+
+.fob-pricing-row td:last-child {
+  border-right: 1px solid var(--fob-white-16);
+  border-top-right-radius: var(--radius-input);
+  border-bottom-right-radius: var(--radius-input);
+  text-align: right;
+}
+
+/* ==========================================================================
+   9. FIND US & MAP (PRD Section 7.7, 22: FR-25 to FR-33)
+   ========================================================================== */
+.fob-map-wrap {
+  width: 100%;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  border: 1px solid var(--fob-white-16);
+  position: relative;
+  min-height: 420px;
+  background: #121236;
+}
+
+.fob-map-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  background: radial-gradient(circle, #1a1a4b 0%, #0e0e2c 100%);
+  z-index: 5;
+}
+
+.fob-map-placeholder.is-hidden {
+  display: none;
+}
+
+#fob-live-map {
+  width: 100%;
+  height: 480px;
+}
+
+.fob-map-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.25rem;
+}
+
+.fob-mode-toggle {
+  display: inline-flex;
+  background: var(--fob-white-08);
+  border: 1px solid var(--fob-white-16);
+  border-radius: var(--radius-pill);
+  padding: 0.25rem;
+}
+
+.fob-mode-btn {
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--fob-white-70);
+  background: transparent;
+  cursor: pointer;
+  transition: all var(--dur-fast);
+}
+
+.fob-mode-btn.is-active {
+  background: var(--fob-volt);
+  color: var(--fob-ink);
+}
+
+.fob-route-summary {
+  background: rgba(47, 60, 255, 0.15);
+  border: 1px solid var(--fob-blue);
+  border-radius: var(--radius-input);
+  padding: 1rem 1.25rem;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.fob-route-summary__dist {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--fob-volt);
+}
+
+/* ==========================================================================
+   10. 404 & BOUNCING O (PRD Section 7.8, 10: ANI-16, ILL-80)
+   ========================================================================== */
+.fob-404-container {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1.5rem;
+  padding: 4rem 1.5rem;
+}
+
+.fob-404-o {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 16px solid var(--fob-volt);
+  animation: fob-404-bounce 2s infinite cubic-bezier(0.28, 0.84, 0.42, 1);
+}
+
+@keyframes fob-404-bounce {
+  0%, 100% {
+    transform: translateY(0) scale(1, 1);
+  }
+  50% {
+    transform: translateY(-80px) scale(0.9, 1.1);
+  }
+  60% {
+    transform: translateY(0) scale(1.15, 0.85);
+  }
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0E0E2C">
+  <title>Offline Mode • FOB Lagos</title>
+  <meta name="description" content="You are currently offline. FOB cached fixture guide and venue details remain available.">
+
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/layout.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
+</head>
+<body class="ground-ink">
+
+  <header class="fob-header">
+    <div class="fob-header__inner">
+      <nav class="fob-nav-pill" aria-label="Main Navigation">
+        <a href="/" class="fob-logo"><span>F</span><span class="fob-logo__o">O</span><span>B</span></a>
+        <div class="fob-nav__actions">
+          <span class="fob-status-chip fob-status-chip--full">Offline Mode</span>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <div class="fob-404-container">
+      <div style="width: 80px; height: 80px; border-radius: 50%; background: var(--fob-white-08); border: 3px solid var(--fob-volt); display: flex; align-items: center; justify-content: center; color: var(--fob-volt); margin-bottom: 1rem;">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
+      </div>
+
+      <span class="fob-section-tag" style="color: var(--fob-volt);">No Internet Connection</span>
+      <h1 style="font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; color: #FFF; text-transform: uppercase;">
+        Network Dropped
+      </h1>
+      <p style="color: var(--fob-white-70); font-size: 1.15rem; max-width: 48ch;">
+        Lagos data acting up? No worries. You can still reach FOB directly on phone or walk straight in.
+      </p>
+
+      <div class="fob-spec-card" style="max-width: 500px; width: 100%; text-align: left; margin: 1.5rem 0;">
+        <div class="fob-spec-card__label">FOB Key Details (Cached)</div>
+        <p style="color: #FFF; font-weight: 700; margin-bottom: 0.5rem;">📍 12 Admiralty Way, Lekki Phase 1, Lagos</p>
+        <p style="color: var(--fob-white-70); font-size: 0.9rem; margin-bottom: 0.5rem;">📞 Direct Call: <a href="tel:+2348030000362" style="color: var(--fob-volt); font-weight: 700;">+234 803 000 0362</a></p>
+        <p style="color: var(--fob-white-70); font-size: 0.9rem;">🕒 Hours: Open daily from 7:00 am until 11:00 pm (Fri/Sat until 1:00 am)</p>
+      </div>
+
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+        <a href="tel:+2348030000362" class="fob-btn fob-btn--primary fob-btn--lg">
+          Call FOB Now
+        </a>
+        <button type="button" class="fob-btn fob-btn--secondary fob-btn--lg" onclick="window.location.reload();">
+          Retry Connection
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="fob-footer">
+    <div class="fob-container">
+      <div class="fob-footer__bottom">
+        <div>&copy; 2026 FOB Recreational Centre Lagos.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/assets/js/main.js"></script>
+</body>
+</html>

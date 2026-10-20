@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0E0E2C">
+  <title>Football Viewing Centre • Match-Day Guide • FOB Lagos</title>
+  <meta name="description" content="Lagos's loudest football viewing lounge: 4K laser projection wall, bone-rattling stadium audio, cold beers, suya & wings. Check live match fixtures and reserve your spot.">
+  <link rel="canonical" href="https://foblagos.com/football-viewing/">
+
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/layout.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
+</head>
+<body class="ground-ink">
+
+  <a href="#main-content" class="fob-skip-link">Skip to main content</a>
+  <div style="display: none;" id="svg-sprite-holder"></div>
+  <script>
+    fetch('/assets/svg/sprite.svg').then(res => res.text()).then(svg => {
+      document.getElementById('svg-sprite-holder').innerHTML = svg;
+    }).catch(() => {});
+  </script>
+
+  <!-- Sticky Header -->
+  <header class="fob-header">
+    <div class="fob-header__inner">
+      <nav class="fob-nav-pill" aria-label="Main Navigation">
+        <a href="/" class="fob-logo">
+          <span>F</span><span class="fob-logo__o">O</span><span>B</span>
+        </a>
+        <ul class="fob-nav__menu">
+          <li><a href="/football-pitch/" class="fob-nav__link">Pitch</a></li>
+          <li><a href="/football-viewing/" class="fob-nav__link is-active">Watch Matches</a></li>
+          <li><a href="/gym/" class="fob-nav__link">Gym</a></li>
+          <li><a href="/basketball/" class="fob-nav__link">Basketball</a></li>
+          <li><a href="/football-viewing/" class="fob-nav__link">LiveScores</a></li>
+          <li><a href="/events/" class="fob-nav__link">Events</a></li>
+          <li><a href="/find-us/" class="fob-nav__link">Find Us</a></li>
+        </ul>
+        <div class="fob-nav__actions">
+          <button type="button" class="fob-btn fob-btn--primary fob-btn--sm" data-fob-sheet data-fob-sheet-zone="Football Viewing Centre">
+            Lock it in
+          </button>
+          <button type="button" class="fob-menu-toggle" aria-label="Open Mobile Menu" aria-controls="fob-mobile-nav">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="fob-mobile-nav" id="fob-mobile-nav" role="dialog" aria-modal="true">
+    <div class="fob-mobile-nav__header">
+      <a href="/" class="fob-logo"><span>F</span><span class="fob-logo__o">O</span><span>B</span></a>
+      <button type="button" class="fob-sheet__close" id="fob-mobile-close-btn">&times;</button>
+    </div>
+    <div class="fob-mobile-nav__links">
+      <a href="/football-pitch/">Football Pitch</a>
+      <a href="/football-viewing/">Viewing Centre & LiveScores</a>
+      <a href="/gym/">Gym & Fitness</a>
+      <a href="/basketball/">Basketball Court</a>
+      <a href="/snooker/">Snooker Lounge</a>
+      <a href="/table-tennis/">Table Tennis</a>
+      <a href="/gaming/">Gaming Centre</a>
+      <a href="/events/">Events & Parties</a>
+      <a href="/find-us/">Find Us & Map</a>
+    </div>
+  </div>
+
+  <main id="main-content">
+
+    <!-- Header Band in Zone Color (Magenta #FF3DA5) (PRD Section 7.2, 7.3) -->
+    <section class="fob-zone-hero-band" style="--zone-band-color: var(--fob-magenta); color: #0E0E2C;">
+      <div class="fob-container fob-zone-hero-band__grid">
+        <div>
+          <span class="fob-zone-badge" style="background:#0E0E2C; color:#FFF; margin-bottom:1rem;">
+            <span class="fob-zone-badge__dot" style="background:var(--fob-magenta);"></span>
+            Zone 02 • Football Viewing Centre
+          </span>
+          <h1 style="font-size: var(--step-h1); font-weight: 900; line-height: 1; color: #0E0E2C; text-transform: uppercase;">
+            Match-Day Live
+          </h1>
+          <p style="font-size: 1.25rem; font-weight: 600; margin-top: 1rem; color: rgba(14,14,44,0.85); max-width: 50ch;">
+            Lagos's sharpest match-day atmosphere. 4K laser projection wall, stadium surround audio, icy cold drinks, and zero buffering.
+          </p>
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem;">
+            <a href="#fixtures-list" class="fob-btn fob-btn--primary">
+              See Upcoming Fixtures
+            </a>
+            <a href="/find-us/" class="fob-btn fob-btn--secondary" style="border-color:#0E0E2C; color:#0E0E2C;">
+              Get Directions
+            </a>
+          </div>
+        </div>
+        <div>
+          <div style="border-radius: var(--radius-card); overflow: hidden; border: 3px solid #0E0E2C; box-shadow: 0 15px 40px rgba(0,0,0,0.25);">
+            <img src="/assets/img/viewing_centre.jpg" alt="Vibrant football fans cheering in FOB viewing lounge" width="700" height="400">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- First Come First Served Banner (PRD Section 7.3, ILL-57) -->
+    <div style="background: var(--fob-blue); padding: 1.25rem 0; border-bottom: 1px solid var(--fob-white-16);">
+      <div class="fob-container" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+        <div style="display: flex; align-items: center; gap: 0.75rem;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--fob-volt)"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+          <span style="font-weight: 700; color: #FFF; font-size: 0.95rem;">
+            <strong>Big matches fill up fast:</strong> Open seating is first come, first served. Arrive at doors-open time!
+          </span>
+        </div>
+        <a href="/find-us/" class="fob-btn fob-btn--primary fob-btn--sm">See venue route &rarr;</a>
+      </div>
+    </div>
+
+    <!-- 7-Day Fixture Schedule (PRD Section 7.3, 7.4: FR-04..09, FR-34) -->
+    <section class="fob-section ground-ink" id="fixtures-list">
+      <div class="fob-container">
+        <div class="fob-section-header">
+          <div>
+            <span class="fob-section-tag" style="color:var(--fob-magenta);">Live Match Schedule</span>
+            <h2 style="font-size: var(--step-h2); font-weight: 800; color: #FFF; margin-top: 0.25rem;">Upcoming 7 Days</h2>
+          </div>
+          <div>
+            <span style="font-size: 0.85rem; color: var(--fob-white-70);">Live score engine syncing top football competitions</span>
+          </div>
+        </div>
+
+        <!-- Top Football Competitions Filter (PRD Section 7.4, FR-09) -->
+        <div class="fob-comp-filter-bar" aria-label="Filter matches by competition">
+          <button type="button" class="fob-btn fob-btn--sm fob-btn--secondary is-selected" data-comp-filter="all">All Top Matches</button>
+          <button type="button" class="fob-btn fob-btn--sm fob-btn--secondary" data-comp-filter="Champions League">Champions League</button>
+          <button type="button" class="fob-btn fob-btn--sm fob-btn--secondary" data-comp-filter="Premier League">Premier League</button>
+          <button type="button" class="fob-btn fob-btn--sm fob-btn--secondary" data-comp-filter="La Liga">La Liga</button>
+          <button type="button" class="fob-btn fob-btn--sm fob-btn--secondary" data-comp-filter="Serie A">Serie A</button>
+        </div>
+
+        <div class="fob-fixtures-grid" id="fob-all-fixtures">
+          <!-- Populated from fixtures.json via assets/js/main.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Refreshments & Match-Day Menu (PRD Section 7.3, ILL-55) -->
+    <section class="fob-section ground-paper" aria-labelledby="refreshments-title">
+      <div class="fob-container">
+        <div style="text-align: center; max-width: 650px; margin: 0 auto 3rem;">
+          <span class="fob-section-tag" style="color:var(--fob-blue);">Cold Drinks & Match Chow</span>
+          <h2 id="refreshments-title" style="font-size: var(--step-h2); font-weight: 800; color: var(--fob-ink); margin-top: 0.5rem;">Refreshments Menu</h2>
+          <p style="color: var(--fob-ink-80); margin-top: 0.5rem;">Served ice-cold and piping hot to your table throughout the match.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem;">
+          <!-- Item 1 -->
+          <div class="fob-spec-card" style="background:#FFF; border-color:var(--fob-ink-12);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+              <h3 style="color: var(--fob-ink); font-size: 1.15rem;">Spicy BBQ Chicken Wings</h3>
+              <span style="font-family: var(--font-display); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.05em; color: var(--fob-magenta); background: rgba(255, 61, 165, 0.12); padding: 0.25rem 0.6rem; border-radius: var(--radius-pill);">HOT & CRISPY</span>
+            </div>
+            <p style="font-size: 0.85rem; color: var(--fob-ink-80);">6 pieces tossed in signature spicy honey habanero glaze with crispy chips.</p>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="fob-spec-card" style="background:#FFF; border-color:var(--fob-ink-12);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+              <h3 style="color: var(--fob-ink); font-size: 1.15rem;">Goat Meat Asun</h3>
+              <span style="font-family: var(--font-display); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.05em; color: var(--fob-orange); background: rgba(255, 122, 0, 0.12); padding: 0.25rem 0.6rem; border-radius: var(--radius-pill);">PEPPERED</span>
+            </div>
+            <p style="font-size: 0.85rem; color: var(--fob-ink-80);">Smoked tender goat meat bites tossed with scotch bonnets and onions.</p>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="fob-spec-card" style="background:#FFF; border-color:var(--fob-ink-12);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+              <h3 style="color: var(--fob-ink); font-size: 1.15rem;">FOB Suya Platter</h3>
+              <span style="font-family: var(--font-display); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.05em; color: var(--fob-blue); background: var(--fob-blue-12); padding: 0.25rem 0.6rem; border-radius: var(--radius-pill);">SIGNATURE</span>
+            </div>
+            <p style="font-size: 0.85rem; color: var(--fob-ink-80);">Classic beef suya seasoned with authentic yaji spice, fresh red onions and tomatoes.</p>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="fob-spec-card" style="background:#FFF; border-color:var(--fob-ink-12);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+              <h3 style="color: var(--fob-ink); font-size: 1.15rem;">Cold Beer Bucket (5 Bottles)</h3>
+              <span style="font-family: var(--font-display); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.05em; color: var(--fob-green); background: rgba(30, 215, 96, 0.12); padding: 0.25rem 0.6rem; border-radius: var(--radius-pill);">ICE CHILLED</span>
+            </div>
+            <p style="font-size: 0.85rem; color: var(--fob-ink-80);">Choice of Heineken, Budweiser, Star, or Guinness in a chilled ice bucket.</p>
+          </div>
+
+          <!-- Item 5 -->
+          <div class="fob-spec-card" style="background:#FFF; border-color:var(--fob-ink-12);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+              <h3 style="color: var(--fob-ink); font-size: 1.15rem;">Match-Day Cocktails / Mocktails</h3>
+              <span style="font-family: var(--font-display); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.05em; color: var(--fob-magenta); background: rgba(255, 61, 165, 0.12); padding: 0.25rem 0.6rem; border-radius: var(--radius-pill);">FRESH POUR</span>
+            </div>
+            <p style="font-size: 0.85rem; color: var(--fob-ink-80);">Chapman, Mojito, Long Island or freshly squeezed citrus coolers.</p>
+          </div>
+
+          <!-- Item 6 -->
+          <div class="fob-spec-card" style="background:#FFF; border-color:var(--fob-ink-12);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+              <h3 style="color: var(--fob-ink); font-size: 1.15rem;">Popcorn & Energy Drink Combo</h3>
+              <span style="font-family: var(--font-display); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.05em; color: var(--fob-blue); background: var(--fob-blue-12); padding: 0.25rem 0.6rem; border-radius: var(--radius-pill);">FAN FAVORITE</span>
+            </div>
+            <p style="font-size: 0.85rem; color: var(--fob-ink-80);">Warm buttery movie-style popcorn plus chilled Monster or Red Bull.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Zone FAQ -->
+    <section class="fob-section ground-ink">
+      <div class="fob-container" style="max-width: 800px;">
+        <h2 style="font-size: var(--step-h2); font-weight: 800; color: #FFF; margin-bottom: 1.5rem; text-align: center;">
+          Viewing Centre FAQs
+        </h2>
+        <div class="fob-accordion">
+          <details class="fob-accordion__item" open>
+            <summary class="fob-accordion__summary">
+              <span>Do I need to reserve seats in advance?</span>
+              <span class="fob-accordion__icon">+</span>
+            </summary>
+            <div class="fob-accordion__body">
+              For regular league matches, standard seating is first come, first served. For private crew booths (seats 6) or derby matches, you can reserve by locking it in on WhatsApp.
+            </div>
+          </details>
+
+          <details class="fob-accordion__item">
+            <summary class="fob-accordion__summary">
+              <span>What screen setup do you have?</span>
+              <span class="fob-accordion__icon">+</span>
+            </summary>
+            <div class="fob-accordion__body">
+              Our main wall features a massive 4K laser projection display plus four 75-inch secondary screens ensuring unobstructed sightlines from every seat in the lounge.
+            </div>
+          </details>
+
+          <details class="fob-accordion__item">
+            <summary class="fob-accordion__summary">
+              <span>Can we book the viewing lounge exclusively for a private game?</span>
+              <span class="fob-accordion__icon">+</span>
+            </summary>
+            <div class="fob-accordion__body">
+              Yes! We host private watch parties for supporter clubs, corporate teams, and birthdays. Check our <a href="/events/" style="color:var(--fob-volt); text-decoration:underline;">Events Page</a> or reach out on WhatsApp.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="fob-footer">
+    <div class="fob-container">
+      <div class="fob-footer__bottom">
+        <div>&copy; 2026 FOB Recreational Centre Lagos.</div>
+        <div class="fob-footer__legal">
+          <a href="/privacy/">Privacy</a>
+          <a href="/terms/">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/assets/js/main.js"></script>
+</body>
+</html>

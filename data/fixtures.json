@@ -1,0 +1,146 @@
+{
+  "updated": "2026-10-20T20:25:00+01:00",
+  "competitions": [
+    "UEFA Champions League",
+    "Premier League",
+    "La Liga",
+    "Serie A"
+  ],
+  "fixtures": [
+    {
+      "id": "ucl-rm-bayern",
+      "competition": "UEFA Champions League",
+      "home": "Real Madrid",
+      "away": "Bayern Munich",
+      "date": "2026-10-20",
+      "kickoff": "2026-10-20T20:00:00+01:00",
+      "doors": "2026-10-20T18:30:00+01:00",
+      "status": "live",
+      "period": "2H",
+      "minute": 76,
+      "score": {
+        "home": 2,
+        "away": 1
+      },
+      "goals": [
+        { "minute": "23'", "team": "home", "player": "Vinícius Jr.", "score": "1-0" },
+        { "minute": "52'", "team": "away", "player": "Harry Kane", "score": "1-1", "isPenalty": true },
+        { "minute": "68'", "team": "home", "player": "Jude Bellingham", "score": "2-1" }
+      ],
+      "venueStatus": "filling up",
+      "statusUpdated": "2026-10-20T20:45:00+01:00",
+      "bigMatch": true,
+      "note": "European Heavyweight Clash. 4K Laser Projection + Stadium Sound."
+    },
+    {
+      "id": "epl-arsenal-chelsea",
+      "competition": "Premier League",
+      "home": "Arsenal",
+      "away": "Chelsea",
+      "date": "2026-10-20",
+      "kickoff": "2026-10-20T17:30:00+01:00",
+      "doors": "2026-10-20T16:00:00+01:00",
+      "status": "finished",
+      "period": "FT",
+      "minute": 90,
+      "score": {
+        "home": 3,
+        "away": 1
+      },
+      "goals": [
+        { "minute": "18'", "team": "home", "player": "Bukayo Saka", "score": "1-0" },
+        { "minute": "41'", "team": "home", "player": "Kai Havertz", "score": "2-0" },
+        { "minute": "64'", "team": "away", "player": "Cole Palmer", "score": "2-1" },
+        { "minute": "88'", "team": "home", "player": "Declan Rice", "score": "3-1" }
+      ],
+      "venueStatus": "full",
+      "statusUpdated": "2026-10-20T19:30:00+01:00",
+      "bigMatch": true,
+      "note": "London Derby. Stadium atmosphere was electric!"
+    },
+    {
+      "id": "ucl-barca-liverpool",
+      "competition": "UEFA Champions League",
+      "home": "Barcelona",
+      "away": "Liverpool",
+      "date": "2026-10-21",
+      "kickoff": "2026-10-21T20:00:00+01:00",
+      "doors": "2026-10-21T18:30:00+01:00",
+      "status": "scheduled",
+      "period": "Upcoming",
+      "minute": 0,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "goals": [],
+      "venueStatus": "open",
+      "statusUpdated": "2026-10-20T14:00:00+01:00",
+      "bigMatch": true,
+      "note": "High tempo guaranteed. Barbecue specials all evening."
+    },
+    {
+      "id": "ucl-mancity-psg",
+      "competition": "UEFA Champions League",
+      "home": "Manchester City",
+      "away": "PSG",
+      "date": "2026-10-22",
+      "kickoff": "2026-10-22T20:00:00+01:00",
+      "doors": "2026-10-22T18:30:00+01:00",
+      "status": "scheduled",
+      "period": "Upcoming",
+      "minute": 0,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "goals": [],
+      "venueStatus": "open",
+      "statusUpdated": "2026-10-20T11:00:00+01:00",
+      "bigMatch": true,
+      "note": "Tactical masterclass. Cold drinks and wings combo available."
+    },
+    {
+      "id": "seriea-inter-milan",
+      "competition": "Serie A",
+      "home": "Inter Milan",
+      "away": "AC Milan",
+      "date": "2026-10-24",
+      "kickoff": "2026-10-24T19:45:00+01:00",
+      "doors": "2026-10-24T18:00:00+01:00",
+      "status": "scheduled",
+      "period": "Upcoming",
+      "minute": 0,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "goals": [],
+      "venueStatus": "open",
+      "statusUpdated": "2026-10-20T09:00:00+01:00",
+      "bigMatch": true,
+      "note": "Derby della Madonnina. Atmosphere will be electric."
+    },
+    {
+      "id": "laliga-realmadrid-barca",
+      "competition": "La Liga",
+      "home": "Real Madrid",
+      "away": "Barcelona",
+      "date": "2026-10-25",
+      "kickoff": "2026-10-25T20:00:00+01:00",
+      "doors": "2026-10-25T18:00:00+01:00",
+      "status": "scheduled",
+      "period": "Upcoming",
+      "minute": 0,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "goals": [],
+      "venueStatus": "open",
+      "statusUpdated": "2026-10-20T09:00:00+01:00",
+      "bigMatch": true,
+      "note": "El Clásico! Arrive right when doors open."
+    }
+  ]
+}

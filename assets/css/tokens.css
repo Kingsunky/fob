@@ -1,0 +1,90 @@
+/* FOB Website Design Tokens (PRD Section 4, 18, 23.4) */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Brand Core Palette */
+  --fob-ink: #0E0E2C;
+  --fob-blue: #2F3CFF;
+  --fob-volt: #D7FF1F;
+  --fob-paper: #F4F4FF;
+
+  /* Zone Colors */
+  --fob-green: #1ED760;   /* Football pitch */
+  --fob-magenta: #FF3DA5; /* Football viewing */
+  --fob-red: #FF2E4D;     /* Gym / Urgent */
+  --fob-orange: #FF6B1A;  /* Basketball / Filling-up */
+  --fob-cyan: #00D1FF;    /* Snooker & Table tennis */
+  --fob-purple: #8B5CF6;  /* Gaming */
+
+  /* Neutral & Translucents */
+  --fob-white: #FFFFFF;
+  --fob-ink-90: rgba(14, 14, 44, 0.9);
+  --fob-ink-80: rgba(14, 14, 44, 0.8);
+  --fob-ink-50: rgba(14, 14, 44, 0.5);
+  --fob-ink-12: rgba(14, 14, 44, 0.12);
+  --fob-ink-06: rgba(14, 14, 44, 0.06);
+  --fob-white-90: rgba(255, 255, 255, 0.9);
+  --fob-white-70: rgba(255, 255, 255, 0.7);
+  --fob-white-40: rgba(255, 255, 255, 0.4);
+  --fob-white-16: rgba(255, 255, 255, 0.16);
+  --fob-white-08: rgba(255, 255, 255, 0.08);
+
+  /* Typography */
+  --font-display: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-text: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  /* Fluid Type Scale (PRD Section 18) */
+  --step-display: clamp(2.75rem, 8vw, 6.5rem);
+  --step-h1: clamp(2rem, 5vw, 3.75rem);
+  --step-h2: clamp(1.6rem, 3.5vw, 2.5rem);
+  --step-h3: clamp(1.25rem, 2.5vw, 1.5rem);
+  --step-body: clamp(0.95rem, 1.5vw, 1.125rem);
+  --step-small: 0.875rem;
+
+  /* Spacing Scale (4px base) */
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-6: 1.5rem;    /* 24px */
+  --space-8: 2rem;      /* 32px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+  --space-24: 6rem;     /* 96px */
+  --space-32: 8rem;     /* 128px */
+
+  /* Radii */
+  --radius-pill: 999px;
+  --radius-card: 24px;
+  --radius-input: 16px;
+  --radius-sm: 8px;
+
+  /* Motion & Durations */
+  --dur-fast: 150ms;
+  --dur-base: 250ms;
+  --dur-slow: 600ms;
+  --dur-hero: 900ms;
+  --ease-out: cubic-bezier(0.2, 0, 0, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Container & Grid */
+  --container-max: 1200px;
+  --container-pad: 1.25rem;
+  --header-height: 76px;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --container-pad: 2rem;
+  }
+}
+
+/* Reduced Motion Reset (PRD Section 9, 23.4) */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

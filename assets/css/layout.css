@@ -1,0 +1,313 @@
+/* FOB Website Layout (PRD Section 7, 10, 18, 23) */
+
+/* Site Announcement Top Banner */
+.fob-banner {
+  background-color: var(--fob-blue);
+  color: var(--fob-volt);
+  font-size: var(--step-small);
+  font-weight: 700;
+  padding: 0.5rem var(--container-pad);
+  text-align: center;
+  position: relative;
+  z-index: 100;
+  border-bottom: 1px solid rgba(215, 255, 31, 0.2);
+}
+
+.fob-banner a {
+  color: var(--fob-white);
+  text-decoration: underline;
+  margin-left: 0.5rem;
+}
+
+/* Header & Floating Pill Navigation */
+.fob-header {
+  position: sticky;
+  top: 1rem;
+  z-index: 1000;
+  width: 100%;
+  pointer-events: none;
+  transition: transform var(--dur-base) var(--ease-out), padding var(--dur-base) var(--ease-out);
+}
+
+.fob-header__inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-pad);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.fob-nav-pill {
+  pointer-events: auto;
+  background: var(--fob-ink);
+  border: 1px solid var(--fob-white-16);
+  border-radius: var(--radius-pill);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.5rem 0.75rem 0.5rem 1.25rem;
+  transition: all var(--dur-base) var(--ease-out);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Header Compact State on Scroll (ANI-10) */
+.fob-header--compact .fob-nav-pill {
+  padding: 0.4rem 0.6rem 0.4rem 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.fob-header--compact .fob-nav__menu {
+  display: none;
+}
+
+/* Logo & Brand Wordmark */
+.fob-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 1.5rem;
+  letter-spacing: -0.03em;
+  color: var(--fob-white);
+}
+
+.fob-logo__o {
+  color: var(--fob-volt);
+  display: inline-block;
+  transform-origin: center;
+  transition: transform var(--dur-fast) var(--ease-spring);
+}
+
+.fob-logo:hover .fob-logo__o {
+  transform: scale(1.15) rotate(15deg);
+}
+
+/* Navigation Links */
+.fob-nav__menu {
+  display: none;
+  align-items: center;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+@media (min-width: 900px) {
+  .fob-nav__menu {
+    display: flex;
+  }
+}
+
+.fob-nav__link {
+  font-size: var(--step-small);
+  font-weight: 600;
+  color: var(--fob-white-90);
+  transition: color var(--dur-fast) var(--ease-out);
+  position: relative;
+  padding: 0.25rem 0;
+}
+
+.fob-nav__link:hover,
+.fob-nav__link.is-active {
+  color: var(--fob-volt);
+}
+
+.fob-nav__link.is-active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--fob-volt);
+  border-radius: var(--radius-pill);
+}
+
+/* Header Actions */
+.fob-nav__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Mobile Menu Toggle Button */
+.fob-menu-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-pill);
+  color: var(--fob-white);
+  background: var(--fob-white-08);
+  transition: background var(--dur-fast) var(--ease-out);
+}
+
+.fob-menu-toggle:hover {
+  background: var(--fob-white-16);
+}
+
+@media (min-width: 900px) {
+  .fob-menu-toggle {
+    display: none;
+  }
+}
+
+/* Mobile Navigation Drawer */
+.fob-mobile-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(14, 14, 44, 0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 1050;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transform: translateY(-100%);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: transform var(--dur-base) var(--ease-out), opacity var(--dur-base) var(--ease-out), visibility var(--dur-base);
+}
+
+.fob-mobile-nav.is-open {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.fob-mobile-nav__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--fob-white-16);
+  padding-bottom: 1.25rem;
+}
+
+.fob-mobile-nav__links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.fob-mobile-nav__links a {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--fob-white);
+  transition: color var(--dur-fast) var(--ease-out);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.fob-mobile-nav__links a:hover {
+  color: var(--fob-volt);
+}
+
+.fob-mobile-nav__badge {
+  font-size: 0.75rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-pill);
+  background: var(--fob-white-16);
+}
+
+.fob-mobile-nav__footer {
+  border-top: 1px solid var(--fob-white-16);
+  padding-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Footer Section */
+.fob-footer {
+  background-color: var(--fob-ink);
+  color: var(--fob-white);
+  border-top: 1px solid var(--fob-white-16);
+  padding-top: var(--space-16);
+  padding-bottom: var(--space-12);
+  margin-top: auto;
+}
+
+.fob-footer__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .fob-footer__grid {
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+  }
+}
+
+.fob-footer__brand p {
+  color: var(--fob-white-70);
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
+
+.fob-footer__col h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--fob-volt);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+}
+
+.fob-footer__col ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.fob-footer__col a {
+  color: var(--fob-white-70);
+  font-size: 0.95rem;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+.fob-footer__col a:hover {
+  color: var(--fob-volt);
+}
+
+.fob-footer__bottom {
+  margin-top: var(--space-12);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--fob-white-08);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: var(--step-small);
+  color: var(--fob-white-40);
+}
+
+@media (min-width: 768px) {
+  .fob-footer__bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.fob-footer__legal {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.fob-footer__legal a:hover {
+  color: var(--fob-white);
+}
