@@ -1,5 +1,5 @@
 FOB Website: Product Requirements Document (PRD)
-Version 1.6 (Ayobo Venue Address, Google Maps Navigation API, Shawarma & Grills Menu, Sports Broadcast Scope) | 20 October 2026 | Status: ready for client sign-off | Prepared by the FOB project team (Brand Strategy, Sports Creative Direction, Art Direction, Copy, UX/UI, Development, Production)
+Version 1.7 (Branded FOB Cinematic Media System, Dynamic Vignette HUD & Zone Photography Tagging) | 20 October 2026 | Status: ready for client sign-off | Prepared by the FOB project team (Brand Strategy, Sports Creative Direction, Art Direction, Copy, UX/UI, Development, Production)
 1. Summary
 FOB is a premier sports and recreation centre located at 2, Lawani Ode Street, Alakara Bus Stop, Ashipa, Ayobo, Lagos, with seven zones: football pitch, football viewing centre, gym, basketball court, snooker, table tennis and gaming. This document defines the requirements for the FOB website: what it must do, how it must look and move, and every illustration, animation, broadcast graphic, map navigation interface, and real-time live match telemetry asset produced for it.
 The website has one job: turn a mobile visitor into a person who walks through the door or sends a WhatsApp message. Bookings across zones run through WhatsApp, phone and walk-in. The viewing centre operates as a live stadium-grade match-day hub with real-time score synchronization across top football competitions, an integrated beer bar with shawarma and live charcoal grills, first come first served. All public pricing has been deliberately removed from the site to focus entirely on atmosphere, live match energy, availability, and fast WhatsApp bookings. The quality bar the site is built to is in section 17, and the brand system it is built from is in section 18.
@@ -11,6 +11,7 @@ Product principles
 	•	Nothing hidden: live matches, real-time scores, goal previews, hours and status are always one tap away.
 	•	Zero pricing friction: the site eliminates all pricing tables and payment barriers; availability and reservations happen directly via WhatsApp. Also includes Goal‑Score Flash animation (ANI‑19).
 	•	Stadium energy, broadcast precision: Visuals blend Lagos crew warmth with sports broadcast typography, live match telemetry (momentum indicators, form guides), and floodlight contrast.
+	•	Cinematic presentation, authentic branding: Every visual asset across hero headers, interactive zone tabs, and photo galleries is framed with anamorphic letterboxing, subtle lens vignetting, and a micro-HUD glassmorphic FOB tag celebrating the iconic volt O.
 2. Goals and success metrics
 Business goals
 	•	Increase walk-ins and WhatsApp enquiries across all seven zones.
@@ -346,6 +347,9 @@ Must
 FR-39
 Match-Day Beer Bar, Shawarma & Live Grills: Viewing centre and refreshments interfaces present sub-zero beer buckets, shawarma rolls, and charcoal-grilled whole fish/meats with table delivery flows under the zero-pricing model
 Must
+FR-40
+Cinematic Media System & Branded FOB Image Tagging: Every image asset across landing and zone pages is encapsulated in a responsive cinematic frame (.fob-cinematic-frame) featuring anamorphic edge letterboxing, radial lens vignetting, subtle micro-zoom on interaction, and an integrated glassmorphic HUD badge (.fob-media-tag) displaying the branded volt 'O' and zone context
+Must
 CMS requirements
 Staff must be able to do these without a developer. Two roles: Admin (owner) and Editor (shift staff, can edit fixtures, live scores, and venue status).
 	•	Fixtures & LiveScores: home team, away team (plain text), competition, date, kick-off time, doors-open time, live score (home/away), live match minute/period, goal scorers list, status, optional note (for example, big derby, come early).
@@ -465,6 +469,11 @@ Momentum Shift
 Live match attack event
 Attacking pressure bar smoothly transitions width with ease-out (400 ms)
 Instant width change
+ANI-21
+Cinematic Frame Micro-Zoom & Vignette Sweep
+Hover or card focus
+Image scales smoothly to 1.04x while cinematic letterbox border accentuates contrast and media HUD tag badge brightens slightly (350 ms ease-out)
+Static image (no scale)
 11. Illustration inventory
 A. Brand core: ILL-01 to 09 (wordmark, O mark, O-grid, spark confetti, pill kit, utility icons, dividers)
 B. Home page: ILL-10 to 16 (floating sport Os, tap me bubble, trust strip icons, how it works spots, crew avatar stack, tabs scenes, desktop QR frame)
@@ -532,6 +541,10 @@ Lead Developer
 Beer Bar, Shawarma & Live Charcoal Grills Menu: Overhaul football viewing refreshments into an integrated beer bar with sub-zero buckets, sharing pitchers, double-sausage shawarma, and live charcoal grills under zero-pricing model.
 1, 7.3, 8 (FR-39), 11
 Food & Beverage / Sports Experience
+25
+Cinematic Media System & Site-Wide Branded FOB Tags: Encapsulate all photos and illustration scenes in high-performance CSS-based cinematic letterbox frames (.fob-cinematic-frame) with glassmorphic branded HUD badges (.fob-media-tag) displaying the iconic volt O and zone tags, avoiding heavy bitmap raster burning while achieving an authentic broadcast-grade cinematic aesthetic.
+1, 7.6, 8 (FR-40), 10 (ANI-21), 18
+Art Direction & Creative Direction
 14. Technical implementation: HTML, CSS and vanilla JavaScript
 File structure:
 /fob-site
@@ -590,6 +603,7 @@ Sample Fixture & LiveScore JSON format:
   ]
 }
 Document control
+Version 1.7: 20 October 2026. Branded FOB Cinematic Media System implemented site-wide: introduced `.fob-cinematic-frame` with anamorphic letterboxing, edge vignetting, micro-zoom motion, and glassmorphic HUD tags (`.fob-media-tag`) across all gallery cards, hero banners, and zone feature strips (FR-40, ANI-21, Decision 25).
 Version 1.6: 20 October 2026. Venue address migrated to 2, Lawani Ode Street, Alakara Bus Stop, Ashipa, Ayobo, Lagos; connected Google Maps Directions API for native GPS turn-by-turn navigation; upgraded football viewing menu to Beer Bar, Shawarma & Live Charcoal Grills (FR-38, FR-39, Decisions 22–24).
 Version 1.5: 20 October 2026. Sports broadcast overhaul: introduced broadcast lower-third matchday marquee, tabular numeric scoreboard typography, recent team form discs, CSS live match momentum gauge, and pro arena zone nomenclature while retaining zero-pricing WhatsApp conversion flow.
 Version 1.4: 20 October 2026. Removed all pricing across the site, added top football competitions sync, and implemented real-time LiveScore model with goal scorers preview.
