@@ -88,8 +88,8 @@
 
   <!-- Site-Wide Announcement Banner -->
   <aside class="fob-banner" aria-label="Venue Announcement">
-    <span>Champions League Match Night tonight • 4K Screen • Cold Drinks</span>
-    <a href="/football-viewing/">See Match Guide &rarr;</a>
+    <span>Lagos's Loudest 4K Sports Viewing Centre & Beer Bar • Ayobo, Lagos • Open Daily</span>
+    <a href="/football-viewing/">Explore Viewing Lounge &rarr;</a>
   </aside>
 
   <!-- Sticky Header with Floating Nav Pill (PRD Section 7.1, 10: ANI-10) -->
@@ -106,7 +106,7 @@
         <!-- Desktop Navigation Links -->
         <ul class="fob-nav__menu">
           <li><a href="/football-pitch/" class="fob-nav__link">Pitch</a></li>
-          <li><a href="/football-viewing/" class="fob-nav__link">Watch Matches</a></li>
+          <li><a href="/football-viewing/" class="fob-nav__link">Viewing Centre</a></li>
           <li><a href="/gym/" class="fob-nav__link">Gym</a></li>
           <li><a href="/basketball/" class="fob-nav__link">Basketball</a></li>
           <li><a href="/snooker/" class="fob-nav__link">Snooker</a></li>
@@ -137,7 +137,7 @@
     </div>
     <div class="fob-mobile-nav__links">
       <a href="/football-pitch/">Football Pitch <span class="fob-mobile-nav__badge" style="color:var(--fob-green);">5-a-side</span></a>
-      <a href="/football-viewing/">Viewing Centre <span class="fob-mobile-nav__badge" style="color:var(--fob-magenta);">Live Matches</span></a>
+      <a href="/football-viewing/">Viewing Centre <span class="fob-mobile-nav__badge" style="color:var(--fob-magenta);">4K Lounge</span></a>
       <a href="/gym/">Gym & Fitness <span class="fob-mobile-nav__badge" style="color:var(--fob-red);">Pure Iron</span></a>
       <a href="/basketball/">Basketball Court <span class="fob-mobile-nav__badge" style="color:var(--fob-orange);">FIBA Spec</span></a>
       <a href="/snooker/">Snooker Lounge <span class="fob-mobile-nav__badge" style="color:var(--fob-cyan);">Slate Tables</span></a>
@@ -184,8 +184,8 @@
             <button type="button" class="fob-btn fob-btn--primary fob-btn--lg" data-fob-sheet data-fob-event="hero_lock_it_in">
               Lock it in
             </button>
-            <a href="/football-viewing/" class="fob-btn fob-btn--secondary fob-btn--lg" id="fob-hero-match-action" data-fob-event="hero_matches_click">
-              See today's matches
+            <a href="/football-viewing/" class="fob-btn fob-btn--secondary fob-btn--lg" id="fob-hero-match-action" data-fob-event="hero_viewing_click">
+              Explore Viewing Centre
             </a>
           </div>
         </div>
@@ -266,87 +266,6 @@
       </div>
     </section>
 
-    <!-- TODAY AT FOB (PRD Section 7.1, 7.3, 8: FR-04 to FR-08) -->
-    <section class="fob-section fob-today-section" id="today-at-fob" aria-labelledby="today-title">
-      <div class="fob-container">
-        <div class="fob-section-header">
-          <div>
-            <span class="fob-section-tag">Match-Day Central</span>
-            <h2 id="today-title" style="font-size: var(--step-h2); font-weight: 800; color: #FFF;">Today at FOB</h2>
-          </div>
-          <div>
-            <a href="/football-viewing/" class="fob-btn fob-btn--secondary fob-btn--sm">
-              View 7-day schedule &rarr;
-            </a>
-          </div>
-        </div>
-
-        <div class="fob-fixtures-grid" id="fob-today-fixtures">
-          <!-- Dynamically populated from data/fixtures.json with fallback -->
-          <article class="fob-fixture-card fob-fixture-card--big-match" data-fixture-id="fix-today-01" data-competition="Premier League">
-            <div class="fob-fixture-card__top">
-              <span class="fob-fixture-card__league">Premier League</span>
-              <span class="fob-status-chip fob-status-chip--filling-up"><span class="fob-status-chip__dot"></span>Filling Up</span>
-            </div>
-            <div class="fob-fixture-card__matchup-row">
-              <div class="fob-fixture-card__team-col">
-                <span class="fob-team-disc">AR</span>
-                <span class="fob-team-name">Arsenal</span>
-              </div>
-              <div class="fob-fixture-card__score-center">
-                <div class="fob-fixture-card__vs">VS</div>
-                <span class="fob-fixture-card__period-tag">5:30 pm</span>
-              </div>
-              <div class="fob-fixture-card__team-col" style="align-items: flex-end;">
-                <span class="fob-team-disc">CH</span>
-                <span class="fob-team-name" style="text-align: right;">Chelsea</span>
-              </div>
-            </div>
-            <div class="fob-fixture-card__times">
-              <div><span class="fob-fixture-card__time-label">Kick-Off</span><span class="fob-fixture-card__time-val">5:30 pm</span></div>
-              <div><span class="fob-fixture-card__time-label">Doors Open</span><span class="fob-fixture-card__time-val" style="color:var(--fob-volt); font-weight:800;">4:00 pm</span></div>
-            </div>
-            <div class="fob-fixture-card__footer">
-              <div class="fob-fixture-card__actions">
-                <a href="/find-us/" class="fob-btn fob-btn--primary fob-btn--sm">See you there</a>
-                <a href="https://wa.me/2348030000362?text=Hi%20FOB%2C%20is%20there%20space%20for%20Arsenal%20vs%20Chelsea%3F" target="_blank" rel="noopener noreferrer" class="fob-btn fob-btn--secondary fob-btn--sm">Ask on WhatsApp</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="fob-fixture-card fob-fixture-card--big-match" data-fixture-id="fix-today-02" data-competition="Champions League">
-            <div class="fob-fixture-card__top">
-              <span class="fob-fixture-card__league">UEFA Champions League</span>
-              <span class="fob-status-chip fob-status-chip--open"><span class="fob-status-chip__dot"></span>Open</span>
-            </div>
-            <div class="fob-fixture-card__matchup-row">
-              <div class="fob-fixture-card__team-col">
-                <span class="fob-team-disc">RM</span>
-                <span class="fob-team-name">Real Madrid</span>
-              </div>
-              <div class="fob-fixture-card__score-center">
-                <div class="fob-fixture-card__vs">VS</div>
-                <span class="fob-fixture-card__period-tag">8:00 pm</span>
-              </div>
-              <div class="fob-fixture-card__team-col" style="align-items: flex-end;">
-                <span class="fob-team-disc">BM</span>
-                <span class="fob-team-name" style="text-align: right;">Bayern Munich</span>
-              </div>
-            </div>
-            <div class="fob-fixture-card__times">
-              <div><span class="fob-fixture-card__time-label">Kick-Off</span><span class="fob-fixture-card__time-val">8:00 pm</span></div>
-              <div><span class="fob-fixture-card__time-label">Doors Open</span><span class="fob-fixture-card__time-val" style="color:var(--fob-volt); font-weight:800;">6:30 pm</span></div>
-            </div>
-            <div class="fob-fixture-card__footer">
-              <div class="fob-fixture-card__actions">
-                <a href="/find-us/" class="fob-btn fob-btn--primary fob-btn--sm">See you there</a>
-                <a href="https://wa.me/2348030000362?text=Hi%20FOB%2C%20is%20there%20space%20for%20Real%20Madrid%20vs%20Bayern%3F" target="_blank" rel="noopener noreferrer" class="fob-btn fob-btn--secondary fob-btn--sm">Ask on WhatsApp</a>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
 
     <!-- PICK YOUR GAME (PRD Section 7.1, 10: ANI-04) -->
     <section class="fob-section ground-ink" aria-labelledby="pick-game-title">
@@ -454,7 +373,7 @@
               </p>
               <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
                 <button type="button" class="fob-btn fob-btn--primary" data-fob-sheet data-fob-sheet-zone="Football Pitch">Lock in a pitch</button>
-                <a href="/football-viewing/" class="fob-btn fob-btn--secondary">Match Schedule</a>
+                <a href="/football-viewing/" class="fob-btn fob-btn--secondary">Viewing Lounge</a>
               </div>
             </div>
           </div>
@@ -474,7 +393,7 @@
                 Laser-sharp 4K projection, bone-rattling stadium sound, cold beers, pepper soup and banter. First come, first served — arrive when doors open.
               </p>
               <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                <a href="/football-viewing/" class="fob-btn fob-btn--primary">Check today's fixtures</a>
+                <a href="/football-viewing/" class="fob-btn fob-btn--primary">Explore Viewing Centre</a>
                 <a href="/find-us/" class="fob-btn fob-btn--secondary">Directions & parking</a>
               </div>
             </div>
@@ -603,11 +522,11 @@
           <!-- Question 1 -->
           <details class="fob-accordion__item" open>
             <summary class="fob-accordion__summary">
-              <span>How do live match screenings and football competitions work?</span>
+              <span>How does the football viewing centre work?</span>
               <span class="fob-accordion__icon">+</span>
             </summary>
             <div class="fob-accordion__body">
-              We screen all top football competitions live on our 4K laser projection wall with stadium surround sound — including UEFA Champions League, Premier League, La Liga, Serie A, and cup fixtures. Check our upcoming match schedule on our <a href="/football-viewing/" style="color:var(--fob-volt); text-decoration:underline;">Match Screenings Page</a>. Seating is open and first come, first served.
+              We screen major football matches and sporting events on our 4K laser projection wall with stadium surround sound. Seating is open, walk-in, and first come, first served — simply come through, grab a seat, and order cold beers, shawarma, and live charcoal grills. Daily fixtures are displayed on our boards at the centre.
             </div>
           </details>
 
@@ -729,7 +648,7 @@
         <div class="fob-footer__col">
           <h4>Explore</h4>
           <ul>
-            <li><a href="/football-viewing/">Match Screenings</a></li>
+            <li><a href="/football-viewing/">Viewing Centre Lounge</a></li>
             <li><a href="/events/">Events & Parties</a></li>
             <li><a href="/gallery/">Photo Gallery</a></li>
             <li><a href="/find-us/">Find Us & Live Route</a></li>

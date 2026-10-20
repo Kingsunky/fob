@@ -12,7 +12,6 @@ export const GOOGLE_MAPS_EMBED_URL = "https://www.google.com/maps/embed?pb=!1m18
 export const GOOGLE_MAPS_DIRECTIONS_URL = "https://www.google.com/maps/dir/?api=1&destination=6.6130,3.2659&destination_place_id=";
 
 export const ENDPOINTS = {
-  fixtures: "/data/fixtures.json",
   hours: "/data/hours.json",
   settings: "/data/settings.json"
 };

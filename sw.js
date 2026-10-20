@@ -1,5 +1,5 @@
-// FOB Service Worker (PRD Version 2.0: Pure Match Screening)
-const CACHE_NAME = "fob-shell-v2";
+// FOB Service Worker (PRD Version 2.1: Walk-In Viewing Lounge Model)
+const CACHE_NAME = "fob-shell-v3";
 const ASSETS_TO_CACHE = [
   "/",
   "/index.html",
@@ -13,7 +13,6 @@ const ASSETS_TO_CACHE = [
   "/assets/js/main.js",
   "/assets/js/config.js",
   "/assets/js/data.js",
-  "/assets/js/fixtures.js",
   "/assets/js/hours.js",
   "/assets/js/whatsapp.js",
   "/assets/js/sheet.js",
@@ -23,7 +22,6 @@ const ASSETS_TO_CACHE = [
   "/assets/js/tap-the-o.js",
   "/assets/js/analytics.js",
   "/assets/svg/sprite.svg",
-  "/data/fixtures.json",
   "/data/hours.json",
   "/data/settings.json"
 ];
