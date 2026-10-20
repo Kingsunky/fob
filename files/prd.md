@@ -1,8 +1,8 @@
 FOB Website: Product Requirements Document (PRD)
-Version 1.4 (LiveScore model, top football competitions sync, and zero-pricing scope) | 20 October 2026 | Status: ready for client sign-off | Prepared by the FOB project team (Brand Strategy, Creative Direction, Art Direction, Copy, UX/UI, Development, Production)
+Version 1.5 (Sports Broadcast Overhaul, Match-Center Telemetry, and Zero-Pricing Scope) | 20 October 2026 | Status: ready for client sign-off | Prepared by the FOB project team (Brand Strategy, Sports Creative Direction, Art Direction, Copy, UX/UI, Development, Production)
 1. Summary
-FOB is a recreational centre in Lagos with seven zones: football pitch, football viewing centre, gym, basketball court, snooker, table tennis and gaming. This document defines the requirements for the FOB website: what it must do, how it must look and move, and every illustration, animation, and real-time live match data asset that has to be produced for it.
-The website has one job: turn a mobile visitor into a person who walks through the door or sends a WhatsApp message. Bookings across zones run through WhatsApp, phone and walk-in. The viewing centre operates as a live match-day hub with real-time score synchronization across top football competitions, first come first served. All public pricing has been deliberately removed from the site to focus entirely on atmosphere, live match energy, availability, and fast WhatsApp bookings. The quality bar the site is built to is in section 17, and the brand system it is built from is in section 18.
+FOB is a recreational centre in Lagos with seven zones: football pitch, football viewing centre, gym, basketball court, snooker, table tennis and gaming. This document defines the requirements for the FOB website: what it must do, how it must look and move, and every illustration, animation, broadcast graphic, and real-time live match telemetry asset produced for it.
+The website has one job: turn a mobile visitor into a person who walks through the door or sends a WhatsApp message. Bookings across zones run through WhatsApp, phone and walk-in. The viewing centre operates as a live stadium-grade match-day hub with real-time score synchronization across top football competitions, first come first served. All public pricing has been deliberately removed from the site to focus entirely on atmosphere, live match energy, availability, and fast WhatsApp bookings. The quality bar the site is built to is in section 17, and the brand system it is built from is in section 18.
 Product principles
 	•	Sleek in structure, fun in moments. Layout, type and photography stay clean. Colour, copy, motion and small surprises carry the fun.
 	•	Mobile first, data-light. Most visitors will arrive on a phone on mobile data.
@@ -10,6 +10,7 @@ Product principles
 	•	The O is the hero. It is the logo, the zone icon, the loader, the cursor and the interactive toy.
 	•	Nothing hidden: live matches, real-time scores, goal previews, hours and status are always one tap away.
 	•	Zero pricing friction: the site eliminates all pricing tables and payment barriers; availability and reservations happen directly via WhatsApp. Also includes Goal‑Score Flash animation (ANI‑19).
+	•	Stadium energy, broadcast precision: Visuals blend Lagos crew warmth with sports broadcast typography, live match telemetry (momentum indicators, form guides), and floodlight contrast.
 2. Goals and success metrics
 Business goals
 	•	Increase walk-ins and WhatsApp enquiries across all seven zones.
@@ -138,10 +139,11 @@ Colour rules
 Typography (locked)
 	•	Display: Outfit ExtraBold (800) for headlines and Outfit Bold (700) for sub-heads. Locked in the working session.
 	•	Text: Plus Jakarta Sans Regular (400) and Bold (700) for body, live scores, fixtures and labels. Locked in the working session.
+	•	Scoreboard & Match Telemetry: Tabular figures enabled (`font-variant-numeric: tabular-nums; letter-spacing: -0.04em; font-feature-settings: "tnum" 1;`) on live scores, countdown clocks, and match minutes for broadcast digital-scoreboard precision without font payload overhead.
 	•	Four font files in total, self-hosted, subsetted to Latin, WOFF2 only, with a system fallback stack.
 Shape and motion language
 	•	Circles, pills and soft corners. Buttons are pills.
-	•	Things roll, bounce or pop. Every animation is short and purposeful.
+	•	Sports broadcast lower-thirds, live momentum shifts, and pulse tags. Things roll, bounce, pop, or flash with stadium urgency. Every animation is short and purposeful.
 5. Audience and key journeys
 Audiences
 	•	The crew organiser (16-35): books for friends or a team, wants availability, time and a fast reply.
@@ -203,15 +205,17 @@ Sections in order, with the PocketApp pattern each follows:
 	•	Zone FAQ (three questions).
 	•	Related zones strip.
 7.3 Football viewing page (Watch & LiveScores)
-	•	Today at FOB strip, top competition selector (All, Champions League, Premier League, La Liga, Serie A), followed by the fixture list for the next 7 days.
+	•	Today at FOB strip, top competition selector (All, Champions League, Premier League, La Liga, Serie A, FA Cup, Super Eagles / NPFL), followed by the fixture list for the next 7 days.
 	•	LiveScore Model on every fixture card:
-		- Teams in plain text with neutral team discs.
-		- Competition badge (e.g. UEFA Champions League, Premier League).
+		- Teams in plain text with neutral team discs and recent form pills (W/D/L).
+		- Competition badge (e.g. UEFA Champions League, Premier League, La Liga).
 		- Live match status: Upcoming, 1H (First Half), HT (Half-Time), 2H (Second Half), FT (Full-Time).
-		- Live score display: prominent bold score counter (e.g. 2 - 1).
+		- Live score display: prominent bold tabular score counter (e.g. 2 - 1) with `font-variant-numeric: tabular-nums`.
 		- Match clock / minute: e.g. 74'.
 		- Goal Scorers Preview on Card: lists recent goal events directly on preview (e.g. Saka 34', Palmer 58' pen).
-		- Real-time GOAL badge alert that pulses when a score changes.
+		- Real-time GOAL badge alert that pulses when a score changes (ANI-19).
+		- Match Momentum Indicator: lightweight 2-tone CSS bar rendering live attacking pressure/possession balance without client performance cost.
+		- Audio & Visual spec chip: e.g. "4K Laser Wall • 105dB Stadium Audio".
 		- Status chip (open, filling up, full, live).
 		- Primary button: See you there. Secondary: Ask on WhatsApp. Directions link on every card.
 	•	First come first served message shown clearly: Big one. Come early.
@@ -231,6 +235,9 @@ To establish FOB as Lagos's premier match-day authority, the site syncs top foot
 		- `id`: unique fixture string (e.g. `2026-10-20-real-madrid-bayern`)
 		- `home`: string (home club name)
 		- `away`: string (away club name)
+		- `homeForm`: array `['W', 'W', 'D']`
+		- `awayForm`: array `['W', 'L', 'W']`
+		- `momentum`: number (0-100 indicating attacking pressure percentage toward home or away)
 		- `competition`: string (league/cup name)
 		- `kickoff`: ISO 8601 timestamp
 		- `doors`: ISO 8601 timestamp
@@ -242,9 +249,10 @@ To establish FOB as Lagos's premier match-day authority, the site syncs top foot
 		- `bigMatch`: boolean
 		- `venueStatus`: enum (`open`, `filling up`, `full`)
 		- `statusUpdated`: ISO 8601 timestamp
-	•	Goal Score Preview on Cards:
+	•	Goal Score Preview & Momentum on Cards:
 		- If `goals` array is populated, card preview renders a compact goal timeline: e.g., ⚽ Saka 34', Palmer 58' (pen).
 		- When a live score change is detected via polling, the score counter animates with a spring pop, and a temporary `GOAL!` flash badge illuminates for 15 seconds.
+		- Live momentum bar shifts dynamically reflecting match attacking pressure.
 	•	Sync Cadence:
 		- When at least one match is in `live` or `halftime` state: polls live feed every 30 seconds.
 		- When matches are scheduled or finished: polls feed every 5 minutes.
@@ -321,6 +329,12 @@ Must
 FR-35
 Zero-Pricing Policy: all pricing tables, rates rows, and per-match ticket prices are omitted across the site to channel inquiries directly to WhatsApp
 Must
+FR-36
+Sports Match Telemetry & Form Guide: Fixture cards render recent team form discs (W/D/L) and a lightweight CSS attacking momentum bar; scores and clocks utilize tabular numeric formatting (`font-variant-numeric: tabular-nums`)
+Must
+FR-37
+Broadcast Matchday Lower-Third: On matchdays, the global ticker transforms into a high-contrast sports broadcast lower-third displaying upcoming kickoffs, live scores, and venue capacity
+Should
 CMS requirements
 Staff must be able to do these without a developer. Two roles: Admin (owner) and Editor (shift staff, can edit fixtures, live scores, and venue status).
 	•	Fixtures & LiveScores: home team, away team (plain text), competition, date, kick-off time, doors-open time, live score (home/away), live match minute/period, goal scorers list, status, optional note (for example, big derby, come early).
@@ -435,6 +449,11 @@ Goal Score Flash & Pulse
 Goal event received
 Card flashes GOAL badge, score numbers pop to 125% and spring back (600 ms)
 Instant score update
+ANI-20
+Momentum Shift
+Live match attack event
+Attacking pressure bar smoothly transitions width with ease-out (400 ms)
+Instant width change
 11. Illustration inventory
 A. Brand core: ILL-01 to 09 (wordmark, O mark, O-grid, spark confetti, pill kit, utility icons, dividers)
 B. Home page: ILL-10 to 16 (floating sport Os, tap me bubble, trust strip icons, how it works spots, crew avatar stack, tabs scenes, desktop QR frame)
@@ -449,17 +468,19 @@ D. Viewing centre, fixtures & LiveScore:
 	•	ILL-56: Empty state: No match today
 	•	ILL-57: Come early illustration: clock and queue forming
 	•	ILL-58: Stale-status fallback: Ask on WhatsApp
+	•	ILL-59: Match Momentum attacking gauge and recent form discs (W/D/L)
+	•	ILL-60: Broadcast lower-third matchday marquee bar
 E. Journeys and contact: ILL-60 to 64
 F. Events and parties: ILL-70 to 72
 G. System states: ILL-80 to 84 (404 bouncing O, loader, offline notice, closed today, success state)
 12. Delivery plan and acceptance criteria
 	•	All 7 zone pages plus Home, Football Viewing with LiveScores, Events, Gallery, Find Us, FAQ, 404, and Offline mode built.
-	•	Top football competitions sync feeds real-time scores, period, and goal scorers.
+	•	Top football competitions sync feeds real-time scores, period, goal scorers, recent form, and attacking momentum.
 	•	All pricing removed across all pages, components, data files, and copy.
-	•	All animations (ANI-01 to ANI-19) function smoothly and respect reduced motion.
+	•	All animations (ANI-01 to ANI-20) function smoothly and respect reduced motion.
 	•	Lock it in sheet opens cleanly on 3 taps and directs into WhatsApp.
 	•	Find Us map displays distance in km and travel time in minutes with driving/walking toggle.
-13. Decision log additions (Version 1.4)
+13. Decision log additions (Version 1.5)
 #
 Decision
 Sections changed
@@ -476,6 +497,18 @@ Lead Developer
 Add ANI-19 Goal Score Flash & Pulse micro-animation when live goals are detected.
 10, 11
 Creative Director
+19
+Sports Broadcast Overhaul: Adopt broadcast lower-third matchday marquee, stadium floodlight contrast gradients, and tabular scoreboard figures (`font-variant-numeric: tabular-nums`) without increasing web font payload.
+1, 3, 4, 8, 10, 11
+Sports Design Director (ex-Goal.com)
+20
+Match-Center Telemetry: Integrate team form guides (W/D/L) and a lightweight CSS/SVG live attacking momentum bar on fixture cards.
+7.3, 7.4, 8, 10, 11
+Sports Design Director & Lead Developer
+21
+Arena Zone Nomenclature: Rebrand 7 zones with pro sports arena designations (e.g., FIBA-spec, Strachan 6811 cloth, 4K laser wall, 105dB stadium audio) while preserving zero-pricing WhatsApp conversion flow.
+1, 7.2, 7.3, 8
+Brand Strategy & Product Owner
 14. Technical implementation: HTML, CSS and vanilla JavaScript
 File structure:
 /fob-site
@@ -534,4 +567,5 @@ Sample Fixture & LiveScore JSON format:
   ]
 }
 Document control
+Version 1.5: 20 October 2026. Sports broadcast overhaul: introduced broadcast lower-third matchday marquee, tabular numeric scoreboard typography, recent team form discs, CSS live match momentum gauge, and pro arena zone nomenclature while retaining zero-pricing WhatsApp conversion flow.
 Version 1.4: 20 October 2026. Removed all pricing across the site, added top football competitions sync, and implemented real-time LiveScore model with goal scorers preview.
