@@ -269,7 +269,7 @@ FR-09
 [DEPRECATED in v2.1] Top Competitions Fixture Schedule: Decommissioned. Online match fixture cards and competition filters removed site-wide.
 Decommissioned
 FR-10
-Opening hours in West Africa Time, with special-hours overrides and an Open now badge
+Opening hours in West Africa Time, structured into split daily sessions (Morning Session: 7:00 am – 11:00 am; Evening Session: 5:00 pm – 9:00 pm) Monday to Saturday, with Sunday zone constraints (Gym closed all day; Football Pitch & Basketball Court evening session only from 5:00 pm – 9:00 pm), special-hours overrides, and an active session status badge.
 Must
 FR-11
 On desktop, a QR code that opens WhatsApp on the visitor's phone
@@ -539,6 +539,10 @@ Sports Creative Direction, UX Lead & Product Owner
 Complete Removal of Online Match Fixtures and Transition to On-Site Board Discovery: All sections displaying upcoming or live match fixtures removed across all pages (including Today at FOB on the home page and the fixture schedule on the viewing page). FOB guests discover daily match screenings, channels, and kick-off times on-site via physical boards at the viewing centre or via direct WhatsApp conversation. This eliminates fixture management friction, encourages spontaneous walk-ins, and directs 100% of website attention to the premier 4K lounge atmosphere, sound system, and food & beverage offerings.
 1, 2, 6, 7.3, 7.4, 8 (FR-04, FR-09), 14, 23
 Management, Sports Creative Direction & Product Owner
+30
+Dual-Session Operating Schedule & Sunday Zone Specific Constraints: Formalized FOB venue operations into two dedicated daily recreation/training sessions Monday through Saturday: Morning Session (7:00 am to 11:00 am WAT) and Evening Session (5:00 pm to 9:00 pm WAT). Enforced critical Sunday zone rules: (1) Gym & Fitness Studio remains closed all day Sunday; (2) 5-a-side Football Pitch and Basketball Court open exclusively for the Sunday Evening Session (5:00 pm to 9:00 pm WAT). Upgraded `data/hours.json` multi-session schema, `assets/js/hours.js` state evaluator, Schema.org `OpeningHoursSpecification`, trust strip live badge/subtitle, and all zone specification cards.
+1, 6, 7, 8 (FR-10), 14, 23
+Operations Director, Sports UX Lead & Product Owner
 14. Technical implementation: HTML, CSS and vanilla JavaScript
 File structure:
 /fob-site
@@ -570,6 +574,7 @@ File structure:
   robots.txt
   sitemap.xml
 Document control
+Version 2.2: 20 October 2026. Dual-Session Operating Schedule & Sunday Zone Rules: Reconfigured venue hours to split morning (7:00 am – 11:00 am) and evening (5:00 pm – 9:00 pm) sessions Monday to Saturday. Implemented Sunday operational constraints: Gym closed all day; Football Pitch & Basketball Court evening session only (5:00 pm – 9:00 pm). Synchronized schema.org, live status chips, trust strips, zone spec cards, and FAQ (FR-10, Decision 30).
 Version 2.1: 20 October 2026. Complete Removal of Fixture Lists & Match Schedules: Deleted every section displaying upcoming or live matches site-wide (including Today at FOB and the viewing centre fixtures list). Established on-site match board and WhatsApp inquiry model, removing fixtures.js and fixtures.json from production (FR-04, FR-09, Decision 29).
 Version 2.0: 20 October 2026. Complete Decommissioning of LiveScore Telemetry & Transition to Pure Matchday Screening Hub: Removed all live scores, in-game match clocks, goal scorers lists, goal flash animations, polling engines, and API keys site-wide. Converted viewing centre into an authentic matchday screening guide with door times, open seating status, and seamless WhatsApp reservations (FR-09, FR-34, FR-42, Decision 28).
 Version 1.9: 20 October 2026. LiveScore API Key Integration & 7-Day Matchday Window Constraints: Connected LiveScore engine via API key (`sk_live_...`), established dynamic 7-day rolling schedule (3 days past to 3 days ahead), and enforced strict display boundaries of minimum 3 matches and maximum 6 matches per display (FR-42, Decision 27).

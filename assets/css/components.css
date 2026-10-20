@@ -153,7 +153,8 @@
   box-shadow: 0 0 8px var(--fob-orange);
 }
 
-.fob-status-chip--full .fob-status-chip__dot {
+.fob-status-chip--full .fob-status-chip__dot,
+.fob-status-chip--closed .fob-status-chip__dot {
   background-color: var(--fob-red);
   box-shadow: 0 0 8px var(--fob-red);
 }

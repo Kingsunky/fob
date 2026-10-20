@@ -147,12 +147,16 @@ function updateHoursUI(hoursData) {
   const scheduleEl = document.getElementById("fob-live-hours-schedule");
 
   if (badgeEl) {
-    badgeEl.textContent = status.isOpen ? "Open Now" : "Closed Now";
-    badgeEl.className = `fob-status-chip ${status.isOpen ? 'fob-status-chip--open' : 'fob-status-chip--full'}`;
+    badgeEl.textContent = status.isOpen
+      ? (status.activeSession ? `Open: ${status.activeSession}` : "Open Now")
+      : "Closed Now";
+    badgeEl.className = `fob-status-chip ${status.isOpen ? 'fob-status-chip--open' : 'fob-status-chip--closed'}`;
   }
 
-  if (scheduleEl && status.todaySchedule) {
-    scheduleEl.textContent = status.todaySchedule;
+  if (scheduleEl) {
+    scheduleEl.textContent = status.isOpen
+      ? (status.todaySchedule || "Morning: 7am–11am • Evening: 5pm–9pm")
+      : (status.statusText || status.todaySchedule || "Morning: 7am–11am • Evening: 5pm–9pm");
   }
 }
 

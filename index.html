@@ -52,21 +52,21 @@
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
         "opens": "07:00",
-        "closes": "23:00"
+        "closes": "11:00"
       },
       {
         "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Friday", "Saturday"],
-        "opens": "07:00",
-        "closes": "01:00"
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "17:00",
+        "closes": "21:00"
       },
       {
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": ["Sunday"],
-        "opens": "08:00",
-        "closes": "23:00"
+        "opens": "17:00",
+        "closes": "21:00"
       }
     ]
   }
@@ -227,7 +227,7 @@
             <div style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.2rem;">
               <span id="fob-live-hours-badge" class="fob-status-chip fob-status-chip--open">Open Now</span>
             </div>
-            <div class="fob-trust-item__sub" id="fob-live-hours-schedule">7:00 am – 11:00 pm (WAT)</div>
+            <div class="fob-trust-item__sub" id="fob-live-hours-schedule">Morning: 7am–11am • Evening: 5pm–9pm</div>
           </div>
         </div>
 
@@ -544,11 +544,11 @@
           <!-- Question 3 -->
           <details class="fob-accordion__item">
             <summary class="fob-accordion__summary">
-              <span>What are your opening hours?</span>
+              <span>What are your opening hours and sessions?</span>
               <span class="fob-accordion__icon">+</span>
             </summary>
             <div class="fob-accordion__body">
-              We are open 7 days a week: Monday to Thursday from 7:00 am to 11:00 pm; Friday and Saturday from 7:00 am to 1:00 am (late night); Sunday from 8:00 am to 11:00 pm. On major UEFA Champions League or derby match nights, hours extend until the final whistle!
+              We operate two dedicated daily sessions Monday to Saturday: <strong>Morning Session (7:00 am – 11:00 am)</strong> and <strong>Evening Session (5:00 pm – 9:00 pm)</strong>. On Sundays, the gym is closed, while our football pitch and basketball court operate exclusively for the <strong>Evening Session (5:00 pm – 9:00 pm)</strong>.
             </div>
           </details>
 
@@ -659,9 +659,8 @@
         <div class="fob-footer__col">
           <h4>Hours & Connect</h4>
           <ul>
-            <li><span>Mon – Thu: 7am – 11pm</span></li>
-            <li><span>Fri – Sat: 7am – 1am</span></li>
-            <li><span>Sun: 8am – 11pm</span></li>
+            <li><span>Mon – Sat: 7am–11am & 5pm–9pm</span></li>
+            <li><span>Sun: 5pm – 9pm (Gym closed)</span></li>
             <li><a href="https://instagram.com/foblagos" target="_blank" rel="noopener noreferrer">Instagram: @foblagos</a></li>
             <li><a href="https://x.com/foblagos" target="_blank" rel="noopener noreferrer">X / Twitter: @foblagos</a></li>
             <li><a href="https://tiktok.com/@foblagos" target="_blank" rel="noopener noreferrer">TikTok: @foblagos</a></li>
