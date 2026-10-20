@@ -1,17 +1,18 @@
 FOB Website: Product Requirements Document (PRD)
-Version 1.7 (Branded FOB Cinematic Media System, Dynamic Vignette HUD & Zone Photography Tagging) | 20 October 2026 | Status: ready for client sign-off | Prepared by the FOB project team (Brand Strategy, Sports Creative Direction, Art Direction, Copy, UX/UI, Development, Production)
+Version 1.8 (Mobile-First Style Guide, WCAG 2.2 AA Accessibility Audit, Sticky Action Dock & Thumb-Zone Ergonomics) | 20 October 2026 | Status: ready for client sign-off | Prepared by the FOB project team (Brand Strategy, Sports Creative Direction, Art Direction, Copy, UX/UI, Development, Production)
 1. Summary
 FOB is a premier sports and recreation centre located at 2, Lawani Ode Street, Alakara Bus Stop, Ashipa, Ayobo, Lagos, with seven zones: football pitch, football viewing centre, gym, basketball court, snooker, table tennis and gaming. This document defines the requirements for the FOB website: what it must do, how it must look and move, and every illustration, animation, broadcast graphic, map navigation interface, and real-time live match telemetry asset produced for it.
 The website has one job: turn a mobile visitor into a person who walks through the door or sends a WhatsApp message. Bookings across zones run through WhatsApp, phone and walk-in. The viewing centre operates as a live stadium-grade match-day hub with real-time score synchronization across top football competitions, an integrated beer bar with shawarma and live charcoal grills, first come first served. All public pricing has been deliberately removed from the site to focus entirely on atmosphere, live match energy, availability, and fast WhatsApp bookings. The quality bar the site is built to is in section 17, and the brand system it is built from is in section 18.
 Product principles
 	•	Sleek in structure, fun in moments. Layout, type and photography stay clean. Colour, copy, motion and small surprises carry the fun.
 	•	Mobile first, data-light. Most visitors will arrive on a phone on mobile data.
-	•	The next action is always visible: Lock it in, See you there, Call, or Directions.
+	•	The next action is always visible: Lock it in, See you there, Call, or Directions, reinforced by a persistent mobile thumb-zone action dock.
 	•	The O is the hero. It is the logo, the zone icon, the loader, the cursor and the interactive toy.
 	•	Nothing hidden: live matches, real-time scores, goal previews, hours and status are always one tap away.
 	•	Zero pricing friction: the site eliminates all pricing tables and payment barriers; availability and reservations happen directly via WhatsApp. Also includes Goal‑Score Flash animation (ANI‑19).
 	•	Stadium energy, broadcast precision: Visuals blend Lagos crew warmth with sports broadcast typography, live match telemetry (momentum indicators, form guides), and floodlight contrast.
 	•	Cinematic presentation, authentic branding: Every visual asset across hero headers, interactive zone tabs, and photo galleries is framed with anamorphic letterboxing, subtle lens vignetting, and a micro-HUD glassmorphic FOB tag celebrating the iconic volt O.
+	•	Accessibility as a baseline: Built strictly to WCAG 2.2 AA with minimum 44px touch targets, outdoor daylight contrast compliance (>4.5:1), keyboard focus trapping in dialogs, and native iOS form zoom prevention.
 2. Goals and success metrics
 Business goals
 	•	Increase walk-ins and WhatsApp enquiries across all seven zones.
@@ -350,6 +351,9 @@ Must
 FR-40
 Cinematic Media System & Branded FOB Image Tagging: Every image asset across landing and zone pages is encapsulated in a responsive cinematic frame (.fob-cinematic-frame) featuring anamorphic edge letterboxing, radial lens vignetting, subtle micro-zoom on interaction, and an integrated glassmorphic HUD badge (.fob-media-tag) displaying the branded volt 'O' and zone context
 Must
+FR-41
+Mobile-First Thumb-Zone Action Dock: On mobile viewports (< 768px), a persistent bottom floating action dock (.fob-mobile-dock) provides one-tap thumb access to "Lock In" (triggering the bottom booking sheet), "Directions" (turn-by-turn navigation route), and "Call", with safe-area inset adaptation for modern smartphones
+Must
 CMS requirements
 Staff must be able to do these without a developer. Two roles: Admin (owner) and Editor (shift staff, can edit fixtures, live scores, and venue status).
 	•	Fixtures & LiveScores: home team, away team (plain text), competition, date, kick-off time, doors-open time, live score (home/away), live match minute/period, goal scorers list, status, optional note (for example, big derby, come early).
@@ -363,11 +367,18 @@ Performance (mobile data first)
 	•	LiveScore polling uses lightweight delta payloads (< 5 KB per poll).
 	•	Images in AVIF or WebP with responsive sizes; heroes under 150 KB on mobile.
 	•	Fonts: two families maximum, WOFF2, subsetted, font-display swap.
-Accessibility (WCAG 2.2 AA)
-	•	LiveScore updates announce goal events via an `aria-live="polite"` region.
-	•	Contrast checked for every colour pair.
-	•	Full keyboard use, visible focus states in volt on ink or ink on volt.
-	•	Tap targets at least 44 by 44 pixels.
+Mobile-First Style Guide & Ergonomics
+	•	Thumb-Zone Prioritization: Primary conversion actions (Lock In, Directions, Call) pinned within natural thumb reach via persistent bottom dock (.fob-mobile-dock) on mobile screens.
+	•	Safe-Area Inset Support: Layout integrates `env(safe-area-inset-top)` and `env(safe-area-inset-bottom)` to account for mobile notches, dynamic islands, and home indicator gestures.
+	•	Zero iOS Viewport Zoom Glitches: Form inputs and selects enforce a minimum 16px (1rem) font size, preventing iOS Safari from triggering unwanted auto-zoom upon tapping fields.
+	•	Fluid Type Clamping: Typography smoothly scales from 320px ultra-compact phones (e.g., iPhone SE) up to large displays using fluid `clamp()` tokens, preventing awkward word breaks or horizontal overflow.
+	•	Horizontal Scroll Immunity: Page wrappers, grid containers, and media elements strictly bounded by `max-width: 100%` and `overflow-x: hidden`.
+Accessibility (WCAG 2.2 AA Compliance)
+	•	Target Size (SC 2.5.8): All interactive targets (buttons, chips, tabs, form inputs, mode toggles, modal close icons) enforce a minimum touch target area of 44 by 44 CSS pixels.
+	•	Daylight Outdoor Contrast (SC 1.4.3): Normal text tokens calibrated to exceed 4.5:1 against the dark stadium ground (#0E0E2C); primary button contrast (Volt on Ink) exceeds 14.8:1 (exceeding Level AAA).
+	•	Keyboard Focus Trapping & Restoration: Lock It In modal sheet and mobile navigation drawer trap keyboard focus while active, restore focus to triggering element upon dismissal, and support Escape key navigation.
+	•	Live Announcement Regions (SC 4.1.3): LiveScore match updates and GPS route calculations announce dynamically to screen readers via polite aria-live regions (`aria-live="polite"`).
+	•	Semantic Navigation & Skip Link: Complete with `#main-content` skip link, `aria-expanded` and `aria-controls` bindings on mobile toggles, and valid semantic landmarks.
 10. Motion and animation specification
 ID
 Animation
@@ -545,6 +556,10 @@ Food & Beverage / Sports Experience
 Cinematic Media System & Site-Wide Branded FOB Tags: Encapsulate all photos and illustration scenes in high-performance CSS-based cinematic letterbox frames (.fob-cinematic-frame) with glassmorphic branded HUD badges (.fob-media-tag) displaying the iconic volt O and zone tags, avoiding heavy bitmap raster burning while achieving an authentic broadcast-grade cinematic aesthetic.
 1, 7.6, 8 (FR-40), 10 (ANI-21), 18
 Art Direction & Creative Direction
+26
+Mobile-First Style Guide & WCAG 2.2 AA Accessibility Compliance: Standardize 44px minimum touch targets across buttons, chips, tabs, inputs, and controls; enforce safe-area inset adaptation for notches/gesture bars; introduce mobile thumb-zone action dock (.fob-mobile-dock); implement focus trapping in modals; and calibrate daylight contrast ratios (>4.5:1).
+1, 7, 8 (FR-41), 9, 18, 23
+UX/UI Lead & Accessibility Specialist
 14. Technical implementation: HTML, CSS and vanilla JavaScript
 File structure:
 /fob-site
@@ -603,6 +618,7 @@ Sample Fixture & LiveScore JSON format:
   ]
 }
 Document control
+Version 1.8: 20 October 2026. Mobile-First Style Guide & WCAG 2.2 AA Accessibility Audit: 44px minimum touch targets, outdoor daylight contrast calibrated (>4.5:1), modal focus trapping, iOS Safari input auto-zoom prevention (16px), safe-area insets, and sticky thumb-zone action dock (.fob-mobile-dock) (FR-41, Decision 26).
 Version 1.7: 20 October 2026. Branded FOB Cinematic Media System implemented site-wide: introduced `.fob-cinematic-frame` with anamorphic letterboxing, edge vignetting, micro-zoom motion, and glassmorphic HUD tags (`.fob-media-tag`) across all gallery cards, hero banners, and zone feature strips (FR-40, ANI-21, Decision 25).
 Version 1.6: 20 October 2026. Venue address migrated to 2, Lawani Ode Street, Alakara Bus Stop, Ashipa, Ayobo, Lagos; connected Google Maps Directions API for native GPS turn-by-turn navigation; upgraded football viewing menu to Beer Bar, Shawarma & Live Charcoal Grills (FR-38, FR-39, Decisions 22–24).
 Version 1.5: 20 October 2026. Sports broadcast overhaul: introduced broadcast lower-third matchday marquee, tabular numeric scoreboard typography, recent team form discs, CSS live match momentum gauge, and pro arena zone nomenclature while retaining zero-pricing WhatsApp conversion flow.

@@ -25,19 +25,24 @@
   --fob-ink-06: rgba(14, 14, 44, 0.06);
   --fob-white-90: rgba(255, 255, 255, 0.9);
   --fob-white-70: rgba(255, 255, 255, 0.7);
-  --fob-white-40: rgba(255, 255, 255, 0.4);
+  --fob-white-40: rgba(255, 255, 255, 0.58); /* Calibrated for WCAG 2.2 AA 4.5:1 daylight contrast */
   --fob-white-16: rgba(255, 255, 255, 0.16);
   --fob-white-08: rgba(255, 255, 255, 0.08);
+
+  /* Touch & Safe Area Tokens (WCAG 2.2 Target Size & Mobile First) */
+  --fob-touch-min: 44px;
+  --fob-safe-bottom: max(0.75rem, env(safe-area-inset-bottom, 0.75rem));
+  --fob-safe-top: max(1rem, env(safe-area-inset-top, 1rem));
 
   /* Typography */
   --font-display: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-text: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
-  /* Fluid Type Scale (PRD Section 18) */
-  --step-display: clamp(2.75rem, 8vw, 6.5rem);
-  --step-h1: clamp(2rem, 5vw, 3.75rem);
-  --step-h2: clamp(1.6rem, 3.5vw, 2.5rem);
-  --step-h3: clamp(1.25rem, 2.5vw, 1.5rem);
+  /* Fluid Type Scale (PRD Section 18 - Calibrated for 320px - 1440px) */
+  --step-display: clamp(2.25rem, 7.5vw, 6.5rem);
+  --step-h1: clamp(1.85rem, 5vw, 3.75rem);
+  --step-h2: clamp(1.45rem, 3.5vw, 2.5rem);
+  --step-h3: clamp(1.15rem, 2.5vw, 1.5rem);
   --step-body: clamp(0.95rem, 1.5vw, 1.125rem);
   --step-small: 0.875rem;
 

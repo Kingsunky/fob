@@ -25,6 +25,13 @@ body {
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
+  padding-bottom: 0;
+}
+
+@media (max-width: 767px) {
+  body {
+    padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px));
+  }
 }
 
 /* Skip link for accessibility (WCAG 2.2 AA) */

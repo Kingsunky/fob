@@ -117,8 +117,28 @@ class LockItInSheet {
     });
 
     document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && this.backdrop.classList.contains("is-open")) {
-        this.close();
+      if (this.backdrop.classList.contains("is-open")) {
+        if (e.key === "Escape") {
+          this.close();
+        } else if (e.key === "Tab") {
+          // Focus trapping within modal (WCAG 2.2 AA)
+          const focusables = this.backdrop.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+          if (focusables.length === 0) return;
+          const firstFocusable = focusables[0];
+          const lastFocusable = focusables[focusables.length - 1];
+
+          if (e.shiftKey) {
+            if (document.activeElement === firstFocusable) {
+              e.preventDefault();
+              lastFocusable.focus();
+            }
+          } else {
+            if (document.activeElement === lastFocusable) {
+              e.preventDefault();
+              firstFocusable.focus();
+            }
+          }
+        }
       }
     });
 
@@ -181,6 +201,7 @@ class LockItInSheet {
   }
 
   open(presetZone = null) {
+    this.previousActiveElement = document.activeElement;
     if (presetZone) {
       this.selectedZone = presetZone;
       const zoneChips = document.querySelectorAll("#sheet-zone-chips .fob-chip-btn");
@@ -194,11 +215,22 @@ class LockItInSheet {
     }
     this.backdrop.classList.add("is-open");
     document.body.style.overflow = "hidden";
+
+    // Set initial focus to close button
+    const closeBtn = document.getElementById("fob-sheet-close-btn");
+    if (closeBtn) {
+      setTimeout(() => closeBtn.focus(), 50);
+    }
   }
 
   close() {
     this.backdrop.classList.remove("is-open");
     document.body.style.overflow = "";
+
+    // Restore previous focus (WCAG 2.2 AA)
+    if (this.previousActiveElement && typeof this.previousActiveElement.focus === "function") {
+      this.previousActiveElement.focus();
+    }
   }
 
   showToastConfirmation() {

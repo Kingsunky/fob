@@ -277,6 +277,8 @@
 .fob-footer__col a {
   color: var(--fob-white-70);
   font-size: 0.95rem;
+  padding: 0.25rem 0;
+  display: inline-block;
   transition: color var(--dur-fast) var(--ease-out);
 }
 
@@ -308,6 +310,13 @@
   gap: 1.5rem;
 }
 
+.fob-footer__legal a {
+  color: var(--fob-white-70);
+  padding: 0.25rem 0;
+  display: inline-block;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
 .fob-footer__legal a:hover {
-  color: var(--fob-white);
+  color: var(--fob-volt);
 }

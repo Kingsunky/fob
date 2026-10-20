@@ -60,7 +60,7 @@
 .fob-btn--secondary {
   background: transparent;
   color: var(--fob-white);
-  border: 2px solid var(--fob-white-40);
+  border: 2px solid var(--fob-white-70);
 }
 
 .fob-btn--secondary:hover {
@@ -78,11 +78,18 @@
   background: var(--fob-ink-06);
 }
 
-/* Compact button for nav & cards */
+/* Compact button for nav & cards (with mobile 44px touch target) */
 .fob-btn--sm {
   padding: 0.45rem 1rem;
   min-height: 38px;
   font-size: 0.85rem;
+}
+
+@media (max-width: 767px) {
+  .fob-btn--sm {
+    min-height: 44px; /* WCAG 2.2 AA mobile touch target */
+    padding: 0.55rem 1.15rem;
+  }
 }
 
 .fob-btn--lg {
@@ -647,15 +654,17 @@
 }
 
 .fob-sheet__close {
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
   border-radius: 50%;
   background: var(--fob-white-08);
   color: var(--fob-white);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   transition: background var(--dur-fast);
 }
 
@@ -688,7 +697,11 @@
   border: 1px solid var(--fob-white-16);
   color: var(--fob-white);
   border-radius: var(--radius-pill);
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1.15rem;
+  min-height: 44px; /* WCAG 2.2 AA touch target */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font-size: 0.85rem;
   font-weight: 600;
   cursor: pointer;
@@ -715,13 +728,14 @@
 
 .fob-input {
   width: 100%;
+  min-height: 48px;
   background: var(--fob-white-08);
   border: 1px solid var(--fob-white-16);
   border-radius: var(--radius-input);
   padding: 0.75rem 1rem;
   color: var(--fob-white);
   font-family: var(--font-text);
-  font-size: 0.95rem;
+  font-size: 1rem; /* Minimum 16px to prevent iOS Safari auto-zoom */
 }
 
 .fob-input:focus {
@@ -905,4 +919,43 @@
   z-index: 3;
   opacity: 0.7;
   pointer-events: none;
+}
+
+/* ==========================================================================
+   MOBILE-FIRST STICKY ACTION DOCK (PRD FR-41, Thumb-Zone Ergonomics)
+   ========================================================================== */
+.fob-mobile-dock {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 990;
+  background: rgba(14, 14, 44, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid var(--fob-white-16);
+  padding: 0.65rem 1rem max(0.65rem, env(safe-area-inset-bottom, 0.65rem));
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.55);
+}
+
+@media (max-width: 767px) {
+  .fob-mobile-dock {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}
+
+.fob-mobile-dock__cta {
+  flex: 1.4;
+  min-height: 46px;
+  font-size: 0.9rem;
+}
+
+.fob-mobile-dock__btn {
+  flex: 1;
+  min-height: 46px;
+  font-size: 0.85rem;
+  padding: 0.5rem 0.75rem;
 }

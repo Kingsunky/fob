@@ -390,21 +390,29 @@
 .fob-tabs-nav {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.35rem;
   background: var(--fob-ink);
   border: 1px solid var(--fob-white-16);
-  padding: 0.4rem;
+  padding: 0.35rem;
   border-radius: var(--radius-pill);
   width: fit-content;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   margin: 0 auto 2.5rem;
 }
 
 .fob-tab-btn {
-  padding: 0.6rem 1.5rem;
+  padding: 0.6rem 1.25rem;
+  min-height: 44px; /* WCAG 2.2 AA mobile touch target */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border-radius: var(--radius-pill);
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 1rem;
+  font-size: clamp(0.85rem, 2.5vw, 1rem);
+  white-space: nowrap;
   color: var(--fob-white-70);
   background: transparent;
   cursor: pointer;
@@ -679,7 +687,11 @@
 }
 
 .fob-mode-btn {
-  padding: 0.4rem 1rem;
+  padding: 0.5rem 1.15rem;
+  min-height: 44px; /* WCAG 2.2 AA touch target */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border-radius: var(--radius-pill);
   font-size: 0.85rem;
   font-weight: 700;
