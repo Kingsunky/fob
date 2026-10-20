@@ -1,23 +1,23 @@
 FOB Website: Product Requirements Document (PRD)
-Version 1.9 (LiveScore API Key Integration, 7-Day Rolling Matchday Window: 3 Days Past to 3 Days Future, 3–6 Matches Display Constraints) | 20 October 2026 | Status: ready for client sign-off | Prepared by the FOB project team (Brand Strategy, Sports Creative Direction, Art Direction, Copy, UX/UI, Development, Production)
+Version 2.0 (Decommissioning of LiveScore Telemetry; Pure Physical Matchday Screening Hub & Venue Schedule) | 20 October 2026 | Status: ready for client sign-off | Prepared by the FOB project team (Brand Strategy, Sports Creative Direction, Art Direction, Copy, UX/UI, Development, Production)
 1. Summary
-FOB is a premier sports and recreation centre located at 2, Lawani Ode Street, Alakara Bus Stop, Ashipa, Ayobo, Lagos, with seven zones: football pitch, football viewing centre, gym, basketball court, snooker, table tennis and gaming. This document defines the requirements for the FOB website: what it must do, how it must look and move, and every illustration, animation, broadcast graphic, map navigation interface, and real-time live match telemetry asset produced for it.
-The website has one job: turn a mobile visitor into a person who walks through the door or sends a WhatsApp message. Bookings across zones run through WhatsApp, phone and walk-in. The viewing centre operates as a live stadium-grade match-day hub with real-time score synchronization across top football competitions, an integrated beer bar with shawarma and live charcoal grills, first come first served. All public pricing has been deliberately removed from the site to focus entirely on atmosphere, live match energy, availability, and fast WhatsApp bookings. The quality bar the site is built to is in section 17, and the brand system it is built from is in section 18.
+FOB is a premier sports and recreation centre located at 2, Lawani Ode Street, Alakara Bus Stop, Ashipa, Ayobo, Lagos, with seven zones: football pitch, football viewing centre, gym, basketball court, snooker, table tennis and gaming. This document defines the requirements for the FOB website: what it must do, how it must look and move, and every illustration, animation, broadcast graphic, map navigation interface, and matchday screening asset produced for it.
+The website has one job: turn a mobile visitor into a person who walks through the door or sends a WhatsApp message. Bookings across zones run through WhatsApp, phone and walk-in. The viewing centre operates as a live stadium-grade match-day screening lounge featuring a 4K laser projection wall and stadium surround sound, screening top football competitions alongside an integrated beer bar with shawarma and live charcoal grills, first come first served. All public pricing and live score telemetries have been removed from the site to focus entirely on physical venue atmosphere, screening schedules, door-opening times, open seating availability, and fast WhatsApp bookings. The quality bar the site is built to is in section 17, and the brand system it is built from is in section 18.
 Product principles
 	•	Sleek in structure, fun in moments. Layout, type and photography stay clean. Colour, copy, motion and small surprises carry the fun.
 	•	Mobile first, data-light. Most visitors will arrive on a phone on mobile data.
 	•	The next action is always visible: Lock it in, See you there, Call, or Directions, reinforced by a persistent mobile thumb-zone action dock.
 	•	The O is the hero. It is the logo, the zone icon, the loader, the cursor and the interactive toy.
-	•	Nothing hidden: live matches, real-time scores, goal previews, hours and status are always one tap away.
-	•	Zero pricing friction: the site eliminates all pricing tables and payment barriers; availability and reservations happen directly via WhatsApp. Also includes Goal‑Score Flash animation (ANI‑19).
-	•	Stadium energy, broadcast precision: Visuals blend Lagos crew warmth with sports broadcast typography, live match telemetry (momentum indicators, form guides), and floodlight contrast.
+	•	Nothing hidden: match screening schedules, door-opening times, seating availability, operating hours, and turn-by-turn directions are always one tap away.
+	•	Zero pricing friction: the site eliminates all pricing tables and payment barriers; availability and table reservations happen directly via WhatsApp.
+	•	Stadium energy, broadcast precision: Visuals blend Lagos crew warmth with sports broadcast typography, bold high-contrast fixtures, and floodlight contrast.
 	•	Cinematic presentation, authentic branding: Every visual asset across hero headers, interactive zone tabs, and photo galleries is framed with anamorphic letterboxing, subtle lens vignetting, and a micro-HUD glassmorphic FOB tag celebrating the iconic volt O.
 	•	Accessibility as a baseline: Built strictly to WCAG 2.2 AA with minimum 44px touch targets, outdoor daylight contrast compliance (>4.5:1), keyboard focus trapping in dialogs, and native iOS form zoom prevention.
-	•	Continuous matchday telemetry: LiveScore engine powered by authenticated API key (`sk_live_...`), displaying a 7-day rolling window (3 days past results to 3 days future fixtures) bounded strictly between a minimum of 3 and a maximum of 6 matches per display.
+	•	Focused venue schedule: Curated matchday screening schedule highlighting major UEFA Champions League, Premier League, La Liga, and Serie A fixtures showing on the big screens.
 2. Goals and success metrics
 Business goals
 	•	Increase walk-ins and WhatsApp enquiries across all seven zones.
-	•	Make the viewing centre the most visited page, driven by real-time match-day fixtures, top football competition sync, and live scores.
+	•	Make the viewing centre the most visited page, driven by big-screen matchday screenings, 4K laser wall experience, and match-day beer & grill offerings.
 	•	Grow group and event revenue (birthdays, team outings, corporate nights, tournaments).
 	•	Give FOB a brand and website that look established from launch day.
 Metrics (targets to be confirmed after a 30-day baseline)
@@ -30,7 +30,7 @@ Click events on every Lock it in, Ask on WhatsApp and Call button
 Directions taps
 Click events on map links
 4% of sessions
-Fixture & LiveScore page views
+Match Screening Schedule page views
 Views of Today at FOB and the fixtures page on match days
 45% of match-day sessions
 Mobile load speed
@@ -39,9 +39,9 @@ Largest Contentful Paint on a mid-range Android over 4G
 Accessibility
 Automated audit plus manual keyboard and screen reader check
 WCAG 2.2 AA
-LiveScore sync latency
-Latency from official goal event to preview update on site
-Under 30 seconds
+Screening schedule accuracy
+Staff verification of screening lineups within 15 minutes of fixture confirmations
+100% of major matches
 3. Reference study: PocketApp (pocketapp.com)
 The brief names pocketapp.com as the reference for design, illustration, animation and brand direction. This is the Lagos mobile money app (a Nigerian fintech wallet). If a different site was intended, tell us and this section will be redone.
 The notes below are based on the site's published page content and asset names. We take patterns and principles from the reference. We do not copy its layout, artwork, copy or assets.
@@ -78,7 +78,7 @@ Tap me hints on two money guns that fire falling naira notes
 Tap the O: a ball that kicks out sport balls and volt sparks that fall and bounce
 Hero feature
 One hero feature given its own full-width block with a bold intro label
-The viewing centre gets the same treatment, with a Today at FOB live match and LiveScore strip
+The viewing centre gets the same treatment, with a Today at FOB live match screening and venue status strip
 FAQ
 Accordion of plain-language questions
 FAQ accordion on Home and on each zone page
@@ -89,10 +89,10 @@ Footer
 Address, phone, email, socials, legal links
 Address, WhatsApp, phone, socials, hours
 What we deliberately do differently
-	•	PocketApp sells a financial product and leans on trust badges. FOB sells an experience, so we lean on live football energy, top competition sync, and community culture.
+	•	PocketApp sells a financial product and leans on trust badges. FOB sells an experience, so we lean on matchday screening energy, pro facilities, and community culture.
 	•	FOB carries seven zone colours, used only as small badges, icons and section headers.
 	•	No pricing tables: all pricing has been removed to maximize conversion speed directly into WhatsApp conversations.
-	•	Real-time LiveScore model: match preview cards feature live home/away scores, match clock (e.g. 1H 34', HT, 2H 78', FT), and live goal scorer previews.
+	•	Pure matchday screening model: match preview cards feature clean VS badges, kick-off and doors-open times, seating capacity chips (Open / Filling Up / Full House / Ask on WhatsApp), and zero in-game score clutter.
 4. Brand direction (locked)
 	•	Wordmark: Route B, a slim ink pill holding white FOB letters with a volt-lime O. The O is slightly oversized and is the only bright element.
 	•	Concept: FOB is the home base for your crew.
@@ -165,18 +165,19 @@ WhatsApp message templates
 6. Scope and sitemap
 In scope (launch)
 	•	Brand-led marketing website, mobile first, responsive to desktop, built in plain HTML, CSS and vanilla JavaScript (section 23).
-	•	Seven zone pages plus Home, Live Fixtures & LiveScore (viewing centre), Events and Parties, Gallery, Find Us and Contact, FAQ, 404.
-	•	LiveScore and top football competitions sync: automatic real-time feed tracking top matches in UEFA Champions League, Premier League, La Liga, Serie A, and FA Cup with live scores and goal scorer previews.
-	•	A simple CMS so staff manage fixtures, competition sync, status, hours, events and photos.
+	•	Seven zone pages plus Home, Match Screenings & Schedule (viewing centre), Events and Parties, Gallery, Find Us and Contact, FAQ, 404.
+	•	Match screening guide across top football competitions: curated schedule of premier matches in UEFA Champions League, Premier League, La Liga, and Serie A showing on the 4K laser projection wall with door-opening times and seating availability.
+	•	A simple CMS so staff manage screening fixtures, venue status, hours, events and photos.
 	•	WhatsApp and tap-to-call flows, directions links, basic analytics, local SEO.
 Out of scope (launch)
+	•	Real-time in-game live score tickers, match clocks, and goal counters (decommissioned in v2.0; focus is strictly physical venue screening attendance).
 	•	Public pricing tables, online seat or table reservations, online payments and memberships.
 	•	User accounts and logins.
 	•	Club crests, league logos and player images (rights-protected; team names appear in plain text only).
 Sitemap
 	•	Home
 	•	Play: Football pitch, Basketball court, Snooker, Table tennis
-	•	Watch: Football viewing (Today at FOB, LiveScores & Fixtures, Top Competitions, Refreshments)
+	•	Watch: Football viewing (Today at FOB, Match Screenings & Schedule, Top Competitions, Refreshments)
 	•	Train: Gym
 	•	Games: Gaming centre
 	•	Events and Parties
@@ -207,26 +208,21 @@ Sections in order, with the PocketApp pattern each follows:
 	•	Three-photo gallery strip.
 	•	Zone FAQ (three questions).
 	•	Related zones strip.
-7.3 Football viewing page (Watch & LiveScores)
-	•	Today at FOB strip, top competition selector (All, Champions League, Premier League, La Liga, Serie A, FA Cup, Super Eagles / NPFL), followed by the fixture list for the next 7 days.
-	•	LiveScore Model on every fixture card:
-		- Teams in plain text with neutral team discs and recent form pills (W/D/L).
-		- Competition badge (e.g. UEFA Champions League, Premier League, La Liga).
-		- Live match status: Upcoming, 1H (First Half), HT (Half-Time), 2H (Second Half), FT (Full-Time).
-		- Live score display: prominent bold tabular score counter (e.g. 2 - 1) with `font-variant-numeric: tabular-nums`.
-		- Match clock / minute: e.g. 74'.
-		- Goal Scorers Preview on Card: lists recent goal events directly on preview (e.g. Saka 34', Palmer 58' pen).
-		- Real-time GOAL badge alert that pulses when a score changes (ANI-19).
-		- Match Momentum Indicator: lightweight 2-tone CSS bar rendering live attacking pressure/possession balance without client performance cost.
-		- Audio & Visual spec chip: e.g. "4K Laser Wall • 105dB Stadium Audio".
-		- Status chip (open, filling up, full, live).
-		- Primary button: See you there. Secondary: Ask on WhatsApp. Directions link on every card.
-	•	First come first served message shown clearly: Big one. Come early.
-	•	Live state: the magenta O pulses while a match is live on screen.
+7.3 Football viewing page (Watch & Match Screenings)
+	•	Today at FOB strip, top competition selector (All, Champions League, Premier League, La Liga, Serie A, FA Cup, Super Eagles / NPFL), followed by the upcoming screening fixture list.
+	•	Match Screening Card Model on every fixture card:
+		- Teams in bold display type with neutral 2-letter circular initial badges.
+		- Competition badge (e.g. UEFA Champions League, Premier League, La Liga, Serie A).
+		- Matchup Center: prominent high-contrast "VS" badge and screening date/day.
+		- Big Match Callout: highlighted badge and crowd advisory (e.g. "European Heavyweight Clash. 4K Laser Projection + Stadium Sound. Arrive early!").
+		- Kick-Off & Doors-Open times with doors-open time emphasized in volt for high-priority matches.
+		- Venue status chip (Open Seating, Filling Up, Full House, Ask on WhatsApp) reflecting current physical lounge capacity.
+		- Primary button: "See you there" (navigates to Find Us route). Secondary button: "Ask on WhatsApp" (pre-fills availability inquiry). Action: "Send to crew" share button.
+	•	First come first served message shown clearly: "Big matches fill up fast: Open seating is first come, first served. Arrive at doors-open time!"
 	•	Refreshments & Chow: Full Match-Day Beer Bar, Shawarma & Live Charcoal Grills section (sub-zero beer buckets, draught cider pitchers, double-sausage special shawarma, smokey BBQ chicken shawarma rolls, whole charcoal-grilled catfish/croaker with roasted plantain, signature suya & peppered asun platters, spicy glazed wings, and match cocktails; zero-pricing policy preserved).
 	•	Empty state: No match today. Check tomorrow.
-7.4 LiveScore Model & Top Football Competitions Sync Engine
-To establish FOB as Lagos's premier match-day authority, the site syncs top football matches across major domestic and international competitions, powered by a lightweight client-side polling and data-sync model:
+7.4 Matchday Screening Schedule & Top Football Competitions Hub
+To establish FOB as Lagos's premier match-day authority, the site presents curated upcoming football screenings across major European and domestic competitions:
 	•	Competitions in scope:
 		1. UEFA Champions League
 		2. English Premier League
@@ -234,32 +230,20 @@ To establish FOB as Lagos's premier match-day authority, the site syncs top foot
 		4. Italian Serie A
 		5. Emirates FA Cup & Carabao Cup
 		6. Nigerian Super Eagles & NPFL featured matches
-	•	LiveScore Data Schema (`livescore.json` / sync endpoint):
-		- `id`: unique fixture string (e.g. `2026-10-20-real-madrid-bayern`)
+	•	Match Screening Data Schema (`data/fixtures.json`):
+		- `id`: unique fixture string (e.g. `ucl-2026-10-20-rm-bayern`)
+		- `competition`: string (league/cup name)
 		- `home`: string (home club name)
 		- `away`: string (away club name)
-		- `homeForm`: array `['W', 'W', 'D']`
-		- `awayForm`: array `['W', 'L', 'W']`
-		- `momentum`: number (0-100 indicating attacking pressure percentage toward home or away)
-		- `competition`: string (league/cup name)
+		- `date`: string (ISO date `YYYY-MM-DD`)
 		- `kickoff`: ISO 8601 timestamp
 		- `doors`: ISO 8601 timestamp
-		- `status`: enum (`scheduled`, `live`, `halftime`, `finished`, `postponed`)
-		- `period`: string (`1H`, `HT`, `2H`, `FT`)
-		- `minute`: integer (current match minute)
-		- `score`: object `{ home: number, away: number }`
-		- `goals`: array of objects `[{ minute: string, team: 'home' | 'away', player: string, type: 'normal' | 'penalty' | 'owngoal' }]`
-		- `bigMatch`: boolean
 		- `venueStatus`: enum (`open`, `filling up`, `full`)
-		- `statusUpdated`: ISO 8601 timestamp
-	•	Goal Score Preview & Momentum on Cards:
-		- If `goals` array is populated, card preview renders a compact goal timeline: e.g., ⚽ Saka 34', Palmer 58' (pen).
-		- When a live score change is detected via polling, the score counter animates with a spring pop, and a temporary `GOAL!` flash badge illuminates for 15 seconds.
-		- Live momentum bar shifts dynamically reflecting match attacking pressure.
-	•	Sync Cadence:
-		- When at least one match is in `live` or `halftime` state: polls live feed every 30 seconds.
-		- When matches are scheduled or finished: polls feed every 5 minutes.
-		- If feed drops or device is offline: displays last cached scores with timestamp and falls back gracefully.
+		- `statusUpdated`: ISO 8601 timestamp (falls back to Ask on WhatsApp if older than 3 hours)
+		- `bigMatch`: boolean (triggers high-energy visual accent)
+		- `note`: string (atmosphere and screening highlight)
+	•	Pure Venue Focus:
+		- In-game score tickers, match minute clocks, goal counters, and live polling were permanently decommissioned in Version 2.0 to eliminate data overhead, reduce mobile battery drain, and prioritize physical venue bookings and walk-ins.
 7.5 Events and Parties
 Three package cards (birthday, team outing, tournament), what is included, group sizes, and an enquiry button that opens WhatsApp with the event template (pricing removed; custom quotes provided on WhatsApp).
 7.6 Gallery
@@ -287,7 +271,7 @@ FR-03
 Tap-to-call button (tel: link) next to every WhatsApp button
 Must
 FR-04
-Today at FOB shows top football competition matches dated today with live score and period, sorted by kick-off time
+Today at FOB shows upcoming match screenings dated today with doors-open time and seating status, sorted by kick-off time
 Must
 FR-05
 Venue status (open, filling up, full) is updated with visible last-updated time
@@ -296,13 +280,13 @@ FR-06
 If a match-day venue status has not been updated for 3 hours, the card falls back to Ask on WhatsApp instead of showing a stale status
 Must
 FR-07
-Fixtures leave the live list 3 hours after full-time and move to an archive
+Fixtures leave the active schedule 3 hours after kick-off time
 Should
 FR-08
-Live state: the zone O pulses between kick-off and full-time with an active LIVE badge
+Screening state: cards for tonight's big matches display a distinct Screening Tonight badge with doors-open advisory
 Should
 FR-09
-Top Football Competitions Sync & LiveScore Data Model: automated sync feeds live match clock, home/away scores, and goal events (player, minute, team) directly to match cards
+Matchday Screening Schedule across Top Competitions: Curated schedule of premier fixtures (UEFA Champions League, Premier League, La Liga, Serie A) screened on the 4K laser wall
 Must
 FR-10
 Opening hours in West Africa Time, with special-hours overrides and an Open now badge
@@ -323,7 +307,7 @@ FR-15
 Local business structured data, per-page titles and descriptions, and a share image per zone
 Must
 FR-16
-Analytics events on every WhatsApp, call, directions and fixture/livescore interaction
+Analytics events on every WhatsApp, call, directions, and match screening card interaction
 Must
 FR-17
 Minimal, privacy-friendly analytics; consent banner only if required by the chosen tool
@@ -332,16 +316,16 @@ FR-18
 Custom 404 page with a playful O animation and a link home
 Could
 FR-34
-Goal Score Preview & Live Ticker: fixture cards render goal scorers with minute and player; a goal event triggers a visual flash alert and score animation
-Must
+[DEPRECATED in v2.0] LiveScore Telemetry & Goal Scorers List: Decommissioned. Replaced by clean match screening guide with doors-open times, venue capacity status, and instant WhatsApp booking
+Decommissioned
 FR-35
 Zero-Pricing Policy: all pricing tables, rates rows, and per-match ticket prices are omitted across the site to channel inquiries directly to WhatsApp
 Must
 FR-36
-Sports Match Telemetry & Form Guide: Fixture cards render recent team form discs (W/D/L) and a lightweight CSS attacking momentum bar; scores and clocks utilize tabular numeric formatting (`font-variant-numeric: tabular-nums`)
+Match Screening Card Presentation: Fixture cards render neutral team initials, competition badge, prominent VS center badge, date, kick-off time, and doors-open times
 Must
 FR-37
-Broadcast Matchday Lower-Third: On matchdays, the global ticker transforms into a high-contrast sports broadcast lower-third displaying upcoming kickoffs, live scores, and venue capacity
+Broadcast Matchday Lower-Third: On matchdays, the global ticker highlights tonight's featured big-screen match screening and door opening times
 Should
 FR-38
 Google Maps Navigation API Integration: Directions buttons and route calculation interface connect directly to the Google Maps Directions API (`https://www.google.com/maps/dir/?api=1...`), passing user origin GPS coordinates and destination at 2, Lawani Ode Street, Alakara Bus Stop, Ashipa, Ayobo, Lagos for native turn-by-turn navigation
@@ -356,11 +340,11 @@ FR-41
 Mobile-First Thumb-Zone Action Dock: On mobile viewports (< 768px), a persistent bottom floating action dock (.fob-mobile-dock) provides one-tap thumb access to "Lock In" (triggering the bottom booking sheet), "Directions" (turn-by-turn navigation route), and "Call", with safe-area inset adaptation for modern smartphones
 Must
 FR-42
-LiveScore API Key Integration & 7-Day Matchday Window Constraints: Real-time LiveScore engine authenticates via configured API key (`sk_live_...` runtime token), querying and displaying a rolling 7-day matchday schedule spanning from 3 days prior to the current date through 3 days ahead, enforcing strict display thresholds of minimum 3 matches and maximum 6 matches per display section
-Must
+[DEPRECATED in v2.0] LiveScore API Key Integration: Decommissioned. All external live score polling and API keys removed to eliminate bandwidth overhead, network latency, and secret exposure risks, directing all focus to physical viewing centre visits
+Decommissioned
 CMS requirements
-Staff must be able to do these without a developer. Two roles: Admin (owner) and Editor (shift staff, can edit fixtures, live scores, and venue status).
-	•	Fixtures & LiveScores: home team, away team (plain text), competition, date, kick-off time, doors-open time, live score (home/away), live match minute/period, goal scorers list, status, optional note (for example, big derby, come early).
+Staff must be able to do these without a developer. Two roles: Admin (owner) and Editor (shift staff, can edit fixtures, venue status, and special announcements).
+	•	Match Screenings: home team, away team (plain text), competition, date, kick-off time, doors-open time, venue capacity status, big match indicator, optional note (for example, big derby, come early).
 	•	Zones: name, tagline, features, specs, hours, photos, FAQ items.
 	•	Events: package name, description, group sizes, inclusions.
 	•	Global settings: WhatsApp number, phone number, address, map link, hours, special-hours notice, social links, site-wide banner message.
@@ -368,7 +352,7 @@ Staff must be able to do these without a developer. Two roles: Admin (owner) and
 Performance (mobile data first)
 	•	Largest Contentful Paint 2.5 seconds or better on a mid-range Android phone over 4G.
 	•	First load under 1.2 MB transferred, with JavaScript under 150 KB compressed.
-	•	LiveScore polling uses lightweight delta payloads (< 5 KB per poll).
+	•	Zero background live-score polling overhead (< 1 KB total static fixture payload).
 	•	Images in AVIF or WebP with responsive sizes; heroes under 150 KB on mobile.
 	•	Fonts: two families maximum, WOFF2, subsetted, font-display swap.
 Mobile-First Style Guide & Ergonomics
@@ -381,7 +365,7 @@ Accessibility (WCAG 2.2 AA Compliance)
 	•	Target Size (SC 2.5.8): All interactive targets (buttons, chips, tabs, form inputs, mode toggles, modal close icons) enforce a minimum touch target area of 44 by 44 CSS pixels.
 	•	Daylight Outdoor Contrast (SC 1.4.3): Normal text tokens calibrated to exceed 4.5:1 against the dark stadium ground (#0E0E2C); primary button contrast (Volt on Ink) exceeds 14.8:1 (exceeding Level AAA).
 	•	Keyboard Focus Trapping & Restoration: Lock It In modal sheet and mobile navigation drawer trap keyboard focus while active, restore focus to triggering element upon dismissal, and support Escape key navigation.
-	•	Live Announcement Regions (SC 4.1.3): LiveScore match updates and GPS route calculations announce dynamically to screen readers via polite aria-live regions (`aria-live="polite"`).
+	•	Live Announcement Regions (SC 4.1.3): Schedule updates and GPS route calculations announce dynamically to screen readers via polite aria-live regions (`aria-live="polite"`).
 	•	Semantic Navigation & Skip Link: Complete with `#main-content` skip link, `aria-expanded` and `aria-controls` bindings on mobile toggles, and valid semantic landmarks.
 10. Motion and animation specification
 ID
@@ -475,15 +459,13 @@ Scroll into view
 Numbers on the trust strip count up once
 Final numbers shown
 ANI-19
-Goal Score Flash & Pulse
-Goal event received
-Card flashes GOAL badge, score numbers pop to 125% and spring back (600 ms)
-Instant score update
+[DEPRECATED in v2.0] Goal Score Flash & Pulse
+Decommissioned along with in-game live score telemetry
+None
 ANI-20
-Momentum Shift
-Live match attack event
-Attacking pressure bar smoothly transitions width with ease-out (400 ms)
-Instant width change
+[DEPRECATED in v2.0] Momentum Shift
+Decommissioned along with in-game live score telemetry
+None
 ANI-21
 Cinematic Frame Micro-Zoom & Vignette Sweep
 Hover or card focus
@@ -493,26 +475,26 @@ Static image (no scale)
 A. Brand core: ILL-01 to 09 (wordmark, O mark, O-grid, spark confetti, pill kit, utility icons, dividers)
 B. Home page: ILL-10 to 16 (floating sport Os, tap me bubble, trust strip icons, how it works spots, crew avatar stack, tabs scenes, desktop QR frame)
 C. Zone set: 7 animated Os, 7 hero scenes, 21 spot icons
-D. Viewing centre, fixtures & LiveScore:
-	•	ILL-50: Fixture card with teams, times, live score display, goal scorers preview, and venue status
-	•	ILL-51: Status chip set: open, filling up, full, live
-	•	ILL-52: LIVE badge with animated pulse
+D. Viewing centre & Match Screenings:
+	•	ILL-50: Fixture card with teams, competition, VS center badge, times (Kick-Off, Doors-Open), and venue capacity status
+	•	ILL-51: Status chip set: open, filling up, full, ask
+	•	ILL-52: Screening Tonight badge with high-visibility accent
 	•	ILL-53: Neutral team discs showing team initials
-	•	ILL-54: LiveScore goal alert badge and score counter display
-	•	ILL-55: Refreshment menu icons
+	•	ILL-54: [DEPRECATED in v2.0]
+	•	ILL-55: Refreshment menu icons (beer bucket, cider pitcher, shawarma roll, live charcoal grill)
 	•	ILL-56: Empty state: No match today
 	•	ILL-57: Come early illustration: clock and queue forming
 	•	ILL-58: Stale-status fallback: Ask on WhatsApp
-	•	ILL-59: Match Momentum attacking gauge and recent form discs (W/D/L)
+	•	ILL-59: [DEPRECATED in v2.0]
 	•	ILL-60: Broadcast lower-third matchday marquee bar
 E. Journeys and contact: ILL-60 to 64
 F. Events and parties: ILL-70 to 72
 G. System states: ILL-80 to 84 (404 bouncing O, loader, offline notice, closed today, success state)
 12. Delivery plan and acceptance criteria
-	•	All 7 zone pages plus Home, Football Viewing with LiveScores, Events, Gallery, Find Us, FAQ, 404, and Offline mode built.
-	•	Top football competitions sync feeds real-time scores, period, goal scorers, recent form, and attacking momentum.
+	•	All 7 zone pages plus Home, Football Viewing with Match Screenings, Events, Gallery, Find Us, FAQ, 404, and Offline mode built.
+	•	Matchday screening schedule presents upcoming games across top competitions with doors-open times and seating status.
 	•	All pricing removed across all pages, components, data files, and copy.
-	•	All animations (ANI-01 to ANI-20) function smoothly and respect reduced motion.
+	•	All animations (ANI-01 to ANI-21) function smoothly and respect reduced motion.
 	•	Lock it in sheet opens cleanly on 3 taps and directs into WhatsApp.
 	•	Find Us map displays distance in km and travel time in minutes with driving/walking toggle.
 13. Decision log additions (Version 1.5)
@@ -568,6 +550,10 @@ UX/UI Lead & Accessibility Specialist
 LiveScore API Key Integration & 7-Day Matchday Window Constraints: Connect LiveScore engine with API key (`sk_live_...` runtime token), querying and displaying a rolling 7-day matchday schedule spanning from 3 days prior to the current date through 3 days ahead, enforcing strict display thresholds of minimum 3 matches and maximum 6 matches per display section.
 1, 7.3, 7.4, 8 (FR-42), 14, 23
 Lead Developer & Product Owner
+28
+Complete Decommissioning of LiveScore Telemetry & Transition to Pure Matchday Screening Hub: Remove all real-time in-game live score tickers, clocks, goal counters, goal pop animations, and API keys. Return the viewing centre to its primary business purpose: a physical sports recreation venue screening major matchdays on a 4K laser wall with beer bar, shawarma, and live charcoal grills. Clean up navigation links and sync matchday screening cards with door times, open seating status, and instant WhatsApp booking.
+1, 2, 6, 7.3, 7.4, 8 (FR-09, FR-34, FR-42), 9, 10, 11, 14, 23
+Sports Creative Direction, UX Lead & Product Owner
 14. Technical implementation: HTML, CSS and vanilla JavaScript
 File structure:
 /fob-site
@@ -575,7 +561,7 @@ File structure:
   404.html
   offline.html
   /football-pitch/index.html
-  /football-viewing/index.html     (Today at FOB, LiveScores, top competitions, refreshments)
+  /football-viewing/index.html     (Today at FOB, Match Screenings, top competitions, refreshments)
   /gym/index.html
   /basketball/index.html
   /snooker/index.html
@@ -589,43 +575,42 @@ File structure:
   /terms/index.html
   /assets
     /css   tokens.css  base.css  layout.css  components.css  pages.css
-    /js    main.js  config.js  data.js  fixtures.js  livescore.js  hours.js  whatsapp.js
+    /js    main.js  config.js  data.js  fixtures.js  hours.js  whatsapp.js
            sheet.js  share.js  map.js  motion.js  tap-the-o.js  analytics.js
     /svg   sprite.svg  zone-os/  illustrations/
     /img   (photos)
-  /data    fixtures.json  livescore.json  hours.json  settings.json
+  /data    fixtures.json  hours.json  settings.json
   sw.js
   manifest.webmanifest
   robots.txt
   sitemap.xml
-Sample Fixture & LiveScore JSON format:
+Sample Match Screening JSON format (`data/fixtures.json`):
 {
-  "updated": "2026-10-20T20:15:00+01:00",
-  "competitions": ["UEFA Champions League", "Premier League", "La Liga", "Serie A"],
+  "updated": "2026-10-20T22:00:00+01:00",
+  "competitions": [
+    "UEFA Champions League",
+    "Premier League",
+    "La Liga",
+    "Serie A"
+  ],
   "fixtures": [
     {
-      "id": "ucl-2026-rm-bayern",
+      "id": "ucl-2026-10-20-rm-bayern",
       "competition": "UEFA Champions League",
       "home": "Real Madrid",
       "away": "Bayern Munich",
+      "date": "2026-10-20",
       "kickoff": "2026-10-20T20:00:00+01:00",
       "doors": "2026-10-20T18:30:00+01:00",
-      "status": "live",
-      "period": "2H",
-      "minute": 74,
-      "score": { "home": 2, "away": 1 },
-      "goals": [
-        { "minute": "23'", "team": "home", "player": "Vinícius Jr.", "score": "1-0" },
-        { "minute": "52'", "team": "away", "player": "Harry Kane", "score": "1-1" },
-        { "minute": "68'", "team": "home", "player": "Jude Bellingham", "score": "2-1" }
-      ],
       "venueStatus": "filling up",
+      "statusUpdated": "2026-10-20T21:40:00+01:00",
       "bigMatch": true,
       "note": "European Heavyweight Clash. 4K Laser Projection + Stadium Sound."
     }
   ]
 }
 Document control
+Version 2.0: 20 October 2026. Complete Decommissioning of LiveScore Telemetry & Transition to Pure Matchday Screening Hub: Removed all live scores, in-game match clocks, goal scorers lists, goal flash animations, polling engines, and API keys site-wide. Converted viewing centre into an authentic matchday screening guide with door times, open seating status, and seamless WhatsApp reservations (FR-09, FR-34, FR-42, Decision 28).
 Version 1.9: 20 October 2026. LiveScore API Key Integration & 7-Day Matchday Window Constraints: Connected LiveScore engine via API key (`sk_live_...`), established dynamic 7-day rolling schedule (3 days past to 3 days ahead), and enforced strict display boundaries of minimum 3 matches and maximum 6 matches per display (FR-42, Decision 27).
 Version 1.8: 20 October 2026. Mobile-First Style Guide & WCAG 2.2 AA Accessibility Audit: 44px minimum touch targets, outdoor daylight contrast calibrated (>4.5:1), modal focus trapping, iOS Safari input auto-zoom prevention (16px), safe-area insets, and sticky thumb-zone action dock (.fob-mobile-dock) (FR-41, Decision 26).
 Version 1.7: 20 October 2026. Branded FOB Cinematic Media System implemented site-wide: introduced `.fob-cinematic-frame` with anamorphic letterboxing, edge vignetting, micro-zoom motion, and glassmorphic HUD tags (`.fob-media-tag`) across all gallery cards, hero banners, and zone feature strips (FR-40, ANI-21, Decision 25).

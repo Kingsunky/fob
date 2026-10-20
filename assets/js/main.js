@@ -1,8 +1,7 @@
-// FOB Website Main Controller (PRD Version 1.4)
+// FOB Website Main Controller (PRD Version 2.0: Pure Match Screening)
 import { loadData } from "./data.js";
 import { getOperatingStatus } from "./hours.js";
-import { createFixtureCardHTML, isLiveMatch } from "./fixtures.js";
-import { initLiveScoreSync, filterMatchesForDisplay } from "./livescore.js";
+import { createFixtureCardHTML } from "./fixtures.js";
 import { initMotion } from "./motion.js";
 import { initShare } from "./share.js";
 import { initTapTheOToy } from "./tap-the-o.js";
@@ -21,7 +20,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   initMobileDock();
   initTabs();
   initGalleryFilter();
-  initLiveScoreSync();
 
   // 2. Load hours and update live status badges
   try {
@@ -170,44 +168,44 @@ function updateHoursUI(hoursData) {
   }
 }
 
-// Render Fixture Cards into Home and Viewing Page (3 to 6 matches display)
+// Render Fixture Cards into Home and Viewing Page
 function renderFixtures(fixtures) {
   const todayContainer = document.getElementById("fob-today-fixtures");
   const allContainer = document.getElementById("fob-all-fixtures");
 
-  const displayMatches = filterMatchesForDisplay(fixtures, 3, 6);
+  if (!fixtures || !fixtures.length) return;
 
   if (todayContainer) {
-    todayContainer.innerHTML = displayMatches.map(f => createFixtureCardHTML(f)).join("");
+    // Show top 3 screening matches on homepage
+    todayContainer.innerHTML = fixtures.slice(0, 3).map(f => createFixtureCardHTML(f)).join("");
   }
 
   if (allContainer) {
-    allContainer.innerHTML = displayMatches.map(f => createFixtureCardHTML(f)).join("");
+    // Show all screening matches on viewing centre page
+    allContainer.innerHTML = fixtures.map(f => createFixtureCardHTML(f)).join("");
   }
 }
 
-// FR-21: Match-Day Hero Switch with LiveScore
+// FR-21: Match-Day Hero Switch
 function checkMatchDayHero(fixtures) {
   const heroBadge = document.getElementById("fob-hero-badge");
   const heroAction = document.getElementById("fob-hero-match-action");
-  if (!heroBadge) return;
+  if (!heroBadge || !fixtures || !fixtures.length) return;
 
-  const liveOrNextMatch = fixtures.find(f => f.status === "live") || fixtures[0];
+  const nextMatch = fixtures.find(f => f.bigMatch) || fixtures[0];
 
-  if (liveOrNextMatch) {
-    const matchName = `${liveOrNextMatch.home} vs ${liveOrNextMatch.away}`;
-    const scoreStr = liveOrNextMatch.score ? `(${liveOrNextMatch.score.home}-${liveOrNextMatch.score.away})` : '';
-    const statusText = liveOrNextMatch.status === "live" ? `LIVE ${liveOrNextMatch.minute}'` : 'TONIGHT';
+  if (nextMatch) {
+    const matchName = `${nextMatch.home} vs ${nextMatch.away}`;
 
     heroBadge.innerHTML = `
       <span class="fob-live-badge__dot"></span>
-      ${statusText}: ${matchName} ${scoreStr} • ${liveOrNextMatch.competition}
+      SCREENING TONIGHT: ${matchName} • ${nextMatch.competition || "Top Match"}
     `;
     heroBadge.style.borderColor = "var(--fob-magenta)";
     heroBadge.style.color = "var(--fob-volt)";
 
     if (heroAction) {
-      heroAction.textContent = liveOrNextMatch.status === "live" ? "Watch Live Scores & Screen" : "See Today's Matches";
+      heroAction.textContent = "See Match Screenings";
       heroAction.href = "/football-viewing/";
     }
   }

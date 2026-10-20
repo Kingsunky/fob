@@ -1,4 +1,4 @@
-/* FOB Website Components (PRD Version 1.4: Zero-Pricing, LiveScore Model, ANI-19) */
+/* FOB Website Components (PRD Version 2.0: Zero-Pricing, Pure Match Screening Model) */
 
 /* Buttons (PRD Section 18: Primary & Secondary Buttons, ANI-09) */
 .fob-btn {
@@ -214,7 +214,7 @@
   flex-shrink: 0;
 }
 
-/* Fixture Card & LiveScore Model (PRD Section 7.3, 7.4, ILL-50, ILL-54) */
+/* Fixture Card & Match Screening Model (PRD Section 7.3, ILL-50) */
 .fob-fixture-card {
   background-color: var(--fob-ink);
   border: 1px solid var(--fob-white-16);
@@ -256,7 +256,7 @@
   letter-spacing: 0.05em;
 }
 
-/* LiveScore Matchup Row */
+/* Match Screening Matchup Row */
 .fob-fixture-card__matchup-row {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
@@ -290,121 +290,21 @@
   min-width: 80px;
 }
 
-.fob-fixture-card__score {
+.fob-fixture-card__vs {
   font-family: var(--font-display);
-  font-size: 1.6rem;
+  font-size: 1.35rem;
   font-weight: 900;
-  color: var(--fob-white);
-  letter-spacing: 0.04em;
-  line-height: 1;
-  transition: transform var(--dur-base) var(--ease-spring), color var(--dur-fast);
-}
-
-.fob-fixture-card__score.is-live-score {
   color: var(--fob-volt);
-}
-
-/* ANI-19: Score bounce on goal */
-.fob-fixture-card__score.is-goal-pop {
-  transform: scale(1.35);
-  color: var(--fob-magenta);
+  letter-spacing: 0.06em;
+  line-height: 1;
 }
 
 .fob-fixture-card__period-tag {
   font-size: 0.75rem;
   font-weight: 700;
   color: var(--fob-white-70);
-  margin-top: 0.25rem;
+  margin-top: 0.35rem;
   text-transform: uppercase;
-}
-
-/* Goal Scorers Preview on Card (PRD Section 7.3, 7.4: FR-34) */
-.fob-goals-preview {
-  background: rgba(14, 14, 44, 0.7);
-  border: 1px solid rgba(255, 61, 165, 0.3);
-  border-radius: var(--radius-input);
-  padding: 0.75rem 1rem;
-  font-size: 0.8rem;
-}
-
-.fob-goals-preview__header {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-weight: 800;
-  color: var(--fob-magenta);
-  text-transform: uppercase;
-  font-size: 0.75rem;
-  margin-bottom: 0.4rem;
-}
-
-.fob-goals-preview__timeline {
-  display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
-}
-
-.fob-goal-item {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  color: var(--fob-white-90);
-}
-
-.fob-goal-item__min {
-  background: var(--fob-white-16);
-  padding: 0.1rem 0.4rem;
-  border-radius: var(--radius-pill);
-  font-weight: 700;
-  font-size: 0.7rem;
-  color: var(--fob-volt);
-}
-
-.fob-goal-item__scorer {
-  font-weight: 700;
-}
-
-.fob-goal-pen {
-  color: var(--fob-orange);
-  font-size: 0.7rem;
-  font-weight: 800;
-}
-
-/* ANI-19: Live Goal Flash Banner */
-.fob-goal-flash-banner {
-  position: fixed;
-  top: 90px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--fob-magenta);
-  color: #FFF;
-  border-radius: var(--radius-pill);
-  padding: 0.85rem 1.75rem;
-  box-shadow: 0 10px 40px rgba(255, 61, 165, 0.6);
-  z-index: 9999;
-  animation: fob-goal-banner-anim 0.5s var(--ease-spring);
-}
-
-.fob-goal-flash-inner {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  font-family: var(--font-display);
-  font-weight: 800;
-}
-
-.fob-goal-tag {
-  background: var(--fob-ink);
-  color: var(--fob-volt);
-  padding: 0.2rem 0.6rem;
-  border-radius: var(--radius-pill);
-  font-size: 0.8rem;
-  letter-spacing: 0.08em;
-}
-
-@keyframes fob-goal-banner-anim {
-  from { transform: translateX(-50%) translateY(-30px); opacity: 0; }
-  to { transform: translateX(-50%) translateY(0); opacity: 1; }
 }
 
 /* Top Football Competitions Filter Bar */

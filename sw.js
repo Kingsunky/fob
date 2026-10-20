@@ -1,5 +1,5 @@
-// FOB Service Worker (PRD Section 19: FR-22, 23.5)
-const CACHE_NAME = "fob-shell-v1";
+// FOB Service Worker (PRD Version 2.0: Pure Match Screening)
+const CACHE_NAME = "fob-shell-v2";
 const ASSETS_TO_CACHE = [
   "/",
   "/index.html",
@@ -22,10 +22,8 @@ const ASSETS_TO_CACHE = [
   "/assets/js/motion.js",
   "/assets/js/tap-the-o.js",
   "/assets/js/analytics.js",
-  "/assets/js/livescore.js",
   "/assets/svg/sprite.svg",
   "/data/fixtures.json",
-  "/data/livescore.json",
   "/data/hours.json",
   "/data/settings.json"
 ];
