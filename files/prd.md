@@ -1,5 +1,5 @@
 FOB Website: Product Requirements Document (PRD)
-Version 1.8 (Mobile-First Style Guide, WCAG 2.2 AA Accessibility Audit, Sticky Action Dock & Thumb-Zone Ergonomics) | 20 October 2026 | Status: ready for client sign-off | Prepared by the FOB project team (Brand Strategy, Sports Creative Direction, Art Direction, Copy, UX/UI, Development, Production)
+Version 1.9 (LiveScore API Key Integration, 7-Day Rolling Matchday Window: 3 Days Past to 3 Days Future, 3–6 Matches Display Constraints) | 20 October 2026 | Status: ready for client sign-off | Prepared by the FOB project team (Brand Strategy, Sports Creative Direction, Art Direction, Copy, UX/UI, Development, Production)
 1. Summary
 FOB is a premier sports and recreation centre located at 2, Lawani Ode Street, Alakara Bus Stop, Ashipa, Ayobo, Lagos, with seven zones: football pitch, football viewing centre, gym, basketball court, snooker, table tennis and gaming. This document defines the requirements for the FOB website: what it must do, how it must look and move, and every illustration, animation, broadcast graphic, map navigation interface, and real-time live match telemetry asset produced for it.
 The website has one job: turn a mobile visitor into a person who walks through the door or sends a WhatsApp message. Bookings across zones run through WhatsApp, phone and walk-in. The viewing centre operates as a live stadium-grade match-day hub with real-time score synchronization across top football competitions, an integrated beer bar with shawarma and live charcoal grills, first come first served. All public pricing has been deliberately removed from the site to focus entirely on atmosphere, live match energy, availability, and fast WhatsApp bookings. The quality bar the site is built to is in section 17, and the brand system it is built from is in section 18.
@@ -13,6 +13,7 @@ Product principles
 	•	Stadium energy, broadcast precision: Visuals blend Lagos crew warmth with sports broadcast typography, live match telemetry (momentum indicators, form guides), and floodlight contrast.
 	•	Cinematic presentation, authentic branding: Every visual asset across hero headers, interactive zone tabs, and photo galleries is framed with anamorphic letterboxing, subtle lens vignetting, and a micro-HUD glassmorphic FOB tag celebrating the iconic volt O.
 	•	Accessibility as a baseline: Built strictly to WCAG 2.2 AA with minimum 44px touch targets, outdoor daylight contrast compliance (>4.5:1), keyboard focus trapping in dialogs, and native iOS form zoom prevention.
+	•	Continuous matchday telemetry: LiveScore engine powered by authenticated API key (`sk_live_...`), displaying a 7-day rolling window (3 days past results to 3 days future fixtures) bounded strictly between a minimum of 3 and a maximum of 6 matches per display.
 2. Goals and success metrics
 Business goals
 	•	Increase walk-ins and WhatsApp enquiries across all seven zones.
@@ -354,6 +355,9 @@ Must
 FR-41
 Mobile-First Thumb-Zone Action Dock: On mobile viewports (< 768px), a persistent bottom floating action dock (.fob-mobile-dock) provides one-tap thumb access to "Lock In" (triggering the bottom booking sheet), "Directions" (turn-by-turn navigation route), and "Call", with safe-area inset adaptation for modern smartphones
 Must
+FR-42
+LiveScore API Key Integration & 7-Day Matchday Window Constraints: Real-time LiveScore engine authenticates via configured API key (`sk_live_...` runtime token), querying and displaying a rolling 7-day matchday schedule spanning from 3 days prior to the current date through 3 days ahead, enforcing strict display thresholds of minimum 3 matches and maximum 6 matches per display section
+Must
 CMS requirements
 Staff must be able to do these without a developer. Two roles: Admin (owner) and Editor (shift staff, can edit fixtures, live scores, and venue status).
 	•	Fixtures & LiveScores: home team, away team (plain text), competition, date, kick-off time, doors-open time, live score (home/away), live match minute/period, goal scorers list, status, optional note (for example, big derby, come early).
@@ -560,6 +564,10 @@ Art Direction & Creative Direction
 Mobile-First Style Guide & WCAG 2.2 AA Accessibility Compliance: Standardize 44px minimum touch targets across buttons, chips, tabs, inputs, and controls; enforce safe-area inset adaptation for notches/gesture bars; introduce mobile thumb-zone action dock (.fob-mobile-dock); implement focus trapping in modals; and calibrate daylight contrast ratios (>4.5:1).
 1, 7, 8 (FR-41), 9, 18, 23
 UX/UI Lead & Accessibility Specialist
+27
+LiveScore API Key Integration & 7-Day Matchday Window Constraints: Connect LiveScore engine with API key (`sk_live_...` runtime token), querying and displaying a rolling 7-day matchday schedule spanning from 3 days prior to the current date through 3 days ahead, enforcing strict display thresholds of minimum 3 matches and maximum 6 matches per display section.
+1, 7.3, 7.4, 8 (FR-42), 14, 23
+Lead Developer & Product Owner
 14. Technical implementation: HTML, CSS and vanilla JavaScript
 File structure:
 /fob-site
@@ -618,6 +626,7 @@ Sample Fixture & LiveScore JSON format:
   ]
 }
 Document control
+Version 1.9: 20 October 2026. LiveScore API Key Integration & 7-Day Matchday Window Constraints: Connected LiveScore engine via API key (`sk_live_...`), established dynamic 7-day rolling schedule (3 days past to 3 days ahead), and enforced strict display boundaries of minimum 3 matches and maximum 6 matches per display (FR-42, Decision 27).
 Version 1.8: 20 October 2026. Mobile-First Style Guide & WCAG 2.2 AA Accessibility Audit: 44px minimum touch targets, outdoor daylight contrast calibrated (>4.5:1), modal focus trapping, iOS Safari input auto-zoom prevention (16px), safe-area insets, and sticky thumb-zone action dock (.fob-mobile-dock) (FR-41, Decision 26).
 Version 1.7: 20 October 2026. Branded FOB Cinematic Media System implemented site-wide: introduced `.fob-cinematic-frame` with anamorphic letterboxing, edge vignetting, micro-zoom motion, and glassmorphic HUD tags (`.fob-media-tag`) across all gallery cards, hero banners, and zone feature strips (FR-40, ANI-21, Decision 25).
 Version 1.6: 20 October 2026. Venue address migrated to 2, Lawani Ode Street, Alakara Bus Stop, Ashipa, Ayobo, Lagos; connected Google Maps Directions API for native GPS turn-by-turn navigation; upgraded football viewing menu to Beer Bar, Shawarma & Live Charcoal Grills (FR-38, FR-39, Decisions 22–24).

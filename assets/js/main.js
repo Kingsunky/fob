@@ -2,7 +2,7 @@
 import { loadData } from "./data.js";
 import { getOperatingStatus } from "./hours.js";
 import { createFixtureCardHTML, isLiveMatch } from "./fixtures.js";
-import { initLiveScoreSync } from "./livescore.js";
+import { initLiveScoreSync, filterMatchesForDisplay } from "./livescore.js";
 import { initMotion } from "./motion.js";
 import { initShare } from "./share.js";
 import { initTapTheOToy } from "./tap-the-o.js";
@@ -170,20 +170,19 @@ function updateHoursUI(hoursData) {
   }
 }
 
-// Render Fixture Cards into Home and Viewing Page
+// Render Fixture Cards into Home and Viewing Page (3 to 6 matches display)
 function renderFixtures(fixtures) {
   const todayContainer = document.getElementById("fob-today-fixtures");
   const allContainer = document.getElementById("fob-all-fixtures");
 
-  const todayMatches = fixtures.filter(f => f.status === "live" || f.status === "finished" || f.date === "2026-10-20");
+  const displayMatches = filterMatchesForDisplay(fixtures, 3, 6);
 
   if (todayContainer) {
-    const listToRender = todayMatches.length > 0 ? todayMatches.slice(0, 3) : fixtures.slice(0, 3);
-    todayContainer.innerHTML = listToRender.map(f => createFixtureCardHTML(f)).join("");
+    todayContainer.innerHTML = displayMatches.map(f => createFixtureCardHTML(f)).join("");
   }
 
   if (allContainer) {
-    allContainer.innerHTML = fixtures.map(f => createFixtureCardHTML(f)).join("");
+    allContainer.innerHTML = displayMatches.map(f => createFixtureCardHTML(f)).join("");
   }
 }
 

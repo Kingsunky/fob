@@ -1,11 +1,11 @@
-// FOB LiveScore & Top Football Competitions Sync Engine (PRD Section 7.4, 8: FR-09, FR-34, ANI-19)
-// Enhanced Demo/Mock Feed — simulates live score changes for demonstration
+// FOB LiveScore & Top Football Competitions Sync Engine (PRD Section 7.4, 8: FR-09, FR-34, FR-42, ANI-19)
 import { loadData } from "./data.js";
 import { createFixtureCardHTML } from "./fixtures.js";
+import { LIVESCORE_API_KEY, MATCH_DISPLAY_LIMITS } from "./config.js";
 
 let livePollingInterval = null;
 let lastKnownGoalsCount = {};
-let demoMode = true; // Demo mode simulates live score changes
+let demoMode = true; // Demo mode simulates score progression in fallback
 
 // Star players per team for realistic goal scorer simulation
 const TEAM_SCORERS = {
@@ -25,6 +25,54 @@ const TEAM_SCORERS = {
   "Enyimba": ["Chidiebere Nnaji", "Eze Ekwutoziam", "Joseph Atule"],
   "Remo Stars": ["Sodiq Ismail", "Franck Mawuena", "Dela Akorli"]
 };
+
+/**
+ * Calculates the dynamic 7-day rolling window:
+ * [3 days ago at 00:00:00 to 3 days after today at 23:59:59]
+ */
+export function get7DayMatchWindow(referenceDate = "2026-10-20T21:50:00+01:00") {
+  const ref = new Date(referenceDate);
+  const start = new Date(ref);
+  start.setDate(ref.getDate() - (MATCH_DISPLAY_LIMITS.daysPast || 3));
+  start.setHours(0, 0, 0, 0);
+
+  const end = new Date(ref);
+  end.setDate(ref.getDate() + (MATCH_DISPLAY_LIMITS.daysFuture || 3));
+  end.setHours(23, 59, 59, 999);
+
+  return { start, end, ref };
+}
+
+/**
+ * Filters fixtures to fall within the 7-day rolling window,
+ * and enforces a display of minimum 3 matches and maximum 6 matches.
+ */
+export function filterMatchesForDisplay(fixtures, min = MATCH_DISPLAY_LIMITS.min || 3, max = MATCH_DISPLAY_LIMITS.max || 6) {
+  if (!fixtures || fixtures.length === 0) return [];
+
+  const { start, end } = get7DayMatchWindow();
+
+  // 1. Filter by 7-day window [today-3days to today+3days]
+  let inWindow = fixtures.filter(f => {
+    const d = new Date(f.kickoff || f.date);
+    return !isNaN(d.getTime()) && d >= start && d <= end;
+  });
+
+  // If fewer than min matches are in-window, backfill from nearby fixtures
+  if (inWindow.length < min) {
+    inWindow = fixtures.slice(0, Math.min(fixtures.length, max));
+  }
+
+  // 2. Sort priority: Live matches first, then today, then upcoming & past chronologically
+  inWindow.sort((a, b) => {
+    if (a.status === "live" && b.status !== "live") return -1;
+    if (b.status === "live" && a.status !== "live") return 1;
+    return new Date(a.kickoff || a.date) - new Date(b.kickoff || b.date);
+  });
+
+  // 3. Enforce maximum 6 matches per display
+  return inWindow.slice(0, max);
+}
 
 export function initLiveScoreSync() {
   initCompetitionFilter();
@@ -65,13 +113,26 @@ function startLiveScorePolling() {
     try {
       let data = null;
       try {
-        data = await loadData("livescore");
+        // Authenticated live scores request with API key
+        const res = await fetch("/data/livescore.json", {
+          headers: {
+            "Authorization": `Bearer ${LIVESCORE_API_KEY}`,
+            "x-api-key": LIVESCORE_API_KEY
+          }
+        });
+        if (res.ok) {
+          data = await res.json();
+        }
       } catch (_) {
+        data = await loadData("livescore");
+      }
+
+      if (!data || !data.fixtures) {
         data = await loadData("fixtures");
       }
 
       if (data && data.fixtures) {
-        // In demo mode, simulate score progression
+        // In demo mode, simulate live score minute and goal changes
         if (demoMode) {
           simulateLiveScoreChanges(data.fixtures);
         }
@@ -90,15 +151,14 @@ function startLiveScorePolling() {
     }
   }
 
-  // Initial poll schedule (defaults to 30s for live matches)
+  // Initial poll schedule
   livePollingInterval = setInterval(poll, 30000);
 }
 
-// Demo mode: randomly simulate a goal every ~2 minutes for live matches
+// Demo simulation for live progression
 function simulateLiveScoreChanges(fixtures) {
   fixtures.forEach(fix => {
     if (fix.status === "live" && Math.random() < 0.15) {
-      // Simulate a goal!
       const isHome = Math.random() > 0.45;
       const team = isHome ? "home" : "away";
       const teamName = isHome ? fix.home : fix.away;
@@ -119,15 +179,12 @@ function simulateLiveScoreChanges(fixtures) {
         isPenalty: isPenalty
       });
 
-      // Trigger the visual goal alert
       triggerGoalAlert(fix);
     }
 
-    // Simulate match minute progression
     if (fix.status === "live" && fix.minute) {
       fix.minute = Math.min((fix.minute || 0) + 1, 90);
 
-      // Auto-transition match periods
       if (fix.minute >= 45 && fix.period === "1H") {
         fix.period = "HT";
       } else if (fix.minute > 45 && fix.period === "HT") {
@@ -140,18 +197,19 @@ function simulateLiveScoreChanges(fixtures) {
   });
 }
 
-function rerenderLiveFixtures(fixtures) {
+export function rerenderLiveFixtures(fixtures) {
   const todayContainer = document.getElementById("fob-today-fixtures");
   const allContainer = document.getElementById("fob-all-fixtures");
 
+  // Filter to 7-day rolling window [3 days past to 3 days ahead] and enforce 3-6 matches display
+  const displayMatches = filterMatchesForDisplay(fixtures, MATCH_DISPLAY_LIMITS.min, MATCH_DISPLAY_LIMITS.max);
+
   if (todayContainer) {
-    const liveMatches = fixtures.filter(f => f.status === "live" || f.status === "finished");
-    const listToRender = liveMatches.length > 0 ? liveMatches.slice(0, 3) : fixtures.slice(0, 3);
-    todayContainer.innerHTML = listToRender.map(f => createFixtureCardHTML(f)).join("");
+    todayContainer.innerHTML = displayMatches.map(f => createFixtureCardHTML(f)).join("");
   }
 
   if (allContainer) {
-    allContainer.innerHTML = fixtures.map(f => createFixtureCardHTML(f)).join("");
+    allContainer.innerHTML = displayMatches.map(f => createFixtureCardHTML(f)).join("");
   }
 }
 
@@ -170,7 +228,6 @@ function checkForGoalUpdates(fixtures) {
 }
 
 export function triggerGoalAlert(fixture) {
-  // ANI-19: Goal Score Flash & Pulse
   const card = document.querySelector(`[data-fixture-id="${fixture.id}"]`);
   if (!card) return;
 
@@ -180,7 +237,6 @@ export function triggerGoalAlert(fixture) {
     setTimeout(() => scoreEl.classList.remove("is-goal-pop"), 1200);
   }
 
-  // Toast / Badge Flash (WCAG 2.2 AA aria-live region)
   const banner = document.createElement("div");
   banner.className = "fob-goal-flash-banner";
   banner.setAttribute("role", "status");
@@ -214,10 +270,12 @@ function initCompetitionFilter() {
       const comp = btn.dataset.compFilter;
       const cards = document.querySelectorAll(".fob-fixture-card");
 
+      let visibleCount = 0;
       cards.forEach(card => {
         const cardComp = card.dataset.competition || "";
         if (comp === "all" || cardComp.toLowerCase().includes(comp.toLowerCase())) {
           card.style.display = "flex";
+          visibleCount++;
         } else {
           card.style.display = "none";
         }
