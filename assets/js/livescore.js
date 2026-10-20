@@ -20,7 +20,10 @@ const TEAM_SCORERS = {
   "Inter Milan": ["Lautaro Martínez", "Marcus Thuram", "Hakan Çalhanoğlu", "Nicolò Barella"],
   "AC Milan": ["Rafael Leão", "Álvaro Morata", "Christian Pulisic", "Tijjani Reijnders"],
   "Manchester United": ["Marcus Rashford", "Rasmus Højlund", "Bruno Fernandes", "Alejandro Garnacho"],
-  "Tottenham": ["Son Heung-min", "Richarlison", "James Maddison", "Dejan Kulusevski"]
+  "Tottenham": ["Son Heung-min", "Richarlison", "James Maddison", "Dejan Kulusevski"],
+  "Super Eagles": ["Victor Osimhen", "Ademola Lookman", "Victor Boniface", "Samuel Chukwueze", "Alex Iwobi"],
+  "Enyimba": ["Chidiebere Nnaji", "Eze Ekwutoziam", "Joseph Atule"],
+  "Remo Stars": ["Sodiq Ismail", "Franck Mawuena", "Dela Akorli"]
 };
 
 export function initLiveScoreSync() {
@@ -58,10 +61,15 @@ export function formatGoalsList(goals, homeTeam, awayTeam) {
 function startLiveScorePolling() {
   if (livePollingInterval) clearInterval(livePollingInterval);
 
-  // Poll live scores every 30 seconds (PRD Section 7.4)
-  livePollingInterval = setInterval(async () => {
+  async function poll() {
     try {
-      const data = await loadData("fixtures");
+      let data = null;
+      try {
+        data = await loadData("livescore");
+      } catch (_) {
+        data = await loadData("fixtures");
+      }
+
       if (data && data.fixtures) {
         // In demo mode, simulate score progression
         if (demoMode) {
@@ -69,11 +77,21 @@ function startLiveScorePolling() {
         }
         checkForGoalUpdates(data.fixtures);
         rerenderLiveFixtures(data.fixtures);
+
+        // PRD Section 7.4 Cadence: 30s when live/halftime, 5min when scheduled/finished
+        const hasActiveLiveMatch = data.fixtures.some(f => f.status === "live" || f.status === "halftime");
+        const nextCadence = hasActiveLiveMatch ? 30000 : 300000;
+
+        clearInterval(livePollingInterval);
+        livePollingInterval = setInterval(poll, nextCadence);
       }
     } catch (e) {
-      console.warn("LiveScore poll notice:", e);
+      console.warn("LiveScore poll notice (offline/fallback):", e);
     }
-  }, 30000);
+  }
+
+  // Initial poll schedule (defaults to 30s for live matches)
+  livePollingInterval = setInterval(poll, 30000);
 }
 
 // Demo mode: randomly simulate a goal every ~2 minutes for live matches
@@ -162,9 +180,12 @@ export function triggerGoalAlert(fixture) {
     setTimeout(() => scoreEl.classList.remove("is-goal-pop"), 1200);
   }
 
-  // Toast / Badge Flash
+  // Toast / Badge Flash (WCAG 2.2 AA aria-live region)
   const banner = document.createElement("div");
   banner.className = "fob-goal-flash-banner";
+  banner.setAttribute("role", "status");
+  banner.setAttribute("aria-live", "polite");
+  banner.setAttribute("aria-atomic", "true");
   const latestGoal = fixture.goals && fixture.goals.length > 0 ? fixture.goals[fixture.goals.length - 1] : null;
   const scorerText = latestGoal ? `${latestGoal.player} (${latestGoal.minute})` : "Score Updated";
 

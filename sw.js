@@ -22,9 +22,10 @@ const ASSETS_TO_CACHE = [
   "/assets/js/motion.js",
   "/assets/js/tap-the-o.js",
   "/assets/js/analytics.js",
+  "/assets/js/livescore.js",
   "/assets/svg/sprite.svg",
   "/data/fixtures.json",
-  "/data/prices.json",
+  "/data/livescore.json",
   "/data/hours.json",
   "/data/settings.json"
 ];
