@@ -13,14 +13,20 @@ export function straightLineKm(a, b) {
   return 2 * R * Math.asin(Math.sqrt(h));
 }
 
-export function getDirectionsUrl(lat, lng, mode = "driving") {
+export function getDirectionsUrl(lat = FOB_LAT, lng = FOB_LNG, mode = "driving", origin = null) {
   const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+  const originParam = origin ? `&origin=${origin.lat},${origin.lng}` : '';
+  const travelmode = mode === "walking" ? "walking" : "driving";
+
   if (isIOS) {
     const dirflg = mode === "walking" ? "w" : "d";
-    return `maps://maps.apple.com/?daddr=${lat},${lng}&dirflg=${dirflg}`;
+    const saddr = origin ? `&saddr=${origin.lat},${origin.lng}` : '';
+    return `maps://maps.apple.com/?daddr=${encodeURIComponent(FOB_ADDRESS)}${saddr}&dirflg=${dirflg}`;
   }
-  const travelmode = mode === "walking" ? "walking" : "driving";
-  return `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}&travelmode=${travelmode}`;
+
+  // Official Google Maps Directions API URL
+  const destQuery = encodeURIComponent(FOB_ADDRESS);
+  return `https://www.google.com/maps/dir/?api=1${originParam}&destination=${destQuery}&travelmode=${travelmode}`;
 }
 
 export function initMapModule() {
@@ -135,7 +141,7 @@ export function initMapModule() {
             Mode: ${currentMode === 'walking' ? 'Walking' : 'Driving (with typical Lagos traffic)'}
           </span>
         </div>
-        <a href="${getDirectionsUrl(FOB_LAT, FOB_LNG, currentMode)}" target="_blank" rel="noopener noreferrer" class="fob-btn fob-btn--primary fob-btn--sm">
+        <a href="${getDirectionsUrl(FOB_LAT, FOB_LNG, currentMode, pos)}" target="_blank" rel="noopener noreferrer" class="fob-btn fob-btn--primary fob-btn--sm" data-fob-event="start_navigation">
           Start Navigation
         </a>
       `;
@@ -146,9 +152,10 @@ export function initMapModule() {
     const mapDiv = document.getElementById("fob-live-map");
     if (!mapDiv) return;
 
-    // Use Google Maps Embed API (free, no key needed)
+    // Use Google Maps Embed API
     const iframe = document.createElement("iframe");
-    iframe.src = `https://www.google.com/maps?q=${FOB_LAT},${FOB_LNG}&z=15&output=embed`;
+    const query = encodeURIComponent("2 Lawani Ode Street, Alakara Bus Stop, Ashipa, Ayobo, Lagos");
+    iframe.src = `https://www.google.com/maps?q=${query}&z=16&output=embed`;
     iframe.width = "100%";
     iframe.height = "100%";
     iframe.style.border = "0";

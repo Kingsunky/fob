@@ -4,13 +4,12 @@
   "whatsappNumber": "2348030000362",
   "whatsappDisplay": "+234 803 000 0362",
   "phoneNumber": "+2348030000362",
-  "phoneDisplay": "+234 803 000 0362",
-  "address": "12 Admiralty Way, Lekki Phase 1, Lagos, Nigeria",
-  "landmark": "Opposite The Palms Mall junction, Lekki Phase 1",
-  "parking": "Secure on-site parking for 45+ vehicles with CCTV and 24/7 security",
+  "address": "2, Lawani Ode Street, Alakara Bus Stop, Ashipa, Ayobo, Lagos, Nigeria",
+  "landmark": "Alakara Bus Stop, Ashipa Road, Ayobo, Lagos",
+  "parking": "Secure on-site parking with perimeter lighting, CCTV and 24/7 security",
   "coordinates": {
-    "lat": 6.4474,
-    "lng": 3.4723
+    "lat": 6.6130,
+    "lng": 3.2659
   },
   "timezone": "Africa/Lagos",
   "staleHours": 3,
