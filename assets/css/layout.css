@@ -111,12 +111,7 @@
   padding: 0.25rem 0;
 }
 
-.fob-nav__link:hover,
-.fob-nav__link.is-active {
-  color: var(--fob-volt);
-}
-
-.fob-nav__link.is-active::after {
+.fob-nav__link::after {
   content: '';
   position: absolute;
   bottom: -4px;
@@ -125,6 +120,19 @@
   height: 2px;
   background-color: var(--fob-volt);
   border-radius: var(--radius-pill);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform var(--dur-fast) var(--ease-spring);
+}
+
+.fob-nav__link:hover::after,
+.fob-nav__link.is-active::after {
+  transform: scaleX(1);
+}
+
+.fob-nav__link:hover,
+.fob-nav__link.is-active {
+  color: var(--fob-volt);
 }
 
 /* Header Actions */

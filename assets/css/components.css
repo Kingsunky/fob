@@ -689,14 +689,17 @@
 .fob-cursor-o {
   display: none;
   position: fixed;
+  top: 0;
+  left: 0;
   width: 24px;
   height: 24px;
   border: 2px solid var(--fob-volt);
   border-radius: 50%;
   pointer-events: none;
   z-index: 99999;
-  transform: translate(-50%, -50%);
+  transform: translate3d(-50%, -50%, 0);
   transition: width 0.15s ease-out, height 0.15s ease-out, background 0.15s ease-out;
+  will-change: transform;
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -859,4 +862,146 @@
   min-height: 46px;
   font-size: 0.85rem;
   padding: 0.5rem 0.75rem;
+}
+
+/* ==========================================================================
+   SUBTLE SITE-WIDE MOTION DESIGN SYSTEM (PRD Section 10: ANI-22)
+   100% GPU-Accelerated (transform & opacity only), Zero Layout Reflows
+   ========================================================================== */
+
+/* 1. Progressive Scroll Reveals */
+.fob-reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.fob-reveal.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 2. Tactile Card Hover Micro-Movements */
+.fob-spec-card {
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.28s ease,
+              border-color 0.28s ease;
+  will-change: transform;
+}
+
+.fob-spec-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(215, 255, 31, 0.35);
+  box-shadow: 0 12px 28px -8px rgba(0, 0, 0, 0.45),
+              0 0 16px -6px rgba(215, 255, 31, 0.12);
+}
+
+.ground-paper .fob-spec-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(14, 14, 44, 0.22);
+  box-shadow: 0 12px 24px -8px rgba(14, 14, 44, 0.12);
+}
+
+/* 3. Trust Strip Item Hover Motion */
+.fob-trust-item {
+  transition: transform 0.24s var(--ease-out);
+}
+
+.fob-trust-item:hover {
+  transform: translateY(-2px);
+}
+
+.fob-trust-item:hover .fob-trust-item__icon {
+  transform: scale(1.08);
+  background: var(--fob-white-16);
+}
+
+/* 4. Live Pulse Breathing Glow on Status Chip */
+@keyframes fob-pulse-dot {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+    box-shadow: 0 0 6px var(--fob-volt);
+  }
+  50% {
+    transform: scale(1.22);
+    opacity: 0.82;
+    box-shadow: 0 0 14px var(--fob-volt);
+  }
+}
+
+.fob-status-chip--open .fob-status-chip__dot {
+  animation: fob-pulse-dot 2.4s infinite ease-in-out;
+}
+
+/* 5. Accordion Expand Soft Fade-Slide */
+@keyframes fob-accordion-open {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fob-accordion__item[open] .fob-accordion__body {
+  animation: fob-accordion-open 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* 6. Button Active Spring Motion */
+.fob-btn {
+  transition: transform 0.18s cubic-bezier(0.34, 1.56, 0.64, 1),
+              background-color var(--dur-fast) var(--ease-out),
+              box-shadow 0.22s ease,
+              border-color var(--dur-fast) var(--ease-out);
+}
+
+.fob-btn:hover {
+  transform: translateY(-2px);
+}
+
+.fob-btn:active {
+  transform: translateY(0) scale(0.97);
+}
+
+/* 7. Gallery Grid Item Hover Lift */
+.fob-gallery-item,
+.fob-gallery-strip__item {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s ease,
+              border-color 0.35s ease;
+  will-change: transform;
+}
+
+.fob-gallery-item:hover,
+.fob-gallery-strip__item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px -8px rgba(0, 0, 0, 0.55);
+}
+
+/* 8. Reduced Motion Accessibility Enforcement */
+@media (prefers-reduced-motion: reduce) {
+  .fob-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .fob-spec-card,
+  .fob-trust-item,
+  .fob-btn,
+  .fob-gallery-item,
+  .fob-gallery-strip__item {
+    transform: none !important;
+    transition: none !important;
+  }
+  .fob-status-chip--open .fob-status-chip__dot {
+    animation: none !important;
+  }
+  .fob-accordion__item[open] .fob-accordion__body {
+    animation: none !important;
+  }
 }

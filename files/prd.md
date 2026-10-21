@@ -1,5 +1,5 @@
 FOB Website: Product Requirements Document (PRD)
-Version 2.3 (Alcohol & Beer Decommissioning / Fresh Smoothies & Healthy Drinks Overhaul) | 21 October 2026 | Status: ready for client sign-off | Prepared by the FOB project team (Brand Strategy, Sports Creative Direction, Art Direction, Copy, UX/UI, Development, Production)
+Version 2.4 (Subtle Site-Wide Motion Design & Progressive Zero-Overhead Scroll Ingress) | 21 October 2026 | Status: ready for client sign-off | Prepared by the FOB project team (Brand Strategy, Sports Creative Direction, Art Direction, Copy, UX/UI, Development, Production)
 1. Summary
 FOB is a premier sports and recreation centre located at 2, Lawani Ode Street, Alakara Bus Stop, Ashipa, Ayobo, Lagos, with seven zones: football pitch, football viewing centre, gym, basketball court, snooker, table tennis and gaming. This document defines the requirements for the FOB website: what it must do, how it must look and move, and every illustration, animation, broadcast graphic, and map navigation interface produced for it.
 The website has one job: turn a mobile visitor into a person who walks through the door or sends a WhatsApp message. Bookings across zones run through WhatsApp, phone and walk-in. The viewing centre operates as a live stadium-grade 4K sports lounge featuring a 4K laser projection wall and 105dB stadium surround sound alongside an integrated smoothie bar with healthy drinks, shawarma, and live charcoal grills, first come first served. In Version 2.1, all online upcoming and live match fixture listings have been completely eliminated; users discover daily fixtures and match screening schedules directly upon arriving at the viewing centre or via WhatsApp inquiries, keeping the website lightweight and laser-focused on venue atmosphere and walk-in conversion. The quality bar the site is built to is in section 17, and the brand system it is built from is in section 18.
@@ -451,6 +451,11 @@ Cinematic Frame Micro-Zoom & Vignette Sweep
 Hover or card focus
 Image scales smoothly to 1.04x while cinematic letterbox border accentuates contrast and media HUD tag badge brightens slightly (350 ms ease-out)
 Static image (no scale)
+ANI-22
+Progressive Site-Wide Scroll Reveals & Tactile Micro-Interactions
+Scroll into view & element hover
+Cards, trust chips, spec tiles, and accordion containers gently glide into view (18px translateY, 0 to 1 opacity) with 60ms grid stagger. Interactive spec cards and gallery tiles elevate (-3px translateY, soft volt/cyan perimeter glow). Live status dot breathes gently (2.4s pulse). GPU-accelerated exclusively via transform and opacity; IntersectionObserver immediately unobserves revealed elements for zero runtime overhead.
+Immediate display without movement or transition (prefers-reduced-motion: reduce)
 11. Illustration inventory
 A. Brand core: ILL-01 to 09 (wordmark, O mark, O-grid, spark confetti, pill kit, utility icons, dividers)
 B. Home page: ILL-10 to 16 (floating sport Os, tap me bubble, trust strip icons, how it works spots, crew avatar stack, tabs scenes, desktop QR frame)
@@ -547,6 +552,10 @@ Operations Director, Sports UX Lead & Product Owner
 Transition from Alcohol/Beer Bar to 100% Healthy Smoothies & Wellness Hydration: Removed all beer, alcohol, cider, and alcoholic cocktail offerings site-wide. Replaced with freshly blended fruit smoothies, cold-pressed tropical juice sharing pitchers, organic match mocktails, and electrolyte hydration drinks alongside our signature shawarma and live charcoal grills. This aligns FOB with an active, high-performance athletic lifestyle, family-friendly recreation, and clean nutrition while preserving the zero-pricing discovery model.
 1, 7.3, 8 (FR-39), 11, 14, 23
 Food & Beverage, Sports Wellness Direction & Product Owner
+32
+Subtle Site-Wide Motion Design System & Zero-Overhead Progressive Reveals: Implemented a responsive, GPU-accelerated micro-motion design system across all pages. Includes: (1) Progressive scroll ingress reveals (`.fob-reveal`, 18px glide, 60ms grid stagger) with immediate observer disconnection on entrance to guarantee 0ms ongoing JS execution; (2) Tactile card hover elevations and perimeter aura glows on `.fob-spec-card`, `.fob-trust-item`, and `.fob-gallery-strip__item`; (3) Rhythmic breathing glow on `.fob-status-chip--open`; (4) Hardware-accelerated desktop cursor tracking via `translate3d`; (5) Accordion expand soft fade-slide; and (6) Strict `prefers-reduced-motion: reduce` compliance across all CSS keyframes and transitions.
+1, 7, 9, 10 (ANI-22), 14, 23
+Motion Design Lead, UX/UI Specialist & Lead Developer
 14. Technical implementation: HTML, CSS and vanilla JavaScript
 File structure:
 /fob-site
@@ -578,6 +587,7 @@ File structure:
   robots.txt
   sitemap.xml
 Document control
+Version 2.4: 21 October 2026. Subtle Site-Wide Motion Design System: Implemented GPU-composited scroll reveals with 60ms grid stagger and instant observer disconnection, tactile card hover lifts, status dot breathing animation, accelerated cursor tracking, and complete prefers-reduced-motion accessibility coverage (ANI-22, Decision 32).
 Version 2.3: 21 October 2026. Alcohol & Beer Decommissioning / Smoothie & Healthy Drinks Overhaul: Completely eliminated beer, alcohol, and alcoholic cocktails site-wide. Introduced fresh cold-pressed smoothies, tropical juice pitchers, and organic wellness drinks paired with shawarma and live charcoal grills across all menus, badges, and PRD specifications (Decision 31).
 Version 2.2: 20 October 2026. Dual-Session Operating Schedule & Sunday Zone Rules: Reconfigured venue hours to split morning (7:00 am – 11:00 am) and evening (5:00 pm – 9:00 pm) sessions Monday to Saturday. Implemented Sunday operational constraints: Gym closed all day; Football Pitch & Basketball Court evening session only (5:00 pm – 9:00 pm). Synchronized schema.org, live status chips, trust strips, zone spec cards, and FAQ (FR-10, Decision 30).
 Version 2.1: 20 October 2026. Complete Removal of Fixture Lists & Match Schedules: Deleted every section displaying upcoming or live matches site-wide (including Today at FOB and the viewing centre fixtures list). Established on-site match board and WhatsApp inquiry model, removing fixtures.js and fixtures.json from production (FR-04, FR-09, Decision 29).
